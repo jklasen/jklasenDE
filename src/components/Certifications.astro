@@ -1,0 +1,141 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const strategic = [
+  'VMware Certified Professional - VMware Cloud Foundation 9 Administrator',
+  'NVIDIA-Certified Associate: AI Infrastructure and Operations',
+  'Broadcom Partner: Certified Expert - VMware Cloud Foundation',
+  'Broadcom Partner: Proven Professional - VMware vSphere Foundation',
+  'Broadcom Partner: Proven Professional - NSX',
+  'AWS Partner: Sales Accreditation',
+];
+
+const community = [
+  { name: 'VMUG Innovation in Leadership Award', year: '2024', highlight: true },
+  { name: 'VMware vExpert PRO', year: '2026, 2025, 2024', highlight: true },
+  { name: 'VMUG Volunteer Leader', year: '2026, 2025, 2024, 2023' },
+  { name: 'VMware vExpert', year: '2017–2026 (10x in Folge)', highlight: true },
+  { name: 'VMware vExpert vSAN', year: '2024, 2019, 2018, 2017' },
+  { name: 'Dell EMC CTO Ambassador', year: '2017' },
+];
+
+const fundamental = [
+  'VCP 9 / VCP-Cloud / VCP 5-DCV / VCP 4 / VCP 3',
+  'VCAP4-DCA',
+  'VCI: VMware Certified Instructor',
+  'DCSA: DataCore Certified Solutions Architect',
+  'ITIL Foundation',
+  'MCSE (Windows 2000), MCSA (Windows 2003)',
+  'MCTS (4 Zertifizierungen), MCP 2.0',
+];
+---
+
+<section id="certifications" class="section-padding bg-white dark:bg-gray-950">
+  <div class="container-narrow">
+    <!-- Section Header -->
+    <div class="text-center mb-16" data-animate>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+        {t('certs.title')}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        {t('certs.subtitle')}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-animate>
+      <!-- Strategic -->
+      <div class="glass-card p-8">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-emerald-600 flex items-center justify-center text-white mb-6">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+          {t('certs.strategic')}
+        </h3>
+        <ul class="space-y-3">
+          {strategic.map((cert) => (
+            <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {cert}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Community -->
+      <div class="glass-card p-8">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-500 to-purple-600 flex items-center justify-center text-white mb-6">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+          {t('certs.community')}
+        </h3>
+        <ul class="space-y-3">
+          {community.map((item) => (
+            <li class="flex items-start gap-2 text-sm">
+              <span class={`mt-0.5 flex-shrink-0 ${item.highlight ? 'text-yellow-500' : 'text-primary-500'}`}>
+                {item.highlight ? '⭐' : '🏅'}
+              </span>
+              <div>
+                <span class={`${item.highlight ? 'font-semibold text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400'}`}>
+                  {item.name}
+                </span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 ml-1">({item.year})</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Fundamental -->
+      <div class="glass-card p-8">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+          {t('certs.fundamental')}
+        </h3>
+        <ul class="space-y-3">
+          {fundamental.map((cert) => (
+            <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              {cert}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Credly Link -->
+    <div class="text-center mt-12" data-animate>
+      <a
+        href="https://www.credly.com/users/jens-klasen"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary"
+      >
+        {lang === 'de' ? 'Alle Badges auf Credly ansehen' : 'View all badges on Credly'}
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

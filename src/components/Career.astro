@@ -1,0 +1,101 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const timeline = [
+  {
+    year: '2025',
+    title: t('career.2025.title'),
+    role: t('career.2025.role'),
+    desc: t('career.2025.desc'),
+    icon: '🚀',
+    current: true,
+  },
+  {
+    year: '2023',
+    title: t('career.2023.title'),
+    role: t('career.2023.role'),
+    desc: t('career.2023.desc'),
+    icon: '🔄',
+  },
+  {
+    year: '2011',
+    title: t('career.2011.title'),
+    role: t('career.2011.role'),
+    desc: t('career.2011.desc'),
+    icon: '🏗️',
+  },
+  {
+    year: '2000',
+    title: t('career.2000.title'),
+    role: t('career.2000.role'),
+    desc: t('career.2000.desc'),
+    icon: '🎓',
+  },
+];
+---
+
+<section id="career" class="section-padding bg-gray-50 dark:bg-gray-900/50">
+  <div class="container-narrow">
+    <!-- Section Header -->
+    <div class="text-center mb-16" data-animate>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+        {t('career.title')}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        {t('career.subtitle')}
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative" data-animate>
+      <!-- Vertical line -->
+      <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-primary-400 to-accent-500"></div>
+
+      <div class="space-y-12">
+        {timeline.map((item, i) => (
+          <div class={`relative flex items-start gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+            <!-- Content Card -->
+            <div class={`ml-20 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
+              <div class={`glass-card p-6 hover:scale-[1.02] transition-transform duration-200 ${item.current ? 'ring-2 ring-primary-500/50' : ''}`}>
+                {item.current && (
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs font-semibold mb-3">
+                    <span class="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse"></span>
+                    {lang === 'de' ? 'Aktuell' : 'Current'}
+                  </span>
+                )}
+                <div class="text-sm font-bold text-primary-600 dark:text-primary-400 mb-1">
+                  {item.year}
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                  {item.title}
+                </h3>
+                <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3">
+                  {item.role}
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline dot -->
+            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white dark:bg-gray-900 border-4 border-primary-500 flex items-center justify-center z-10 text-sm">
+              {item.icon}
+            </div>
+
+            <!-- Spacer for alternating layout -->
+            <div class="hidden md:block md:w-[calc(50%-2rem)]"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

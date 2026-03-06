@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Career from '../../components/Career.astro';
+import Certifications from '../../components/Certifications.astro';
+import Hunting from '../../components/Hunting.astro';
+import Contact from '../../components/Contact.astro';
+
+const lang = 'en';
+---
+
+<Layout
+  title="Jens Klasen | Technology Evangelist"
+  description="Jens Klasen - Technology Evangelist with 25+ years of IT experience. Bridging strategic vision with technical implementation."
+  lang={lang}
+>
+  <Hero lang={lang} />
+  <About lang={lang} />
+  <Career lang={lang} />
+  <Certifications lang={lang} />
+  <Hunting lang={lang} />
+  <Contact lang={lang} />
+</Layout>

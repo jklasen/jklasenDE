@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n/utils';
+
+const lang = 'de';
+const t = useTranslations(lang);
+---
+
+<Layout title="Impressum | Jens Klasen" lang={lang}>
+  <section class="section-padding pt-32 bg-white dark:bg-gray-950">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:underline mb-8">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        {lang === 'de' ? 'Zurück zur Startseite' : 'Back to Home'}
+      </a>
+
+      <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">
+        {t('impressum.title')}
+      </h1>
+
+      <div class="space-y-10 text-gray-600 dark:text-gray-400">
+        <!-- Responsible -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('impressum.responsible')}
+          </h2>
+          <p>
+            Jens Klasen<br />
+            Gartenstraße 25<br />
+            55234 Albig<br /><br />
+            E-Mail: <a href="mailto:jens@jklasen.com" class="text-primary-600 dark:text-primary-400 hover:underline">jens@jklasen.com</a>
+          </p>
+        </div>
+
+        <!-- Dispute -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('impressum.dispute')}
+          </h2>
+          <p>
+            {t('impressum.dispute.text')}
+          </p>
+          <p class="mt-2">
+            <a
+              href="http://ec.europa.eu/consumers/odr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary-600 dark:text-primary-400 hover:underline"
+            >
+              EU Online-Streitbeilegung
+            </a>
+          </p>
+        </div>
+
+        <!-- Liability for content -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('impressum.liability.title')}
+          </h2>
+          <p>{t('impressum.liability.text')}</p>
+        </div>
+
+        <!-- Liability for links -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('impressum.links.title')}
+          </h2>
+          <p>{t('impressum.links.text')}</p>
+        </div>
+
+        <!-- Copyright -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('impressum.copyright.title')}
+          </h2>
+          <p>{t('impressum.copyright.text')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
