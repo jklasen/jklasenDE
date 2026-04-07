@@ -21,14 +21,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'Ich verbinde strategische Vision mit technischer Umsetzung. Durch moderne Private-Cloud-Infrastrukturen und KI-gestützte Softwarelösungen schaffe ich nachhaltige Wettbewerbsvorteile.',
+      'Ich verbinde strategische Vision mit technischer Umsetzung. Mit über 25 Jahren Erfahrung in der IT-Branche unterstütze ich Unternehmen dabei, moderne Private-Cloud-Infrastrukturen und KI-gestützte Softwarelösungen einzuführen — für nachhaltige Wettbewerbsvorteile, digitale Souveränität und zukunftssichere Architekturen.',
     'hero.cta': 'Kontakt aufnehmen',
     'hero.cta2': 'Mehr erfahren',
 
     // About
     'about.title': 'Über mich',
     'about.intro':
-      'Technology Evangelist mit über 25 Jahren Erfahrung in der IT-Branche. Ich brenne für die Verbindung von strategischer Vision und technischer Exzellenz.',
+      'Technology Evangelist mit über 25 Jahren Erfahrung in der IT-Branche. Ich brenne für die Verbindung von strategischer Vision und technischer Exzellenz. Mein Antrieb ist es, komplexe Technologien greifbar zu machen und Menschen für Innovation zu begeistern — ob im Gespräch mit Entscheidern, in technischen Workshops oder auf der großen Bühne.',
     'about.personal.title': 'Persönliches',
     'about.personal.born': 'Geboren im Mai 1978',
     'about.personal.family': 'Verheiratet seit 2017, Vater einer Tochter (2015) und eines Sohnes (2018)',
@@ -36,18 +36,18 @@ export const ui = {
     'about.passions.title': 'Leidenschaften & Engagement',
     'about.passions.animals': 'Tierschutz',
     'about.passions.animals.desc':
-      'Aktiv in der Kitzrettung Rheinhessen und jagdlich engagiert mit eigenem Revier seit 2014.',
+      'Aktiv in der Kitzrettung Rheinhessen — jedes Jahr retten wir dutzende Kitze vor dem Mähtod. Jagdlich engagiert mit eigenem Revier seit 2014, mit Fokus auf nachhaltige Hege und ökologisches Gleichgewicht.',
     'about.passions.fitness': 'Fitness',
     'about.passions.fitness.desc':
-      'eBike-Touren, LesMills Bodypump, Apple Fitness+ und Sports Chanbara.',
+      'Regelmäßig unterwegs mit dem eBike durch Rheinhessen und darüber hinaus. Im Studio mit LesMills Bodypump und Apple Fitness+. Als Ausgleich zum Büroalltag außerdem Sports Chanbara — japanischer Schwertkampf.',
     'about.passions.music': 'Musik',
     'about.passions.music.desc': 'Metalcore, Death Metal, Nordic Folk — FAUN, Wardruna, Heilung.',
     'about.passions.archaeology': 'Archäologie',
     'about.passions.archaeology.desc':
-      'Faszination für frühe Hochkulturen, die Himmelsscheibe von Nebra und die Schamanin von Bad Dürrenberg.',
+      'Tiefe Faszination für frühe Hochkulturen und deren Errungenschaften. Besonders die Himmelsscheibe von Nebra und die Schamanin von Bad Dürrenberg zeigen, wie weit fortgeschritten unsere Vorfahren bereits waren.',
     'about.passions.tech': 'Technologie',
     'about.passions.tech.desc':
-      'SmartHome, Photovoltaik, Batteriespeicher und E-Mobilität.',
+      'Auch privat technikbegeistert: SmartHome-Automatisierung, eigene Photovoltaikanlage mit Batteriespeicher und vollelektrische Mobilität. Technologie soll das Leben einfacher und nachhaltiger machen.',
 
     // Career
     'career.title': 'Karriere',
@@ -55,18 +55,18 @@ export const ui = {
     'career.2025.title': 'Software-Lösungsunternehmen',
     'career.2025.role': 'Technology Evangelist',
     'career.2025.desc':
-      'Seit Januar 2025 bei einem etablierten Softwarehaus (gegr. 1997) mit 12+ Jahren Erfahrung in KI und Container-Technologie. Fokus auf moderne Private-Cloud-Infrastrukturen für Souveränität, Performance, Compliance und Vermeidung von Vendor Lock-in.',
+      'Seit Januar 2025 bei einem etablierten Softwarehaus (gegr. 1997) mit über 12 Jahren Erfahrung in KI und Container-Technologie. Als Technology Evangelist vermittle ich die Vorteile moderner Private-Cloud-Infrastrukturen — von digitaler Souveränität über Performance und Compliance bis zur Vermeidung von Vendor Lock-in. Ich begleite Kunden auf ihrem Weg in zukunftsfähige IT-Architekturen.',
     'career.2023.title': 'Transformation & Innovation',
     'career.2023.role': 'Solution Architect',
     'career.2023.desc':
-      'Application Modernization, agile DevOps, KI/ML-Integration und IT-OT-Konvergenz.',
+      'Begleitung von Unternehmen bei der Modernisierung bestehender Applikationslandschaften. Schwerpunkte: agile DevOps-Methoden, Integration von KI/ML in bestehende Prozesse und die Zusammenführung von IT und OT (Operational Technology) für ganzheitliche Digitalisierung.',
     'career.2011.title': 'IT-Hersteller',
     'career.2011.role': 'Solution Architect',
-    'career.2011.desc': 'IT als Business Enabler. Lösungsarchitektur für Enterprise-Kunden.',
+    'career.2011.desc': 'Über ein Jahrzehnt Erfahrung als Solution Architect bei führenden IT-Herstellern. Konzeption und Umsetzung von Lösungsarchitekturen für Enterprise-Kunden — IT als strategischer Business Enabler statt reiner Kostenstelle.',
     'career.2000.title': 'Karrierebeginn',
     'career.2000.role': 'IT-Fachinformatiker (IHK)',
     'career.2000.desc':
-      'Kernkompetenzen: Microsoft-Windows-Infrastruktur, Storage-Systeme, Virtualisierung.',
+      'Der Grundstein: Ausbildung zum IT-Fachinformatiker mit IHK-Abschluss. Aufbau tiefer technischer Kompetenz in Microsoft-Windows-Infrastrukturen, Storage-Systemen und Virtualisierung — das Fundament für eine Karriere an der Schnittstelle von Technologie und Business.',
 
     // Certifications
     'certs.title': 'Zertifizierungen & Auszeichnungen',
@@ -79,19 +79,16 @@ export const ui = {
     'hunting.title': 'Die Jagd',
     'hunting.subtitle': 'Verantwortung und Strategische Pflege',
     'hunting.desc':
-      'Ökologische Verantwortung, Habitatmanagement, Artenschutz und kulturelle Tradition im Rahmen der deutschen Jagdethik. Grundsätze: Hege und Pflege, Wildbestandsmanagement, kulturelle Tradition und Naturverbundenheit.',
+      'Seit 2014 führe ich ein eigenes Jagdrevier in Rheinhessen. Für mich ist die Jagd weit mehr als ein Hobby — sie ist gelebte Verantwortung für Natur und Wildtiere. Im Mittelpunkt stehen ökologische Hege, nachhaltiges Wildbestandsmanagement und der Erhalt von Lebensräumen. Ergänzend engagiere ich mich ehrenamtlich in der Kitzrettung Rheinhessen, wo wir mit Drohnen und Wärmebildtechnik junge Rehkitze vor dem Mähtod bewahren.',
 
     // Contact
     'contact.title': 'Kontakt',
-    'contact.subtitle': 'Lassen Sie uns sprechen',
+    'contact.subtitle': 'Lassen Sie uns vernetzen',
     'contact.description':
-      'Sie möchten die Einführung innovativer Technologien beschleunigen und Ihre Teams dafür begeistern? Ich freue mich auf Ihre Nachricht.',
-    'contact.name': 'Name',
-    'contact.email': 'E-Mail-Adresse',
-    'contact.message': 'Nachricht',
-    'contact.send': 'Nachricht senden',
-    'contact.address': 'Adresse',
-    'contact.or': 'oder',
+      'Sie möchten die Einführung innovativer Technologien beschleunigen, Ihre IT-Architektur zukunftssicher gestalten oder Ihre Teams für neue Technologien begeistern? Lassen Sie uns ins Gespräch kommen — ich freue mich auf Ihre Nachricht.',
+    'contact.linkedin.cta': 'Auf LinkedIn vernetzen',
+    'contact.linkedin.desc': '3.000+ Follower — Insights zu Cloud, KI und digitaler Transformation',
+    'contact.social.title': 'Weitere Kanäle',
 
     // Footer
     'footer.impressum': 'Impressum',
@@ -129,14 +126,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'I bridge strategic vision with technical implementation. Through modern private cloud infrastructure and AI-driven software solutions, I create sustainable competitive advantages.',
+      'I bridge strategic vision with technical implementation. With over 25 years of experience in the IT industry, I help organizations adopt modern private cloud infrastructure and AI-driven software solutions — delivering sustainable competitive advantages, digital sovereignty, and future-proof architectures.',
     'hero.cta': 'Get in Touch',
     'hero.cta2': 'Learn More',
 
     // About
     'about.title': 'About Me',
     'about.intro':
-      'Technology Evangelist with over 25 years of experience in the IT industry. I am passionate about connecting strategic vision with technical excellence.',
+      'Technology Evangelist with over 25 years of experience in the IT industry. I am passionate about connecting strategic vision with technical excellence. My drive is making complex technologies tangible and inspiring people to embrace innovation — whether in conversations with decision-makers, technical workshops, or on the big stage.',
     'about.personal.title': 'Personal',
     'about.personal.born': 'Born May 1978',
     'about.personal.family': 'Married since 2017, father of a daughter (2015) and a son (2018)',
@@ -144,18 +141,18 @@ export const ui = {
     'about.passions.title': 'Passions & Engagement',
     'about.passions.animals': 'Animal Protection',
     'about.passions.animals.desc':
-      'Active in fawn rescue (Kitzrettung Rheinhessen) and hunting with a personal reserve since 2014.',
+      'Active in fawn rescue (Kitzrettung Rheinhessen) — every year we save dozens of fawns from mowing deaths. Engaged hunter with a personal reserve since 2014, focused on sustainable conservation and ecological balance.',
     'about.passions.fitness': 'Fitness',
     'about.passions.fitness.desc':
-      'eBike tours, LesMills Bodypump, Apple Fitness+, and Sports Chanbara.',
+      'Regularly exploring the Rheinhessen region and beyond by eBike. Staying fit with LesMills Bodypump and Apple Fitness+. For a unique balance to office life: Sports Chanbara — Japanese sword fighting.',
     'about.passions.music': 'Music',
     'about.passions.music.desc': 'Metalcore, Death Metal, Nordic Folk — FAUN, Wardruna, Heilung.',
     'about.passions.archaeology': 'Archaeology',
     'about.passions.archaeology.desc':
-      'Fascinated by early civilizations, the Nebra Sky Disk, and the Shaman of Bad Dürrenberg.',
+      'Deep fascination with early civilizations and their achievements. The Nebra Sky Disk and the Shaman of Bad Dürrenberg are prime examples of how advanced our ancestors already were.',
     'about.passions.tech': 'Technology',
     'about.passions.tech.desc':
-      'Smart Home, photovoltaics, battery storage, and e-mobility.',
+      'Tech enthusiast at home too: smart home automation, own photovoltaic system with battery storage, and fully electric mobility. Technology should make life simpler and more sustainable.',
 
     // Career
     'career.title': 'Career',
@@ -163,18 +160,18 @@ export const ui = {
     'career.2025.title': 'Software Solutions Company',
     'career.2025.role': 'Technology Evangelist',
     'career.2025.desc':
-      'Since January 2025 at an established software company (est. 1997) with 12+ years of AI and container technology experience. Focus on modern private cloud infrastructure for sovereignty, performance, compliance, and avoiding vendor lock-in.',
+      'Since January 2025 at an established software company (est. 1997) with over 12 years of experience in AI and container technology. As Technology Evangelist, I communicate the benefits of modern private cloud infrastructure — from digital sovereignty and performance to compliance and avoiding vendor lock-in. I guide customers on their journey to future-proof IT architectures.',
     'career.2023.title': 'Transformation & Innovation',
     'career.2023.role': 'Solution Architect',
     'career.2023.desc':
-      'Application modernization, agile DevOps, AI/ML integration, and IT-OT convergence.',
+      'Guiding organizations through modernization of existing application landscapes. Key areas: agile DevOps methodologies, integrating AI/ML into existing processes, and bridging IT and OT (Operational Technology) for holistic digitalization.',
     'career.2011.title': 'IT Manufacturer',
     'career.2011.role': 'Solution Architect',
-    'career.2011.desc': 'IT as a business enabler. Solution architecture for enterprise customers.',
+    'career.2011.desc': 'Over a decade of experience as Solution Architect at leading IT manufacturers. Designing and implementing solution architectures for enterprise customers — positioning IT as a strategic business enabler rather than just a cost center.',
     'career.2000.title': 'Career Start',
     'career.2000.role': 'IT Specialist (IHK Certified)',
     'career.2000.desc':
-      'Core competencies: Microsoft Windows infrastructure, storage systems, virtualization.',
+      'The foundation: IT specialist training with IHK certification. Building deep technical expertise in Microsoft Windows infrastructure, storage systems, and virtualization — the bedrock for a career at the intersection of technology and business.',
 
     // Certifications
     'certs.title': 'Certifications & Awards',
@@ -187,19 +184,16 @@ export const ui = {
     'hunting.title': 'Hunting',
     'hunting.subtitle': 'Responsibility and Strategic Stewardship',
     'hunting.desc':
-      'Ecological responsibility, habitat management, species preservation, and cultural tradition within German hunting ethics. Principles: conservation, wildlife population management, cultural tradition, and connection to nature.',
+      'Since 2014, I manage my own hunting reserve in Rheinhessen. For me, hunting is far more than a hobby — it is a lived responsibility for nature and wildlife. The focus is on ecological stewardship, sustainable wildlife population management, and habitat preservation. Additionally, I volunteer with Kitzrettung Rheinhessen, where we use drones and thermal imaging to save young fawns from mowing deaths.',
 
     // Contact
     'contact.title': 'Contact',
-    'contact.subtitle': "Let's Talk",
+    'contact.subtitle': "Let's Connect",
     'contact.description':
-      'Looking to accelerate innovative technology adoption and inspire your teams? I look forward to hearing from you.',
-    'contact.name': 'Name',
-    'contact.email': 'Email Address',
-    'contact.message': 'Message',
-    'contact.send': 'Send Message',
-    'contact.address': 'Address',
-    'contact.or': 'or',
+      'Looking to accelerate innovative technology adoption, future-proof your IT architecture, or inspire your teams to embrace new technologies? Let\'s start a conversation — I look forward to hearing from you.',
+    'contact.linkedin.cta': 'Connect on LinkedIn',
+    'contact.linkedin.desc': '3,000+ followers — Insights on Cloud, AI, and Digital Transformation',
+    'contact.social.title': 'More Channels',
 
     // Footer
     'footer.impressum': 'Legal Notice',
