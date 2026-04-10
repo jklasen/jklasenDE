@@ -21,14 +21,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'Ich verbinde strategische Vision mit technischer Umsetzung. Mit über 25 Jahren Erfahrung in der IT-Branche unterstütze ich Unternehmen dabei, moderne Private-Cloud-Infrastrukturen und KI-gestützte Softwarelösungen einzuführen — für nachhaltige Wettbewerbsvorteile, digitale Souveränität und zukunftssichere Architekturen.',
+      'Ich verbinde strategische Vision mit technischer Umsetzung. Seit 1999 in der IT-Branche unterstütze ich Unternehmen dabei, moderne Private-Cloud-Infrastrukturen und KI-gestützte Softwarelösungen einzuführen — für nachhaltige Wettbewerbsvorteile, digitale Souveränität und zukunftssichere Architekturen.',
     'hero.cta': 'Kontakt aufnehmen',
     'hero.cta2': 'Mehr erfahren',
 
     // About
     'about.title': 'Über mich',
     'about.intro':
-      'Technology Evangelist mit über 25 Jahren Erfahrung in der IT-Branche. Ich brenne für die Verbindung von strategischer Vision und technischer Exzellenz. Mein Antrieb ist es, komplexe Technologien greifbar zu machen und Menschen für Innovation zu begeistern — ob im Gespräch mit Entscheidern, in technischen Workshops oder auf der großen Bühne.',
+      'Technology Evangelist, seit 1999 in der IT-Branche. Ich brenne für die Verbindung von strategischer Vision und technischer Exzellenz. Mein Antrieb ist es, komplexe Technologien greifbar zu machen und Menschen für Innovation zu begeistern — ob im Gespräch mit Entscheidern, in technischen Workshops oder auf der Bühne.',
     'about.personal.title': 'Persönliches',
     'about.personal.born': 'Geboren im Mai 1978',
     'about.personal.family': 'Verheiratet seit 2017, Vater einer Tochter (2015) und eines Sohnes (2018)',
@@ -146,14 +146,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'I bridge strategic vision with technical implementation. With over 25 years of experience in the IT industry, I help organizations adopt modern private cloud infrastructure and AI-driven software solutions — delivering sustainable competitive advantages, digital sovereignty, and future-proof architectures.',
+      'I bridge strategic vision with technical implementation. In the IT industry since 1999, I help organizations adopt modern private cloud infrastructure and AI-driven software solutions — delivering sustainable competitive advantages, digital sovereignty, and future-proof architectures.',
     'hero.cta': 'Get in Touch',
     'hero.cta2': 'Learn More',
 
     // About
     'about.title': 'About Me',
     'about.intro':
-      'Technology Evangelist with over 25 years of experience in the IT industry. I am passionate about connecting strategic vision with technical excellence. My drive is making complex technologies tangible and inspiring people to embrace innovation — whether in conversations with decision-makers, technical workshops, or on the big stage.',
+      'Technology Evangelist, in the IT industry since 1999. I am passionate about connecting strategic vision with technical excellence. My drive is making complex technologies tangible and inspiring people to embrace innovation — whether in conversations with decision-makers, technical workshops, or on stage.',
     'about.personal.title': 'Personal',
     'about.personal.born': 'Born May 1978',
     'about.personal.family': 'Married since 2017, father of a daughter (2015) and a son (2018)',

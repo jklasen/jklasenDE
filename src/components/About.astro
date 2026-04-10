@@ -22,11 +22,6 @@ const passions = [
     desc: t('about.passions.fitness.desc'),
   },
   {
-    rune: 'ᛗ',
-    title: t('about.passions.music'),
-    desc: t('about.passions.music.desc'),
-  },
-  {
     rune: 'ᛟ',
     title: t('about.passions.archaeology'),
     desc: t('about.passions.archaeology.desc'),
@@ -37,6 +32,9 @@ const passions = [
     desc: t('about.passions.tech.desc'),
   },
 ];
+
+// Official band links — open in new tab
+const bandLinkClass = 'text-bone-50 font-semibold border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors';
 
 const credos = lang === 'de' ? [
   { rune: 'ᛋ', word: 'Struktur', sub: 'Klarheit vor Chaos' },
@@ -120,7 +118,7 @@ const credos = lang === 'de' ? [
         </h3>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
         {passions.map((p) => (
           <div class="forged-card p-7 group hover:border-blood-500/40 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-start gap-5">
@@ -140,6 +138,136 @@ const credos = lang === 'de' ? [
             </div>
           </div>
         ))}
+      </div>
+
+      <!-- Featured: Music -->
+      <div class="forged-card corner-accents mt-10 p-10 lg:p-14 relative overflow-hidden" data-animate>
+        <div class="br-corner"></div>
+
+        <!-- Ambient background rune -->
+        <div class="absolute -top-20 -right-10 font-rune text-[22rem] text-bone-300/[0.03] leading-none pointer-events-none select-none">ᛗ</div>
+
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 border border-bone-300/30 flex items-center justify-center font-rune text-4xl text-blood-400">
+              ᛗ
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.3em] text-blood-400 font-display mb-1">
+                {lang === 'de' ? 'Musik' : 'Music'}
+              </p>
+              <h4 class="font-display font-black uppercase tracking-wider text-bone-100 text-2xl lg:text-3xl leading-tight">
+                {lang === 'de'
+                  ? 'Klangwelten — von moderner Härte zu archaischen Wurzeln'
+                  : 'Soundworlds — from modern fury to ancient roots'}
+              </h4>
+            </div>
+          </div>
+
+          <p class="text-lg lg:text-xl text-bone-100 italic font-display leading-relaxed mb-8 max-w-3xl">
+            {lang === 'de'
+              ? 'Musik ist für mich kein bloßer Hintergrund — sie ist ein Erlebnis extremer Kontraste.'
+              : 'Music is never just background noise for me — it is an experience of extreme contrasts.'}
+          </p>
+
+          <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Modern side -->
+            <div class="space-y-4">
+              <p class="text-[10px] uppercase tracking-[0.3em] text-blood-400 font-display">
+                {lang === 'de' ? 'Moderne Härte' : 'Modern fury'}
+              </p>
+              <p class="text-base text-bone-200/85 leading-relaxed">
+                {lang === 'de' ? (
+                  <>
+                    Mein Herz schlägt für die unbeugsame Energie des <strong class="text-bone-50 font-semibold">Metalcore</strong> und <strong class="text-bone-50 font-semibold">Deathcore</strong>. Ich schätze die technische Präzision und die wuchtigen Riffs von <a href="https://en.wikipedia.org/wiki/Parkway_Drive" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Parkway Drive</a>, aber auch die düstere, monoton-melodische Tiefe und die orchestrale Gewalt, die <a href="https://en.wikipedia.org/wiki/Lorna_Shore" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Lorna Shore</a> ausmachen. Es ist diese rohe, ungefilterte Kraft, die für mich den Reiz moderner extremer Musik definiert.
+                  </>
+                ) : (
+                  <>
+                    My heart beats for the unbending energy of <strong class="text-bone-50 font-semibold">Metalcore</strong> and <strong class="text-bone-50 font-semibold">Deathcore</strong>. I value the technical precision and massive riffs of <a href="https://en.wikipedia.org/wiki/Parkway_Drive" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Parkway Drive</a>, as well as the dark, monotonously melodic depth and orchestral force that define <a href="https://en.wikipedia.org/wiki/Lorna_Shore" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Lorna Shore</a>. This raw, unfiltered power is what defines the appeal of modern extreme music for me.
+                  </>
+                )}
+              </p>
+            </div>
+
+            <!-- Roots side -->
+            <div class="space-y-4">
+              <p class="text-[10px] uppercase tracking-[0.3em] text-blood-400 font-display">
+                {lang === 'de' ? 'Archaische Wurzeln' : 'Ancient roots'}
+              </p>
+              <p class="text-base text-bone-200/85 leading-relaxed">
+                {lang === 'de'
+                  ? 'Doch wo die Härte aufhört, beginnt eine andere, ebenso fesselnde Reise: die Rückkehr zu den Wurzeln. Als Ausgleich zur modernen Wall of Sound verliere ich mich in der nordischen Mystik und atmosphärischen Tiefe.'
+                  : 'But where the fury ends, another journey begins — just as captivating: the return to the roots. As a counterbalance to the modern wall of sound, I lose myself in Nordic mysticism and atmospheric depth.'}
+              </p>
+            </div>
+          </div>
+
+          <!-- Runic divider -->
+          <div class="rune-divider my-10">
+            <span class="font-rune text-2xl text-bone-300/60 tracking-[0.4em]">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+          </div>
+
+          <!-- Bulleted list — roots -->
+          <ul class="space-y-5 max-w-3xl mx-auto">
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 font-rune text-2xl text-blood-400 mt-[-2px]">ᛏ</span>
+              <p class="text-base text-bone-200/85 leading-relaxed">
+                {lang === 'de' ? (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Die Natur spüren</strong>
+                    Mit den organischen Klängen von <a href="https://en.wikipedia.org/wiki/Wardruna" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Wardruna</a>, <a href="https://danheimmusic.com" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Danheim</a> und <a href="https://en.wikipedia.org/wiki/Forndom" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Forndom</a> tauche ich in vergangene Welten ein.
+                  </>
+                ) : (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Feeling nature</strong>
+                    With the organic sounds of <a href="https://en.wikipedia.org/wiki/Wardruna" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Wardruna</a>, <a href="https://danheimmusic.com" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Danheim</a> and <a href="https://en.wikipedia.org/wiki/Forndom" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Forndom</a>, I dive into forgotten worlds.
+                  </>
+                )}
+              </p>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 font-rune text-2xl text-blood-400 mt-[-2px]">ᛟ</span>
+              <p class="text-base text-bone-200/85 leading-relaxed">
+                {lang === 'de' ? (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Melodische Vielfalt</strong>
+                    Künstler wie <a href="https://en.wikipedia.org/wiki/Faun_(band)" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>FAUN</a> und <a href="https://en.wikipedia.org/wiki/Sowulo" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Sowulo</a> zeigen mir, wie zeitlos folkloristische Melodien sein können.
+                  </>
+                ) : (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Melodic range</strong>
+                    Artists like <a href="https://en.wikipedia.org/wiki/Faun_(band)" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>FAUN</a> and <a href="https://en.wikipedia.org/wiki/Sowulo" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Sowulo</a> show me how timeless folk melodies can be.
+                  </>
+                )}
+              </p>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 font-rune text-2xl text-blood-400 mt-[-2px]">ᚨ</span>
+              <p class="text-base text-bone-200/85 leading-relaxed">
+                {lang === 'de' ? (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Archaische Kraft</strong>
+                    Die rauen Kehlkopfgesänge von <a href="https://en.wikipedia.org/wiki/Nytt_Land" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Nytt Land</a> und die beeindruckenden, rituellen Inszenierungen von <a href="https://en.wikipedia.org/wiki/Heilung_(band)" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Heilung</a> schaffen eine Verbindung zum Ursprünglichen, die weit über herkömmliche Musik hinausgeht.
+                  </>
+                ) : (
+                  <>
+                    <strong class="text-bone-50 font-display uppercase tracking-wider text-sm block mb-1">Ancient force</strong>
+                    The raw throat singing of <a href="https://en.wikipedia.org/wiki/Nytt_Land" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Nytt Land</a> and the breathtaking ritual performances of <a href="https://en.wikipedia.org/wiki/Heilung_(band)" target="_blank" rel="noopener noreferrer" class={bandLinkClass}>Heilung</a> create a connection to the primordial that reaches far beyond conventional music.
+                  </>
+                )}
+              </p>
+            </li>
+          </ul>
+
+          <!-- Closing note -->
+          <div class="mt-10 pt-8 border-t border-bone-300/10">
+            <p class="text-base lg:text-lg text-bone-100 italic font-display leading-relaxed text-center max-w-3xl mx-auto">
+              {lang === 'de'
+                ? 'Für mich ist es kein Widerspruch, sondern die perfekte Symbiose: Die moderne Wut des Deathcore trifft auf das zeitlose Erbe des Nordens. Beide Genres teilen eine Intensität, die unter die Haut geht — egal, ob durch eine verzerrte Gitarre oder eine Rahmentrommel.'
+                : "For me, it is no contradiction but a perfect symbiosis: the modern rage of Deathcore meets the timeless heritage of the North. Both genres share an intensity that gets under your skin — whether through a distorted guitar or a frame drum."}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
