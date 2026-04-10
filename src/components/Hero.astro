@@ -103,26 +103,15 @@ const t = useTranslations(lang);
               <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(139,0,0,0.5)" stroke-width="1" stroke-dasharray="2 8"/>
             </svg>
           </div>
-          <!-- Logo center — round sticker -->
-          <div class="absolute inset-12 flex items-center justify-center">
-            <div
-              class="relative w-full h-full rounded-full bg-bone-100 flex items-center justify-center overflow-hidden"
-              style="
-                border: 3px solid rgba(220, 209, 173, 0.6);
-                box-shadow:
-                  0 0 0 1px rgba(0,0,0,0.5),
-                  0 0 40px rgba(139, 0, 0, 0.45),
-                  0 0 80px rgba(220, 209, 173, 0.12),
-                  inset 0 0 30px rgba(0, 0, 0, 0.08);
-              "
-            >
-              <img
-                src="/images/jens-icon-large.svg"
-                alt="Jens Klasen Sigil"
-                class="w-[88%] h-[88%] object-contain"
-                loading="eager"
-              />
-            </div>
+          <!-- Logo center — etched, no sticker -->
+          <div class="absolute inset-10 flex items-center justify-center">
+            <img
+              src="/images/jens-transparent-dark-bg.png"
+              alt="Jens Klasen Sigil"
+              class="w-full h-full object-contain"
+              style="filter: drop-shadow(0 0 24px rgba(139, 0, 0, 0.35)) drop-shadow(0 0 40px rgba(220, 209, 173, 0.12));"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
