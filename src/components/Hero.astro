@@ -30,15 +30,17 @@ const t = useTranslations(lang);
             <span>{lang === 'de' ? 'Willkommen' : 'Welcome'}</span>
           </p>
 
-          <h1 class="font-display font-black uppercase leading-[0.95] tracking-tight">
-            <span class="block text-4xl sm:text-5xl lg:text-6xl text-bone-200/90">{lang === 'de' ? 'Ich bin' : 'I am'}</span>
-            <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl heading-blood mt-2">JENS</span>
-            <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl heading-blood">KLASEN</span>
+          <h1 class="leading-[0.9] tracking-tight">
+            <span class="block text-2xl sm:text-3xl text-bone-200/80 mb-2" style="font-family: 'MedievalSharp', 'Cinzel', Georgia, serif;">
+              {lang === 'de' ? 'Ich bin der' : "I'm"}
+            </span>
+            <span class="block heading-brutal uppercase text-7xl sm:text-8xl lg:text-9xl xl:text-[11rem]">JENS</span>
+            <span class="block heading-brutal uppercase text-7xl sm:text-8xl lg:text-9xl xl:text-[11rem]">KLASEN</span>
           </h1>
 
           <div class="flex items-center gap-4 pt-2">
             <span class="block h-px w-12 bg-blood-500"></span>
-            <p class="text-sm sm:text-base font-display uppercase tracking-[0.25em] text-blood-400">
+            <p class="text-sm sm:text-base uppercase tracking-[0.25em] text-blood-400" style="font-family: 'MedievalSharp', 'Cinzel', Georgia, serif;">
               {t('hero.title')} · {lang === 'de' ? 'Freidenker' : 'Free Thinker'}
             </p>
           </div>

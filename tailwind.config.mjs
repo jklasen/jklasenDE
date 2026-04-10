@@ -74,6 +74,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Cinzel', 'Georgia', 'serif'],
+        carved: ['Metamorphous', 'Cinzel', 'Georgia', 'serif'],
         rune: ['"MedievalSharp"', 'Cinzel', 'serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },

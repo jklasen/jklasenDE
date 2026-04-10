@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=MedievalSharp&family=Metamorphous&display=swap');
+
+/* Self-hosted Norse — Viking runestone display font by Joël Carrouché
+   Licensed for web embedding (personal + commercial). */
+@font-face {
+  font-family: 'Norse';
+  src: url('/fonts/Norse.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Norse';
+  src: url('/fonts/Norsebold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -40,7 +57,9 @@
 
   /* Cinematic display heading with carved feel */
   .heading-carved {
-    @apply font-display font-black uppercase tracking-wider text-bone-100;
+    @apply uppercase tracking-wider text-bone-100;
+    font-family: 'Metamorphous', 'Cinzel', Georgia, serif;
+    font-weight: 400;
     text-shadow:
       0 0 1px rgba(220, 209, 173, 0.4),
       0 2px 12px rgba(0, 0, 0, 0.8);
@@ -53,9 +72,26 @@
     color: transparent;
   }
 
+  /* Brutal hero name — Norse (Viking runestone), carved stone with warm blood edge */
+  .heading-brutal {
+    font-family: 'Norse', 'Metamorphous', 'Cinzel', Georgia, serif;
+    font-weight: 700;
+    background: linear-gradient(180deg, #f6f3e9 0%, #dcd1ad 30%, #8e7c47 65%, #6b0202 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter:
+      drop-shadow(0 2px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow(0 0 18px rgba(0, 0, 0, 0.6))
+      drop-shadow(0 0 32px rgba(139, 0, 0, 0.25));
+    letter-spacing: 0.02em;
+  }
+
   /* Section eyebrow — small uppercase tag */
   .eyebrow {
-    @apply inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.3em] text-bone-300/80 font-semibold;
+    @apply inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.3em] text-bone-300/80;
+    font-family: 'MedievalSharp', 'Cinzel', Georgia, serif;
+    font-weight: 400;
   }
 
   .eyebrow::before,
