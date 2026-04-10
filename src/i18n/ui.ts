@@ -159,7 +159,7 @@ export const ui = {
     'contact.description':
       'Ein Gespräch mit mir lohnt sich, wenn Sie an einer echten Wegmarke stehen: Infrastruktur, die ans Ende ihres Lebenszyklus kommt, ein Vendor, der nach Übernahme nicht mehr der ist, mit dem Sie den Vertrag geschlossen haben, ein KI-Vorhaben, das aus der Pilotphase raus soll, oder die unbequeme Frage, ob die nächste Hardware-Generation wirklich die Antwort ist. Nicht lohnenswert, wenn Sie eine Bestätigung für eine Entscheidung suchen, die schon gefallen ist — dafür gibt es günstigere Stimmen als meine. Alles andere: gerne.',
     'contact.linkedin.cta': 'Auf LinkedIn vernetzen',
-    'contact.linkedin.desc': '3.000+ Follower — Insights zu Cloud, KI und digitaler Transformation',
+    'contact.linkedin.desc': '3.000+ Follower — Klartext zu Private Cloud, KI und Vendor-Strategie',
     'contact.social.title': 'Weitere Kanäle',
 
     // Footer
@@ -198,14 +198,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'I bridge strategic vision with technical implementation. In the IT industry since 1999, I help organizations adopt modern private cloud infrastructure and AI-driven software solutions — delivering sustainable competitive advantages, digital sovereignty, and future-proof architectures.',
+      "25 years in IT, and I haven't given a single talk on something I didn't first test myself on real hardware or real code. I'm a sparring partner for decision-makers when infrastructure, sovereignty and AI all land on the table at the same time — and I'm the one who picks up the hammer while others are still talking. What I recommend, I also build myself. Sometimes on the side, sometimes full-time, always seriously.",
     'hero.cta': 'Get in Touch',
     'hero.cta2': 'Learn More',
 
     // About
     'about.title': 'About Me',
     'about.intro':
-      'Technology Evangelist, in the IT industry since 1999. I am passionate about connecting strategic vision with technical excellence. My drive is making complex technologies tangible and inspiring people to embrace innovation — whether in conversations with decision-makers, technical workshops, or on stage.',
+      "I'm one of the few in this industry who came up through the command line and never lost the muscle. Twenty-three of those years spent with vendors and in vendor-adjacent roles — which means I know how vendor narratives get built, because I helped build a few. Today I use that knowledge in the other direction: I sit on the customer side of the table, translate between the board and the platform team, and say so when what the next sales rep is promising doesn't actually work that way in the real world.",
     'about.personal.title': 'Personal',
     'about.personal.born': 'Born May 1978',
     'about.personal.family': 'Married since 2017, father of a daughter (2015) and a son (2018)',
@@ -301,16 +301,16 @@ export const ui = {
     // Career
     'career.title': 'Career',
     'career.subtitle': 'My professional journey',
-    'career.2025.title': 'Software Solutions Company',
+    'career.2025.title': 'CID GmbH',
     'career.2025.role': 'Technology Evangelist',
     'career.2025.desc':
-      'Since January 2025 at an established software company (est. 1997) with over 12 years of experience in AI and container technology. As Technology Evangelist, I communicate the benefits of modern private cloud infrastructure — from digital sovereignty and performance to compliance and avoiding vendor lock-in. I guide customers on their journey to future-proof IT architectures.',
-    'career.2023.title': 'Transformation & Innovation',
-    'career.2023.role': 'Solution Architect',
+      'CID is a software company from the Rhine-Main region, founded in 1997, that has been running AI and container technology in real production environments for over twelve years — not as a lab, but with customers in regulated industries. My role there is the interface between what holds up technically and what lands in the boardroom conversation. I translate in both directions and at the same time guide customers who want to step out of single-vendor dependency — without walking straight into the next one.',
+    'career.2023.title': 'evoila GmbH',
+    'career.2023.role': 'Senior Sales Specialist & Unit Lead',
     'career.2023.desc':
-      'Guiding organizations through modernization of existing application landscapes. Key areas: agile DevOps methodologies, integrating AI/ML into existing processes, and bridging IT and OT (Operational Technology) for holistic digitalization.',
-    'career.2011.title': 'IT Manufacturer',
-    'career.2011.role': 'Solution Architect',
+      'At evoila I led a team of six and built the bridge between sales and solution architecture — not as a clean separation of roles, but as the reality of a growing systems integrator where strategy, customer conversation and architecture decision all land with the same person. Key areas: modernizing application landscapes, bringing AI and ML into existing processes, and tearing down the line between classical IT and Operational Technology wherever it only still exists out of habit.',
+    'career.2011.title': 'Dell Technologies',
+    'career.2011.role': 'Principal Solutions Architect',
     'career.2011.desc': 'Over a decade of experience as Solution Architect at leading IT manufacturers. Designing and implementing solution architectures for enterprise customers — positioning IT as a strategic business enabler rather than just a cost center.',
     'career.2000.title': 'Career Start',
     'career.2000.role': 'IT Specialist (IHK Certified)',
@@ -334,9 +334,9 @@ export const ui = {
     'contact.title': 'Contact',
     'contact.subtitle': "Let's Connect",
     'contact.description':
-      'Looking to accelerate innovative technology adoption, future-proof your IT architecture, or inspire your teams to embrace new technologies? Let\'s start a conversation — I look forward to hearing from you.',
+      "A conversation with me is worth your time when you're standing at a real crossroads: infrastructure approaching the end of its lifecycle, a vendor that after an acquisition isn't the one you signed with, an AI project that needs to move out of the pilot phase, or the uncomfortable question of whether the next hardware generation is really the answer. Not worth it if you're looking for confirmation of a decision that's already been made — there are cheaper voices than mine for that. Everything else: gladly.",
     'contact.linkedin.cta': 'Connect on LinkedIn',
-    'contact.linkedin.desc': '3,000+ followers — Insights on Cloud, AI, and Digital Transformation',
+    'contact.linkedin.desc': '3,000+ followers — straight talk on private cloud, AI and vendor strategy',
     'contact.social.title': 'More Channels',
 
     // Footer
