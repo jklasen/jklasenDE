@@ -12,6 +12,7 @@ export const ui = {
     'nav.about': 'Über mich',
     'nav.career': 'Karriere',
     'nav.certifications': 'Zertifizierungen',
+    'nav.briefing': 'Briefing',
     'nav.contact': 'Kontakt',
     'nav.impressum': 'Impressum',
 
@@ -182,6 +183,21 @@ export const ui = {
     'impressum.copyright.title': 'Urheberrecht',
     'impressum.copyright.text':
       'Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.',
+
+    // Briefing
+    'briefing.overview.eyebrow': 'Future Proof Tech Briefing',
+    'briefing.overview.title': 'Briefing',
+    'briefing.overview.intro':
+      'Der Future Proof Tech Briefing ist mein unregelmäßig erscheinender Newsletter zu den strukturellen Verschiebungen in Infrastruktur, KI und Plattform-Architektur. Ich veröffentliche jeden Artikel zuerst hier und spiegele ihn dann auf LinkedIn. Wenn etwas zu sagen ist, lesen Sie es zuerst an dieser Stelle.',
+    'briefing.overview.empty': 'Noch keine Artikel veröffentlicht.',
+    'briefing.article.readingTimeLabel': 'Lesezeit',
+    'briefing.article.author.heading': 'Über den Autor',
+    'briefing.article.author.body':
+      'Jens Klasen ist Technology Evangelist bei CID GmbH und schreibt über die Verschiebung von Hardware zu Software in der Infrastruktur-Welt. Der Newsletter „Future Proof Tech Briefing" erscheint unregelmäßig hier und auf LinkedIn, wenn es etwas zu sagen gibt.',
+    'briefing.article.back': '← Zurück zur Briefing-Übersicht',
+    'briefing.teaser.eyebrow': 'Aktuell im Briefing',
+    'briefing.teaser.cta.read': 'Artikel lesen',
+    'briefing.teaser.cta.all': 'Alle Briefings',
   },
   en: {
     // Navigation
@@ -189,6 +205,7 @@ export const ui = {
     'nav.about': 'About',
     'nav.career': 'Career',
     'nav.certifications': 'Certifications',
+    'nav.briefing': 'Briefing',
     'nav.contact': 'Contact',
     'nav.impressum': 'Legal Notice',
 
@@ -359,5 +376,20 @@ export const ui = {
     'impressum.copyright.title': 'Copyright',
     'impressum.copyright.text':
       'Reproduction, editing, distribution, and any kind of use beyond the limits of copyright law require the written consent of the respective author or creator.',
+
+    // Briefing (German-only content; EN keys mirror DE for fallback)
+    'briefing.overview.eyebrow': 'Future Proof Tech Briefing',
+    'briefing.overview.title': 'Briefing',
+    'briefing.overview.intro':
+      'Der Future Proof Tech Briefing ist mein unregelmäßig erscheinender Newsletter zu den strukturellen Verschiebungen in Infrastruktur, KI und Plattform-Architektur. Ich veröffentliche jeden Artikel zuerst hier und spiegele ihn dann auf LinkedIn. Wenn etwas zu sagen ist, lesen Sie es zuerst an dieser Stelle.',
+    'briefing.overview.empty': 'Noch keine Artikel veröffentlicht.',
+    'briefing.article.readingTimeLabel': 'Lesezeit',
+    'briefing.article.author.heading': 'Über den Autor',
+    'briefing.article.author.body':
+      'Jens Klasen ist Technology Evangelist bei CID GmbH und schreibt über die Verschiebung von Hardware zu Software in der Infrastruktur-Welt. Der Newsletter „Future Proof Tech Briefing" erscheint unregelmäßig hier und auf LinkedIn, wenn es etwas zu sagen gibt.',
+    'briefing.article.back': '← Zurück zur Briefing-Übersicht',
+    'briefing.teaser.eyebrow': 'Aktuell im Briefing',
+    'briefing.teaser.cta.read': 'Artikel lesen',
+    'briefing.teaser.cta.all': 'Alle Briefings',
   },
 } as const;

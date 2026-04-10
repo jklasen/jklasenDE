@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const entries = await getCollection('briefing');
+const latest = entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())[0];
+
+const formattedDate = latest
+  ? latest.data.date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
+const slug = latest?.id.replace(/\.md$/, '');
+---
+
+{latest && (
+  <section id="briefing" class="section-padding">
+    <div class="container-narrow">
+      <div class="max-w-2xl mx-auto" data-animate>
+        <p class="eyebrow mb-8">
+          <span>{t('briefing.teaser.eyebrow')}</span>
+        </p>
+
+        <div class="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-bone-300/60 font-display mb-5">
+          <time datetime={latest.data.date.toISOString()}>{formattedDate}</time>
+          <span class="w-1 h-1 bg-bone-300/40 rounded-full"></span>
+          <span>{latest.data.readingTime}</span>
+        </div>
+
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl text-bone-100 leading-tight mb-6"
+          style="font-family: 'Metamorphous', 'Cinzel', Georgia, serif; font-weight: 400;"
+        >
+          {latest.data.title}
+        </h2>
+
+        <p class="text-base lg:text-lg text-bone-200/80 leading-relaxed mb-10">
+          {latest.data.teaser}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href={`/briefing/${slug}/`}
+            class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] font-display text-bone-100 border-b border-blood-500/60 hover:text-blood-300 hover:border-blood-400 transition-colors pb-1"
+          >
+            {t('briefing.teaser.cta.read')}
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="/briefing/"
+            class="text-xs uppercase tracking-[0.25em] font-display text-bone-300/60 hover:text-bone-100 transition-colors"
+          >
+            {t('briefing.teaser.cta.all')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+)}

@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../i18n/utils';
-import { useTranslations } from '../i18n/utils';
+import { getLocalizedPath, useTranslations } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -11,12 +11,15 @@ const t = useTranslations(lang);
 const otherLang = lang === 'de' ? 'en' : 'de';
 const otherLangPath = lang === 'de' ? '/en/' : '/';
 
+const homeBase = getLocalizedPath(lang, '/');
+
 const navItems = [
-  { href: '#home', label: t('nav.home') },
-  { href: '#about', label: t('nav.about') },
-  { href: '#career', label: t('nav.career') },
-  { href: '#certifications', label: t('nav.certifications') },
-  { href: '#contact', label: t('nav.contact') },
+  { href: `${homeBase}#home`, label: t('nav.home') },
+  { href: `${homeBase}#about`, label: t('nav.about') },
+  { href: `${homeBase}#career`, label: t('nav.career') },
+  { href: `${homeBase}#certifications`, label: t('nav.certifications') },
+  { href: '/briefing/', label: t('nav.briefing') },
+  { href: `${homeBase}#contact`, label: t('nav.contact') },
 ];
 ---
 
@@ -27,7 +30,7 @@ const navItems = [
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20 lg:h-24">
       <!-- Logo -->
-      <a href="#home" class="flex items-center gap-3 group">
+      <a href={`${homeBase}#home`} class="flex items-center gap-3 group">
         <div class="relative w-14 h-14 lg:w-16 lg:h-16 flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
           <img
             src="/images/jens-transparent-dark-bg.png"

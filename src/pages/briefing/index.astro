@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'de';
+const t = useTranslations(lang);
+
+const entries = await getCollection('briefing');
+const sorted = entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout title={`${t('briefing.overview.title')} | Jens Klasen`} description={t('briefing.overview.intro')} lang={lang}>
+  <section class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
+    <div class="max-w-2xl mx-auto">
+      <!-- Header -->
+      <header class="mb-20" data-animate>
+        <p class="eyebrow mb-6">
+          <span>{t('briefing.overview.eyebrow')}</span>
+        </p>
+        <h1 class="heading-carved text-5xl sm:text-6xl lg:text-7xl mb-8">
+          {t('briefing.overview.title')}
+        </h1>
+        <p class="text-lg text-bone-200/80 leading-relaxed italic">
+          {t('briefing.overview.intro')}
+        </p>
+      </header>
+
+      <!-- Article list -->
+      {sorted.length === 0 ? (
+        <p class="text-base text-bone-300/60 italic" data-animate>
+          {t('briefing.overview.empty')}
+        </p>
+      ) : (
+        <ul class="space-y-0" data-animate>
+          {sorted.map((entry, i) => {
+            const slug = entry.id.replace(/\.md$/, '');
+            return (
+              <li class={i > 0 ? 'border-t border-bone-300/15' : ''}>
+                <a href={`/briefing/${slug}/`} class="block py-12 group">
+                  <div class="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-bone-300/60 font-display mb-4">
+                    <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+                    <span class="w-1 h-1 bg-bone-300/40 rounded-full"></span>
+                    <span>{entry.data.readingTime}</span>
+                  </div>
+                  <h2
+                    class="text-2xl sm:text-3xl text-bone-100 group-hover:text-blood-300 transition-colors mb-4 leading-tight"
+                    style="font-family: 'Metamorphous', 'Cinzel', Georgia, serif; font-weight: 400;"
+                  >
+                    {entry.data.title}
+                  </h2>
+                  <p class="text-base text-bone-200/80 leading-relaxed">
+                    {entry.data.teaser}
+                  </p>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  </section>
+</Layout>
