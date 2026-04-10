@@ -62,33 +62,68 @@ const credos = lang === 'de' ? [
       </p>
     </div>
 
-    <!-- Personal manifesto -->
-    <div class="forged-card corner-accents p-10 lg:p-14 mb-20 relative overflow-hidden" data-animate>
-      <div class="br-corner"></div>
-      <div class="grid lg:grid-cols-12 gap-10 items-center relative">
-        <div class="lg:col-span-7 space-y-6">
+    <!-- Personal manifesto with portrait -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 mb-20 items-stretch" data-animate>
+      <!-- Portrait -->
+      <div class="lg:col-span-5">
+        <div class="forged-card corner-accents relative overflow-hidden h-full">
+          <div class="br-corner"></div>
+          <img
+            src="/images/92%20-%20FotoLou-92.jpeg"
+            alt={lang === 'de' ? 'Jens Klasen mit seiner Frau' : 'Jens Klasen with his wife'}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <!-- Bottom vignette -->
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(180deg, transparent 55%, rgba(5,5,4,0.85) 100%);"
+          ></div>
+          <!-- Caption -->
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <div class="flex items-center gap-3">
+              <span class="block h-px w-8 bg-blood-500"></span>
+              <p class="text-[10px] uppercase tracking-[0.3em] text-bone-200/90 font-display">
+                {lang === 'de' ? 'Mit meiner Frau · zwei Seelen, ein Pfad' : 'With my wife · two souls, one path'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manifesto + personal facts -->
+      <div class="lg:col-span-7">
+        <div class="forged-card corner-accents p-10 lg:p-14 relative overflow-hidden h-full flex flex-col">
+          <div class="br-corner"></div>
+
           <p class="font-display text-2xl lg:text-3xl text-bone-100 leading-snug">
             {lang === 'de'
               ? '„Glatze, Vollbart, Tinte unter der Haut — und ein Kopf voller Architekturdiagramme. Ich bin kein Anzugträger, der Buzzwords verkauft. Ich bin der, der den Hammer ansetzt, wenn andere noch reden."'
               : '"Bald head, full beard, ink under the skin — and a mind full of architecture diagrams. I\'m not a suit selling buzzwords. I\'m the one who picks up the hammer while others are still talking."'}
           </p>
-          <div class="flex items-center gap-4 pt-2">
+
+          <div class="flex items-center gap-4 pt-4">
             <span class="block h-px w-12 bg-blood-500"></span>
             <span class="text-xs font-display uppercase tracking-[0.3em] text-blood-400">— Jens</span>
           </div>
-        </div>
-        <div class="lg:col-span-5 space-y-3 text-sm text-bone-200/80">
-          <div class="flex items-start gap-3">
-            <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
-            <span>{t('about.personal.born')}</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
-            <span>{t('about.personal.family')}</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
-            <span class="font-semibold text-bone-100">{t('about.personal.values')}</span>
+
+          <!-- Personal bullets at bottom -->
+          <div class="mt-auto pt-8 space-y-3 text-sm text-bone-200/80">
+            <div class="rune-divider !my-4 !justify-start">
+              <span class="font-rune text-xl text-blood-400">ᛟ</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
+              <span>{t('about.personal.born')}</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
+              <span>{t('about.personal.family')}</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-rune text-blood-400 text-xl mt-[-2px]">ᛟ</span>
+              <span class="font-semibold text-bone-100">{t('about.personal.values')}</span>
+            </div>
           </div>
         </div>
       </div>
