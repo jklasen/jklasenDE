@@ -1,0 +1,67 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    title: t('forge.kitzcontrol.title'),
+    status: t('forge.kitzcontrol.status'),
+    body: t('forge.kitzcontrol.body'),
+  },
+  {
+    title: t('forge.jkfitt.title'),
+    status: t('forge.jkfitt.status'),
+    body: t('forge.jkfitt.body'),
+  },
+  {
+    title: t('forge.rammageddon.title'),
+    status: t('forge.rammageddon.status'),
+    body: t('forge.rammageddon.body'),
+  },
+];
+---
+
+<section id="forge" class="section-padding">
+  <div class="container-narrow">
+    <!-- Section Header -->
+    <div class="text-center mb-20" data-animate>
+      <p class="eyebrow justify-center mb-6">
+        <span>{t('forge.eyebrow')}</span>
+      </p>
+      <h2 class="heading-carved text-5xl sm:text-6xl lg:text-7xl mb-8">
+        {t('forge.title')}
+      </h2>
+      <div class="rune-divider mb-8">
+        <span class="font-rune text-2xl text-blood-400">ᚦ</span>
+      </div>
+      <p class="text-lg text-bone-200/80 max-w-2xl mx-auto leading-relaxed italic">
+        {t('forge.lead')}
+      </p>
+    </div>
+
+    <!-- Three projects, narrative column -->
+    <div class="max-w-3xl mx-auto" data-animate>
+      {projects.map((p, i) => (
+        <article class={`py-14 ${i > 0 ? 'border-t border-bone-300/15' : ''}`}>
+          <h3
+            class="text-3xl lg:text-4xl text-bone-100 mb-3 leading-tight"
+            style="font-family: 'Metamorphous', 'Cinzel', Georgia, serif; font-weight: 400;"
+          >
+            {p.title}
+          </h3>
+          <p class="text-[11px] uppercase tracking-[0.25em] text-bone-300/50 font-display mb-8">
+            {p.status}
+          </p>
+          <p class="text-base lg:text-lg text-bone-200/85 leading-relaxed" set:html={p.body}></p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

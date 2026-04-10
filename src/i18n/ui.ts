@@ -49,6 +49,58 @@ export const ui = {
     'about.passions.tech.desc':
       'Auch privat technikbegeistert: SmartHome-Automatisierung, eigene Photovoltaikanlage mit Batteriespeicher und vollelektrische Mobilität. Technologie soll das Leben einfacher und nachhaltiger machen.',
 
+    // Positioning — So arbeite ich
+    'positioning.eyebrow': 'Mein Handwerk',
+    'positioning.title': 'So arbeite ich',
+    'positioning.intro.p1':
+      'Ich bin Sparringspartner für Entscheider, wenn Infrastruktur-Strategie, digitale Souveränität und KI-Readiness gleichzeitig auf dem Tisch liegen. Und Evangelist genug, um komplexe Zusammenhänge so zu übersetzen, dass Vorstand und Plattform-Team am Ende dieselbe Landkarte vor sich haben.',
+    'positioning.intro.p2':
+      'Ich habe die Entwicklung von der Server-Virtualisierung über Software-Defined Datacenter bis zur KI-fähigen Private Cloud nicht nur begleitet, sondern mitgebaut — über 25 Jahre, quer durch jede Schicht. Genau deshalb kann ich mir leisten, unbequeme Dinge auszusprechen, die andere aus Vendor-Loyalität verschweigen. Ich verkaufe keine Produkte. Ich bewerte Technologien danach, ob sie in zehn Jahren noch tragen.',
+    'positioning.audience.title': 'Wen ich begleite',
+    'positioning.audience.body':
+      'CTOs, CIOs, CDOs und CEOs in Unternehmen, die an einer Wegmarke stehen — im gehobenen Mittelstand ebenso wie im unteren Enterprise-Segment. Besonders dort, wo Souveränität kein Marketing-Wort ist, sondern Pflicht: öffentliche Hand, regulierte Finanzwelt, produzierende Industrie, Service Provider. Überall, wo Entscheidungen über Infrastruktur gleichzeitig Entscheidungen über Unabhängigkeit, Compliance und Zukunftsfähigkeit sind.',
+    'positioning.bridge.title': 'Die Brücke, die ich baue',
+    'positioning.bridge.body':
+      'SysOps, DevOps, Platform Engineering, MLOps — vier Welten, die in den meisten Unternehmen aneinander vorbeireden. Meine Arbeit ist, sie in eine gemeinsame Sprache zu bringen: vom klassischen IT-Betrieb über entwicklerzentrierte Plattformen bis zu produktionsfähigen KI-Workloads. Ohne diese Brücke bleibt KI ein Pilotprojekt, das nie produktiv wird. Mit ihr wird aus Infrastruktur eine Grundlage, auf der Menschen tatsächlich bauen können.',
+    'positioning.phases.eyebrow': 'Die Methode',
+    'positioning.phases.title': 'In vier Phasen',
+    'positioning.phases.intro': 'Immer in dieser Reihenfolge.',
+    'positioning.phases.listen.title': 'Lauschen',
+    'positioning.phases.listen.desc':
+      'Verstehen, was historisch gewachsen ist, was der Entscheider wirklich will — und was nur Lärm ist.',
+    'positioning.phases.map.title': 'Kartieren',
+    'positioning.phases.map.desc':
+      'Sichtbar machen, wie die Teile zusammenhängen und wo die echten Hebel liegen.',
+    'positioning.phases.forge.title': 'Schmieden',
+    'positioning.phases.forge.desc':
+      'Gemeinsam mit dem internen Team an der Lösung arbeiten — nicht als Externer, der Empfehlungen abgibt und wieder geht.',
+    'positioning.phases.handover.title': 'Übergeben',
+    'positioning.phases.handover.desc':
+      'Mein Ziel ist, dass das Unternehmen ohne mich weitermachen kann. Keine Abhängigkeit, keine Endlos-Mandate.',
+    'positioning.takeaway.eyebrow': 'Was du mitnimmst',
+    'positioning.takeaway.lead': 'Keine fertige Antwort von der Stange.',
+    'positioning.takeaway.body':
+      'Sondern zwei Dinge: eine Landkarte, die zeigt, wie deine Infrastruktur wirklich zusammenhängt — und die drei oder vier Fragen, die du deinen Teams und Anbietern als Nächstes stellen musst. Die Antworten finden wir zusammen, oder du findest sie selbst. Hauptsache, es sind die richtigen Fragen.',
+    'positioning.takeaway.cta.lead': 'Wenn dich eines dieser Themen gerade umtreibt —',
+    'positioning.takeaway.cta.button': 'Lass uns reden',
+
+    // Forge — Aus der Schmiede
+    'forge.eyebrow': 'Belege statt Behauptungen',
+    'forge.title': 'Aus der Schmiede',
+    'forge.lead': 'Drei Projekte, die zeigen, wie ich arbeite — nicht, was ich behaupte.',
+    'forge.kitzcontrol.title': 'KitzControl',
+    'forge.kitzcontrol.status': 'Stand: April 2026 — Übergeben an CopterPro, Entwicklungszeit 2024–2026',
+    'forge.kitzcontrol.body':
+      'Jedes Frühjahr, bevor die Mähwerke durch die Wiesen in Rheinhessen laufen, suchen ehrenamtliche Piloten mit Wärmebilddrohnen nach Rehkitzen im hohen Gras. <a href="https://www.kitzcontrol.de/" target="_blank" rel="noopener noreferrer" class="text-bone-50 font-semibold border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors">KitzControl</a> ist die Plattform dahinter: Multi-Tenant-Architektur mit sauber getrennten Rollen für Koordinatoren, Helfer, kommerzielle Piloten und Landwirte, Next.js und PostgreSQL mit PostGIS für die Geodaten. Dazu die Dinge, die man erst baut, wenn man selbst fliegt: DIPUL-Luftraumabfrage und Drohnenwetter direkt aus dem Einsatz-Dashboard, ein Klick vor dem Start statt drei Browser-Tabs. Ich habe die Plattform über zwei Saisons gebaut, zusammen mit der <a href="https://www.kitzrettungrheinhessen.de/" target="_blank" rel="noopener noreferrer" class="text-bone-50 font-semibold border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors">Kitzrettung Rheinhessen e.V.</a>, und dann an CopterPro übergeben — mit der Auflage, dass sie für die ehrenamtliche Kitzrettung fünf Jahre kostenlos bleibt. Das ist der ehrlichste Test, den ich für meinen eigenen Rat kenne: Trägt die Architektur, die ich Kunden empfehle, auch dann, wenn ich selbst der Betreiber bin und der Fehler mich persönlich trifft.',
+    'forge.jkfitt.title': 'JK-Fitt',
+    'forge.jkfitt.status': 'Stand: April 2026 — In aktiver Entwicklung',
+    'forge.jkfitt.body':
+      'JK-Fitt ist meine persönliche KI-Coaching-App, und der erste Kunde bin ich selbst. Apple HealthKit liefert Schlaf, HRV und VO2max. Die RENPHO-Waage spreche ich direkt an — über die inoffizielle Cloud-API, mit RSA-verschlüsseltem Login und Keychain-Speicherung, weil der offizielle Weg über Apple Health nur vier Werte durchreicht und die interessanten dreißig weglässt: Körperwasser, viszerales Fett, Skelettmuskel, segmentale Analyse. Der Coach — ein System-Prompt auf Basis mehrerer Trainingsphilosophien, angebunden über meinen eigenen Anthropic-API-Key — bekommt diesen kompletten Kontext inklusive 7-, 30- und 90-Tage-Trends und redet Klartext, wenn die Regeneration nicht zur geplanten Intervalleinheit passt. Ich teste KI nicht in Slides, sondern am eigenen Körper. Was hier nicht trägt, empfehle ich auch keinem Kunden. Und an diesem Projekt sehe ich, was sich gerade verschiebt: Standard-Apps haben ihre Rolle, aber sie sind nicht mehr die einzige bezahlbare Option. Personalisierte Software und zugeschnittene KI-Lösungen sind in Wochen statt Monaten machbar — vorausgesetzt, jemand versteht nicht nur das Bauen, sondern auch Betrieb, Wartung und Weiterentwicklung. Das ist die Art von Arbeit, für die Kunden heute zu CID kommen.',
+    'forge.rammageddon.title': 'RAMmageddon',
+    'forge.rammageddon.status': 'Stand: April 2026 — Analyse: November 2025, Veröffentlichung: Januar 2026',
+    'forge.rammageddon.body':
+      'Im November 2025 ist mir in den Lieferketten-Daten etwas aufgefallen, das nicht zur herrschenden Erzählung passte: Die Memory-Preise waren keine saisonale Delle, sondern der Anfang einer Verschiebung. Ich habe das mit dem technischen CEO von CID besprochen, und wir haben die Entscheidung getroffen, eine größere Server- und Storage-Bestellung vorzuziehen. Im Januar 2026 habe ich die Analyse öffentlich gemacht — als mehrteilige Serie „RAMmageddon" in meinem LinkedIn-Newsletter „Future Proof Tech Briefing". Die These: Hier laufen mehrere Linien zusammen. HBM-Allokationen für KI-Beschleuniger binden DRAM-Kapazität, neue US-Tarife verschieben Kostenstrukturen, die Straße von Hormuz ist keine abstrakte Geopolitik mehr, sondern eine Zeile in der Beschaffungsplanung, und die europäische Chipabhängigkeit wird vom Diskussionspapier zum Quartalsproblem. Daraus folgt die eigentliche Kernbotschaft: Wer jetzt mit mehr Hardware gegenhält, kauft auf dem falschen Markt ein. Die tragende Antwort heißt Software-Modernisierung und Right-Sizing. Ich habe die Krise nicht beschrieben, weil ich hellsehen kann, sondern weil man sie sieht, wenn man gleichzeitig auf Lieferketten und Software-Architektur schaut.',
+
     // Family
     'family.eyebrow': 'Mein Anker',
     'family.title': 'Meine Familie',
@@ -173,6 +225,58 @@ export const ui = {
     'about.passions.tech': 'Technology',
     'about.passions.tech.desc':
       'Tech enthusiast at home too: smart home automation, own photovoltaic system with battery storage, and fully electric mobility. Technology should make life simpler and more sustainable.',
+
+    // Positioning — How I work
+    'positioning.eyebrow': 'My Craft',
+    'positioning.title': 'How I work',
+    'positioning.intro.p1':
+      "I'm a sparring partner for decision-makers when infrastructure strategy, digital sovereignty and AI readiness all land on the table at the same time. And enough of an evangelist to translate complex matters so the board and the platform team end up with the same map in front of them.",
+    'positioning.intro.p2':
+      "I haven't just followed the evolution from server virtualization through software-defined datacenter to AI-capable private cloud — I helped build it, across 25 years and every layer of the stack. That's exactly why I can afford to say the uncomfortable things others keep quiet about out of vendor loyalty. I don't sell products. I evaluate technologies by whether they'll still hold up ten years from now.",
+    'positioning.audience.title': 'Who I work with',
+    'positioning.audience.body':
+      "CTOs, CIOs, CDOs and CEOs in organizations standing at a crossroads — upper mid-market as much as lower enterprise. Especially where sovereignty isn't a marketing word but an obligation: public sector, regulated finance, manufacturing, service providers. Wherever decisions about infrastructure are simultaneously decisions about independence, compliance and long-term viability.",
+    'positioning.bridge.title': 'The bridge I build',
+    'positioning.bridge.body':
+      'SysOps, DevOps, Platform Engineering, MLOps — four worlds that talk past each other in most organizations. My work is to bring them into a shared language: from classic IT operations through developer-centric platforms to production-ready AI workloads. Without this bridge, AI stays a pilot that never ships. With it, infrastructure becomes a foundation people can actually build on.',
+    'positioning.phases.eyebrow': 'The method',
+    'positioning.phases.title': 'In four phases',
+    'positioning.phases.intro': 'Always in this order.',
+    'positioning.phases.listen.title': 'Listen',
+    'positioning.phases.listen.desc':
+      'Understand what has grown historically, what the decision-maker really wants — and what is just noise.',
+    'positioning.phases.map.title': 'Map',
+    'positioning.phases.map.desc':
+      'Make visible how the parts connect and where the real leverage lies.',
+    'positioning.phases.forge.title': 'Forge',
+    'positioning.phases.forge.desc':
+      'Work on the solution together with the internal team — not as an outsider who hands over recommendations and leaves.',
+    'positioning.phases.handover.title': 'Hand over',
+    'positioning.phases.handover.desc':
+      'My goal is that the organization can carry on without me. No dependency, no endless mandates.',
+    'positioning.takeaway.eyebrow': 'What you take away',
+    'positioning.takeaway.lead': 'No off-the-shelf answer.',
+    'positioning.takeaway.body':
+      "Instead, two things: a map that shows how your infrastructure actually connects — and the three or four questions you need to ask your teams and vendors next. We'll find the answers together, or you'll find them yourself. What matters is that they're the right questions.",
+    'positioning.takeaway.cta.lead': "If one of these themes is on your mind —",
+    'positioning.takeaway.cta.button': "Let's talk",
+
+    // Forge — From the Forge
+    'forge.eyebrow': 'Proof, not claims',
+    'forge.title': 'From the Forge',
+    'forge.lead': "Three projects that show how I work — not what I claim.",
+    'forge.kitzcontrol.title': 'KitzControl',
+    'forge.kitzcontrol.status': 'As of April 2026 — Handed over to CopterPro, built 2024–2026',
+    'forge.kitzcontrol.body':
+      'Every spring, before the mowers run through the meadows of Rheinhessen, volunteer pilots use thermal-imaging drones to find roe deer fawns hidden in the tall grass. <a href="https://www.kitzcontrol.de/" target="_blank" rel="noopener noreferrer" class="text-bone-50 font-semibold border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors">KitzControl</a> is the platform behind that work: a multi-tenant architecture with cleanly separated roles for coordinators, helpers, commercial pilots and farmers, built on Next.js and PostgreSQL with PostGIS for the geo data. Plus the things you only build once you\'ve actually flown yourself: DIPUL airspace queries and drone weather pulled directly into the operations dashboard — one click before takeoff instead of three browser tabs. I built the platform across two seasons together with <a href="https://www.kitzrettungrheinhessen.de/" target="_blank" rel="noopener noreferrer" class="text-bone-50 font-semibold border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors">Kitzrettung Rheinhessen e.V.</a> and then handed it over to CopterPro — under the condition that it stays free for volunteer fawn rescue for five years. That\'s the most honest test I know for my own advice: does the architecture I recommend to clients also hold up when I\'m the operator and the bug hits me personally?',
+    'forge.jkfitt.title': 'JK-Fitt',
+    'forge.jkfitt.status': 'As of April 2026 — In active development',
+    'forge.jkfitt.body':
+      "JK-Fitt is my personal AI coaching app, and I'm the first customer. Apple HealthKit delivers sleep, HRV and VO2max. The RENPHO scale I talk to directly — through the unofficial cloud API, with RSA-encrypted login and Keychain storage, because the official path through Apple Health only passes four values and leaves the interesting thirty behind: body water, visceral fat, skeletal muscle, segmental analysis. The coach — a system prompt grounded in several training philosophies, wired up through my own Anthropic API key — gets that complete context including 7-, 30- and 90-day trends and speaks plainly when recovery doesn't match the planned interval session. I don't test AI in slides — I test it on my own body. What doesn't hold up here, I don't recommend to clients either. And on this project I see what's shifting right now: standard apps still have their place, but they're no longer the only affordable option. Personalized software and tailored AI solutions are achievable in weeks rather than months — provided someone understands not just the building, but operations, maintenance and ongoing development. That's the kind of work clients now come to CID for.",
+    'forge.rammageddon.title': 'RAMmageddon',
+    'forge.rammageddon.status': 'As of April 2026 — Analysis: November 2025, Published: January 2026',
+    'forge.rammageddon.body':
+      "In November 2025, something in the supply-chain data caught my eye that didn't fit the prevailing narrative: memory prices weren't a seasonal dip — they were the start of a shift. I discussed it with CID's technical CEO, and we decided to pull forward a major server and storage order. In January 2026 I went public with the analysis — as a multi-part series called „RAMmageddon\" in my LinkedIn newsletter „Future Proof Tech Briefing\". The thesis: several lines are converging here. HBM allocations for AI accelerators are tying up DRAM capacity, new US tariffs are reshuffling cost structures, the Strait of Hormuz is no longer abstract geopolitics but a line in procurement planning, and Europe's chip dependency is moving from policy paper to quarterly problem. From that follows the actual core message: anyone trying to fight back with more hardware is buying on the wrong market. The answer that holds is software modernization and right-sizing. I didn't describe the crisis because I'm clairvoyant — I described it because you can see it when you look at supply chains and software architecture at the same time.",
 
     // Family
     'family.eyebrow': 'My Anchor',

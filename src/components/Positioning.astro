@@ -1,0 +1,191 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const phases = [
+  {
+    numeral: 'I',
+    rune: 'ᛚ',
+    title: t('positioning.phases.listen.title'),
+    desc: t('positioning.phases.listen.desc'),
+  },
+  {
+    numeral: 'II',
+    rune: 'ᚨ',
+    title: t('positioning.phases.map.title'),
+    desc: t('positioning.phases.map.desc'),
+  },
+  {
+    numeral: 'III',
+    rune: 'ᚲ',
+    title: t('positioning.phases.forge.title'),
+    desc: t('positioning.phases.forge.desc'),
+  },
+  {
+    numeral: 'IV',
+    rune: 'ᚷ',
+    title: t('positioning.phases.handover.title'),
+    desc: t('positioning.phases.handover.desc'),
+  },
+];
+---
+
+<section id="work" class="section-padding relative overflow-hidden">
+  <!-- Background atmosphere -->
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-forge-950 via-forge-900 to-forge-950"></div>
+    <div class="absolute top-1/3 right-0 w-[700px] h-[700px] bg-blood-700/8 rounded-full blur-[150px]"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-ember-500/5 rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="container-narrow relative">
+    <!-- Section Header -->
+    <div class="text-center mb-16" data-animate>
+      <p class="eyebrow justify-center mb-6">
+        <span>{t('positioning.eyebrow')}</span>
+      </p>
+      <h2 class="heading-carved text-5xl sm:text-6xl lg:text-7xl mb-8">
+        {t('positioning.title')}
+      </h2>
+      <div class="rune-divider">
+        <span class="font-rune text-2xl text-blood-400">ᚲ</span>
+      </div>
+    </div>
+
+    <!-- Intro narrative -->
+    <div class="max-w-3xl mx-auto mb-20 space-y-8" data-animate>
+      <p class="text-xl lg:text-2xl text-bone-100/95 leading-relaxed font-display">
+        {t('positioning.intro.p1')}
+      </p>
+
+      <div class="flex items-start gap-5 pt-4">
+        <span class="block h-px w-12 bg-blood-500 mt-4 flex-shrink-0"></span>
+        <p class="text-base lg:text-lg text-bone-200/85 leading-relaxed">
+          {t('positioning.intro.p2')}
+        </p>
+      </div>
+    </div>
+
+    <!-- Audience + Bridge: 2-column cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-24" data-animate>
+      <!-- Audience -->
+      <div class="forged-card p-8 lg:p-10 group hover:border-blood-500/40 transition-colors">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 border border-bone-300/30 flex items-center justify-center font-rune text-3xl text-blood-400 group-hover:text-blood-300 group-hover:border-blood-500/60 transition-all">
+            ᛗ
+          </div>
+          <h3 class="font-display uppercase tracking-wider text-bone-100 text-xl lg:text-2xl leading-tight">
+            {t('positioning.audience.title')}
+          </h3>
+        </div>
+        <p class="text-base text-bone-200/80 leading-relaxed">
+          {t('positioning.audience.body')}
+        </p>
+      </div>
+
+      <!-- Bridge -->
+      <div class="forged-card p-8 lg:p-10 group hover:border-blood-500/40 transition-colors">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 border border-bone-300/30 flex items-center justify-center font-rune text-3xl text-blood-400 group-hover:text-blood-300 group-hover:border-blood-500/60 transition-all">
+            ᛞ
+          </div>
+          <h3 class="font-display uppercase tracking-wider text-bone-100 text-xl lg:text-2xl leading-tight">
+            {t('positioning.bridge.title')}
+          </h3>
+        </div>
+        <p class="text-base text-bone-200/80 leading-relaxed">
+          {t('positioning.bridge.body')}
+        </p>
+      </div>
+    </div>
+
+    <!-- Phases -->
+    <div class="mb-24" data-animate>
+      <div class="text-center mb-12">
+        <p class="eyebrow justify-center mb-4">
+          <span>{t('positioning.phases.eyebrow')}</span>
+        </p>
+        <h3 class="heading-carved text-3xl sm:text-4xl lg:text-5xl mb-4">
+          {t('positioning.phases.title')}
+        </h3>
+        <p class="text-sm uppercase tracking-[0.3em] text-blood-400 font-display">
+          {t('positioning.phases.intro')}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {phases.map((phase) => (
+          <div class="forged-card p-7 group hover:border-blood-500/40 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+            <!-- Ambient background rune -->
+            <div class="absolute -top-6 -right-4 font-rune text-[10rem] text-bone-300/[0.04] leading-none pointer-events-none select-none">
+              {phase.rune}
+            </div>
+
+            <div class="relative">
+              <!-- Numeral + rune -->
+              <div class="flex items-center justify-between mb-5">
+                <span class="text-xs font-display uppercase tracking-[0.3em] text-blood-400">{phase.numeral}</span>
+                <span class="font-rune text-3xl text-blood-400 group-hover:text-blood-300 transition-colors">{phase.rune}</span>
+              </div>
+
+              <h4 class="font-display uppercase tracking-wider text-bone-100 text-xl mb-3">
+                {phase.title}
+              </h4>
+
+              <div class="h-px w-10 bg-blood-500/60 mb-4"></div>
+
+              <p class="text-sm text-bone-200/75 leading-relaxed">
+                {phase.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Takeaway card -->
+    <div class="forged-card corner-accents max-w-3xl mx-auto p-10 lg:p-14 relative overflow-hidden" data-animate>
+      <div class="br-corner"></div>
+
+      <!-- Ambient background rune -->
+      <div class="absolute -bottom-10 -right-6 font-rune text-[18rem] text-bone-300/[0.03] leading-none pointer-events-none select-none">ᚷ</div>
+
+      <div class="relative">
+        <p class="eyebrow mb-6">
+          <span>{t('positioning.takeaway.eyebrow')}</span>
+        </p>
+
+        <p class="font-display text-2xl lg:text-3xl text-bone-50 leading-snug mb-6">
+          „{t('positioning.takeaway.lead')}"
+        </p>
+
+        <p class="text-base lg:text-lg text-bone-200/85 leading-relaxed">
+          {t('positioning.takeaway.body')}
+        </p>
+
+        <div class="rune-divider my-10">
+          <span class="font-rune text-2xl text-bone-300/60 tracking-[0.4em]">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+          <p class="text-sm uppercase tracking-[0.2em] text-bone-200/80 font-display flex-1">
+            {t('positioning.takeaway.cta.lead')}
+          </p>
+          <a href="#contact" class="btn-primary flex-shrink-0">
+            {t('positioning.takeaway.cta.button')}
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
