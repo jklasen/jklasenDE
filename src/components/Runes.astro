@@ -1,0 +1,72 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="runes" class="section-padding relative overflow-hidden">
+  <!-- Background atmosphere -->
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-forge-950 via-forge-900 to-forge-950"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blood-700/8 rounded-full blur-[160px]"></div>
+    <!-- Faint full-rune row across the top -->
+    <div class="absolute top-10 left-0 right-0 text-center font-rune text-bone-300/[0.07] text-3xl tracking-[0.6em] select-none">
+      ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ
+    </div>
+  </div>
+
+  <div class="container-narrow relative">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <p class="eyebrow justify-center mb-6">
+        <span>{t('runes.eyebrow')}</span>
+      </p>
+      <h2 class="heading-carved text-4xl sm:text-5xl lg:text-6xl mb-2">
+        {t('runes.title')}
+      </h2>
+      <div class="rune-divider">
+        <span class="font-rune text-2xl text-blood-400">ᚦ</span>
+      </div>
+    </div>
+
+    <!-- Manifesto card -->
+    <div class="forged-card corner-accents max-w-3xl mx-auto p-10 lg:p-14 relative">
+      <div class="br-corner"></div>
+
+      <p class="text-lg lg:text-xl text-bone-100/90 leading-relaxed">
+        {t('runes.lead')}
+      </p>
+
+      <div class="rune-divider my-10">
+        <span class="font-rune text-3xl text-bone-300/60 tracking-[0.4em]">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+      </div>
+
+      <p class="text-sm uppercase tracking-[0.2em] text-bone-300/70 mb-6 font-display">
+        {t('runes.heilung.intro')}
+      </p>
+
+      <!-- Heilung quote -->
+      <blockquote class="relative pl-6 lg:pl-10 border-l-2 border-blood-500">
+        <span class="absolute -top-4 -left-2 font-display text-6xl lg:text-7xl text-blood-500/40 leading-none select-none">„</span>
+        <p class="font-display italic text-xl lg:text-2xl text-bone-50 leading-relaxed">
+          {t('runes.heilung.quote')}
+        </p>
+        <footer class="mt-6 text-[11px] uppercase tracking-[0.3em] text-blood-400 font-display">
+          — {t('runes.heilung.attribution')}
+        </footer>
+      </blockquote>
+    </div>
+
+    <!-- Closing rune row -->
+    <div class="text-center mt-10">
+      <p class="font-rune text-xs text-bone-300/40 tracking-[0.5em]">
+        ᚠᚢᚦᚨᚱᚲ · {lang === 'de' ? 'Ehrfurcht vor allem Lebendigen' : 'Reverence for all that lives'} · ᚠᚢᚦᚨᚱᚲ
+      </p>
+    </div>
+  </div>
+</section>

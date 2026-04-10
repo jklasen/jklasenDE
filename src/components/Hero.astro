@@ -10,101 +10,116 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
-  <!-- Background -->
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-gray-950 dark:via-gray-900 dark:to-primary-950"></div>
-    <!-- Decorative elements -->
-    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-400/10 dark:bg-primary-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent-400/10 dark:bg-accent-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl"></div>
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-20">
+  <!-- Background runic atmosphere -->
+  <div class="absolute inset-0 -z-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-forge-950 via-forge-900 to-forge-950"></div>
+    <!-- ember glow -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-blood-700/15 rounded-full blur-[140px] ember-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-ember-500/8 rounded-full blur-[120px]"></div>
+    <!-- subtle vertical streaks -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(90deg, transparent 0, transparent 80px, rgba(220,209,173,1) 80px, rgba(220,209,173,1) 81px);"></div>
   </div>
 
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       <!-- Text Content -->
-      <div class="space-y-8">
-        <div class="space-y-4">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
-            <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-            {t('hero.greeting')}
-          </div>
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
-            <span class="block text-gray-900 dark:text-white">{t('hero.name')}</span>
-            <span class="block gradient-text mt-2">{t('hero.title')}</span>
-          </h1>
-          <p class="text-lg sm:text-xl text-primary-600/80 dark:text-primary-400/80 font-medium">
-            {t('hero.subtitle')}
+      <div class="lg:col-span-7 space-y-8">
+        <div class="space-y-6">
+          <p class="eyebrow">
+            <span>{lang === 'de' ? 'Willkommen' : 'Welcome'}</span>
           </p>
+
+          <h1 class="font-display font-black uppercase leading-[0.95] tracking-tight">
+            <span class="block text-4xl sm:text-5xl lg:text-6xl text-bone-200/90">{lang === 'de' ? 'Ich bin' : 'I am'}</span>
+            <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl heading-blood mt-2">JENS</span>
+            <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl heading-blood">KLASEN</span>
+          </h1>
+
+          <div class="flex items-center gap-4 pt-2">
+            <span class="block h-px w-12 bg-blood-500"></span>
+            <p class="text-sm sm:text-base font-display uppercase tracking-[0.25em] text-blood-400">
+              {t('hero.title')} · {lang === 'de' ? 'Freidenker' : 'Free Thinker'}
+            </p>
+          </div>
         </div>
 
-        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
+        <p class="text-lg text-bone-200/80 leading-relaxed max-w-xl">
           {t('hero.description')}
         </p>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 pt-2">
           <a href="#contact" class="btn-primary">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            {lang === 'de' ? 'Met trinken' : 'Raise a Horn'}
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
-            {t('hero.cta')}
           </a>
           <a href="#about" class="btn-secondary">
-            {t('hero.cta2')}
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-            </svg>
+            {lang === 'de' ? 'Die Saga lesen' : 'Read the Saga'}
           </a>
         </div>
 
         <!-- Quick Stats -->
-        <div class="flex gap-8 pt-4">
-          <div>
-            <p class="text-3xl font-bold text-gray-900 dark:text-white">25+</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{lang === 'de' ? 'Jahre Erfahrung' : 'Years Experience'}</p>
+        <div class="grid grid-cols-3 gap-6 pt-8 max-w-lg">
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-display text-3xl font-black text-bone-100">25+</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1">{lang === 'de' ? 'Jahre im Feuer' : 'Years in the Forge'}</p>
           </div>
-          <div>
-            <p class="text-3xl font-bold text-gray-900 dark:text-white">30+</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{lang === 'de' ? 'Zertifizierungen' : 'Certifications'}</p>
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-display text-3xl font-black text-bone-100">30+</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1">{lang === 'de' ? 'Schlachten · Zertifikate' : 'Battles · Certs'}</p>
           </div>
-          <div>
-            <p class="text-3xl font-bold text-gray-900 dark:text-white">10x</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">vExpert</p>
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-display text-3xl font-black text-bone-100">10×</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1">vExpert</p>
           </div>
         </div>
       </div>
 
-      <!-- Profile Image / Visual -->
-      <div class="relative hidden lg:block">
-        <div class="relative w-full aspect-square max-w-md mx-auto">
-          <!-- Decorative ring -->
-          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 animate-spin-slow opacity-20 blur-sm" style="animation: spin 20s linear infinite;"></div>
-          <!-- Image container -->
-          <div class="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900 dark:to-accent-900">
-            <img
-              src="/images/IMG_8305.jpeg"
-              alt="Jens Klasen"
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
+      <!-- Sigil / Logo -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative w-full max-w-md mx-auto aspect-square">
+          <!-- Outer rotating runic ring -->
+          <div class="absolute inset-0 rune-spin pointer-events-none">
+            <svg viewBox="0 0 400 400" class="w-full h-full opacity-30">
+              <defs>
+                <path id="runeCircle" d="M 200,200 m -190,0 a 190,190 0 1,1 380,0 a 190,190 0 1,1 -380,0" />
+              </defs>
+              <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(220,209,173,0.4)" stroke-width="1"/>
+              <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(220,209,173,0.2)" stroke-width="1"/>
+              <text font-family="MedievalSharp, serif" font-size="22" fill="rgba(220,209,173,0.7)" letter-spacing="6">
+                <textPath href="#runeCircle" startOffset="0">
+                  ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ ᚠ ᚢ ᚦ ᚨ ᚱ
+                </textPath>
+              </text>
+            </svg>
           </div>
-          <!-- Floating badges -->
-          <div class="absolute -right-4 top-1/4 glass-card p-3 animate-bounce" style="animation-duration: 3s;">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🏆</span>
-              <div>
-                <p class="text-xs font-semibold text-gray-900 dark:text-white">vExpert PRO</p>
-                <p class="text-xs text-gray-500">2026</p>
-              </div>
-            </div>
+          <!-- Inner counter-rotating ring -->
+          <div class="absolute inset-8 rune-spin-reverse pointer-events-none">
+            <svg viewBox="0 0 400 400" class="w-full h-full opacity-20">
+              <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(139,0,0,0.5)" stroke-width="1" stroke-dasharray="2 8"/>
+            </svg>
           </div>
-          <div class="absolute -left-4 bottom-1/4 glass-card p-3 animate-bounce" style="animation-duration: 4s;">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🤖</span>
-              <div>
-                <p class="text-xs font-semibold text-gray-900 dark:text-white">NVIDIA AI</p>
-                <p class="text-xs text-gray-500">Certified</p>
-              </div>
+          <!-- Logo center — round sticker -->
+          <div class="absolute inset-12 flex items-center justify-center">
+            <div
+              class="relative w-full h-full rounded-full bg-bone-100 flex items-center justify-center overflow-hidden"
+              style="
+                border: 3px solid rgba(220, 209, 173, 0.6);
+                box-shadow:
+                  0 0 0 1px rgba(0,0,0,0.5),
+                  0 0 40px rgba(139, 0, 0, 0.45),
+                  0 0 80px rgba(220, 209, 173, 0.12),
+                  inset 0 0 30px rgba(0, 0, 0, 0.08);
+              "
+            >
+              <img
+                src="/images/jens-icon-large.svg"
+                alt="Jens Klasen Sigil"
+                class="w-[88%] h-[88%] object-contain"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
@@ -113,17 +128,8 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
-    <span class="text-xs uppercase tracking-widest">Scroll</span>
-    <div class="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center">
-      <div class="w-1.5 h-3 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 animate-bounce"></div>
-    </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-bone-300/60">
+    <span class="text-[10px] uppercase tracking-[0.4em] font-display">Skol</span>
+    <div class="w-px h-12 bg-gradient-to-b from-bone-300/60 to-transparent"></div>
   </div>
 </section>
-
-<style>
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-</style>

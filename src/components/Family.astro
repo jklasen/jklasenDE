@@ -1,0 +1,103 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Encode the spaces in the original filename for the URL
+const familyImage = '/images/31%20-%20FotoLou-31.jpg';
+---
+
+<section id="family" class="section-padding relative overflow-hidden">
+  <!-- Background atmosphere -->
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-forge-950 via-forge-900 to-forge-950"></div>
+    <div class="absolute top-1/2 right-0 w-[700px] h-[700px] bg-blood-700/8 rounded-full blur-[160px]"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-ember-500/5 rounded-full blur-[140px]"></div>
+  </div>
+
+  <div class="container-narrow relative">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="lg:col-span-7 relative">
+        <div class="relative forged-card corner-accents overflow-hidden">
+          <div class="br-corner"></div>
+          <img
+            src={familyImage}
+            alt={lang === 'de' ? 'Jens Klasen mit seiner Familie' : 'Jens Klasen with his family'}
+            class="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <!-- Cinematic vignette -->
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="
+              background:
+                linear-gradient(180deg, transparent 60%, rgba(5, 5, 4, 0.8) 100%),
+                linear-gradient(90deg, rgba(5, 5, 4, 0.4) 0%, transparent 25%, transparent 75%, rgba(5, 5, 4, 0.4) 100%);
+            "
+          ></div>
+          <!-- Caption inside the image -->
+          <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+            <div class="flex items-center gap-3">
+              <span class="block h-px w-8 bg-blood-500"></span>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-bone-200/90 font-display">
+                {t('family.caption')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <p class="eyebrow mb-6">
+            <span>{t('family.eyebrow')}</span>
+          </p>
+          <h2 class="heading-carved text-4xl sm:text-5xl lg:text-6xl">
+            {t('family.title')}
+          </h2>
+          <div class="rune-divider !my-6 !justify-start">
+            <span class="font-rune text-2xl text-blood-400">ᛟ</span>
+          </div>
+        </div>
+
+        <p class="text-xl text-bone-100 leading-relaxed font-display italic">
+          {t('family.lead')}
+        </p>
+
+        <p class="text-base text-bone-200/85 leading-relaxed">
+          {t('family.body')}
+        </p>
+
+        <!-- Trio of values -->
+        <div class="grid grid-cols-3 gap-4 pt-4">
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-rune text-2xl text-blood-400">ᛞ</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1 font-display">
+              {lang === 'de' ? 'Da sein' : 'Be there'}
+            </p>
+          </div>
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-rune text-2xl text-blood-400">ᛗ</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1 font-display">
+              {lang === 'de' ? 'Leisten' : 'Deliver'}
+            </p>
+          </div>
+          <div class="border-l-2 border-blood-500 pl-4">
+            <p class="font-rune text-2xl text-blood-400">ᚨ</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-bone-300/70 mt-1 font-display">
+              {lang === 'de' ? 'Sorge tragen' : 'Provide'}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

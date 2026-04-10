@@ -49,6 +49,26 @@ export const ui = {
     'about.passions.tech.desc':
       'Auch privat technikbegeistert: SmartHome-Automatisierung, eigene Photovoltaikanlage mit Batteriespeicher und vollelektrische Mobilität. Technologie soll das Leben einfacher und nachhaltiger machen.',
 
+    // Family
+    'family.eyebrow': 'Mein Anker',
+    'family.title': 'Meine Familie',
+    'family.lead':
+      'Meine Familie ist mein Ein und Alles — der ruhende Pol hinter jeder Schlacht, das Licht am Ende jedes langen Tages, der Grund warum ich morgens den Hammer ansetze.',
+    'family.body':
+      'Aber damit sie das sein kann — damit ich da sein kann, wenn es zählt, damit ich Sicherheit, Freiheit und Möglichkeiten geben kann — muss ich Sorge tragen. Ich muss da sein. Ich muss leisten. Nicht aus Pflicht, sondern aus Verantwortung. Jedes Projekt, jede Entscheidung, jeder Schritt nach vorn ist auch ein Versprechen an die drei Menschen, die mit mir gehen.',
+    'family.caption': 'Im Rücken: meine Familie. Im Herzen: mein Antrieb.',
+
+    // Runes
+    'runes.eyebrow': 'Über die Runen',
+    'runes.title': 'Warum Runen?',
+    'runes.lead':
+      'Die Runen faszinieren mich, seit ich ein Kind bin. Sie sind für mich ein Bindeglied zu unseren Vorfahren — ein Werkzeug aus einer Zeit, in der Sprache, Natur und Spiritualität noch eins waren. Wer mich kennt, weiß: das hat nichts mit der Fehldeutung und dem Missbrauch dieser Symbole in der deutschen Geschichte zu tun. Im Gegenteil — ich gebe ihnen ihre ursprüngliche Bedeutung zurück: Verbindung, Verantwortung, Demut.',
+    'runes.heilung.intro':
+      'Frei nach dem Eröffnungsgebet der Band Heilung — gesprochen von Kai Uwe Faust zu Beginn jedes Konzerts — das mir aus der Seele spricht:',
+    'runes.heilung.quote':
+      'Remember that we all are brothers. All people, beast, tree and stone and wind. We all descend from the one great being, that was always there. Before people lived and named it. Before the first seed sprouted.',
+    'runes.heilung.attribution': 'Kai Uwe Faust · Heilung · Opening Ceremony',
+
     // Career
     'career.title': 'Karriere',
     'career.subtitle': 'Mein beruflicher Werdegang',
@@ -153,6 +173,26 @@ export const ui = {
     'about.passions.tech': 'Technology',
     'about.passions.tech.desc':
       'Tech enthusiast at home too: smart home automation, own photovoltaic system with battery storage, and fully electric mobility. Technology should make life simpler and more sustainable.',
+
+    // Family
+    'family.eyebrow': 'My Anchor',
+    'family.title': 'My Family',
+    'family.lead':
+      'My family is my everything — the still point behind every battle, the light at the end of every long day, the reason I pick up the hammer in the morning.',
+    'family.body':
+      'But for them to be that — for me to be there when it counts, to provide security, freedom and opportunities — I have to carry the weight. I have to show up. I have to deliver. Not out of duty, but out of responsibility. Every project, every decision, every step forward is also a promise to the three people walking beside me.',
+    'family.caption': 'At my back: my family. In my heart: my drive.',
+
+    // Runes
+    'runes.eyebrow': 'About the Runes',
+    'runes.title': 'Why Runes?',
+    'runes.lead':
+      'The runes have fascinated me since I was a child. To me they are a bridge to our ancestors — a tool from a time when language, nature and spirituality were still one. Anyone who knows me knows: this has nothing to do with the misinterpretation and misuse of these symbols in German history. Quite the opposite — I want to give them back their original meaning: connection, responsibility, humility.',
+    'runes.heilung.intro':
+      'Inspired by the Opening Ceremony of the band Heilung — spoken by Kai Uwe Faust at the start of every concert — words that speak straight to my soul:',
+    'runes.heilung.quote':
+      'Remember that we all are brothers. All people, beast, tree and stone and wind. We all descend from the one great being, that was always there. Before people lived and named it. Before the first seed sprouted.',
+    'runes.heilung.attribution': 'Kai Uwe Faust · Heilung · Opening Ceremony',
 
     // Career
     'career.title': 'Career',
