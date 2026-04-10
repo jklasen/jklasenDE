@@ -21,14 +21,14 @@ export const ui = {
     'hero.title': 'Technology Evangelist',
     'hero.subtitle': 'Next-Generation Architecture',
     'hero.description':
-      'Ich verbinde strategische Vision mit technischer Umsetzung. Seit 1999 in der IT-Branche unterstütze ich Unternehmen dabei, moderne Private-Cloud-Infrastrukturen und KI-gestützte Softwarelösungen einzuführen — für nachhaltige Wettbewerbsvorteile, digitale Souveränität und zukunftssichere Architekturen.',
+      '25 Jahre IT, und ich habe noch keinen einzigen Vortrag gehalten, den ich nicht vorher selbst an echter Hardware oder echtem Code geprüft hätte. Ich bin Sparringspartner für Entscheider, wenn Infrastruktur, Souveränität und KI gleichzeitig auf dem Tisch liegen — und ich bin derjenige, der den Hammer ansetzt, wenn andere noch reden. Was ich empfehle, baue ich auch selbst. Manchmal nebenbei, manchmal hauptberuflich, immer ernst.',
     'hero.cta': 'Kontakt aufnehmen',
     'hero.cta2': 'Mehr erfahren',
 
     // About
     'about.title': 'Über mich',
     'about.intro':
-      'Technology Evangelist, seit 1999 in der IT-Branche. Ich brenne für die Verbindung von strategischer Vision und technischer Exzellenz. Mein Antrieb ist es, komplexe Technologien greifbar zu machen und Menschen für Innovation zu begeistern — ob im Gespräch mit Entscheidern, in technischen Workshops oder auf der Bühne.',
+      'Ich bin einer von den wenigen in dieser Branche, die von der Kommandozeile kommen und es nie verlernt haben. Dreiundzwanzig Jahre davon bei Herstellern und in Hersteller-nahen Rollen — was bedeutet, dass ich weiß, wie Vendor-Narrative gebaut werden, weil ich an manchen mitgebaut habe. Heute nutze ich dieses Wissen in die andere Richtung: Ich sitze auf der Kundenseite des Tisches, übersetze zwischen Vorstand und Plattform-Team, und sage, wenn das, was der nächste Vertrieb verspricht, in der Realität nicht so funktioniert.',
     'about.personal.title': 'Persönliches',
     'about.personal.born': 'Geboren im Mai 1978',
     'about.personal.family': 'Verheiratet seit 2017, Vater einer Tochter (2015) und eines Sohnes (2018)',
@@ -84,9 +84,9 @@ export const ui = {
     'positioning.takeaway.cta.lead': 'Wenn dich eines dieser Themen gerade umtreibt —',
     'positioning.takeaway.cta.button': 'Lass uns reden',
 
-    // Forge — Aus der Schmiede
+    // Forge — Aus der Werkstatt
     'forge.eyebrow': 'Belege statt Behauptungen',
-    'forge.title': 'Aus der Schmiede',
+    'forge.title': 'Aus der Werkstatt',
     'forge.lead': 'Drei Projekte, die zeigen, wie ich arbeite — nicht, was ich behaupte.',
     'forge.kitzcontrol.title': 'KitzControl',
     'forge.kitzcontrol.status': 'Stand: April 2026 — Übergeben an CopterPro, Entwicklungszeit 2024–2026',
@@ -124,16 +124,16 @@ export const ui = {
     // Career
     'career.title': 'Karriere',
     'career.subtitle': 'Mein beruflicher Werdegang',
-    'career.2025.title': 'Software-Lösungsunternehmen',
+    'career.2025.title': 'CID GmbH',
     'career.2025.role': 'Technology Evangelist',
     'career.2025.desc':
-      'Seit Januar 2025 bei einem etablierten Softwarehaus (gegr. 1997) mit über 12 Jahren Erfahrung in KI und Container-Technologie. Als Technology Evangelist vermittle ich die Vorteile moderner Private-Cloud-Infrastrukturen — von digitaler Souveränität über Performance und Compliance bis zur Vermeidung von Vendor Lock-in. Ich begleite Kunden auf ihrem Weg in zukunftsfähige IT-Architekturen.',
-    'career.2023.title': 'Transformation & Innovation',
-    'career.2023.role': 'Solution Architect',
+      'CID ist ein 1997 gegründetes Softwarehaus aus dem Rhein-Main-Gebiet, das seit über zwölf Jahren KI und Container-Technologie in echten Produktionsumgebungen betreibt — nicht als Labor, sondern bei Kunden im regulierten Umfeld. Meine Rolle dort ist die Schnittstelle zwischen dem, was technisch trägt, und dem, was im Vorstandsgespräch ankommt. Ich übersetze in beide Richtungen und bin gleichzeitig der, der Kunden begleitet, wenn sie weg wollen von der Abhängigkeit eines einzelnen Herstellers — ohne in die nächste zu laufen.',
+    'career.2023.title': 'evoila GmbH',
+    'career.2023.role': 'Senior Sales Specialist & Unit Lead',
     'career.2023.desc':
-      'Begleitung von Unternehmen bei der Modernisierung bestehender Applikationslandschaften. Schwerpunkte: agile DevOps-Methoden, Integration von KI/ML in bestehende Prozesse und die Zusammenführung von IT und OT (Operational Technology) für ganzheitliche Digitalisierung.',
-    'career.2011.title': 'IT-Hersteller',
-    'career.2011.role': 'Solution Architect',
+      'Bei evoila habe ich ein Team von sechs Leuten geführt und die Brücke zwischen Vertrieb und Solution Architecture gebaut — keine saubere Rollentrennung, sondern die Realität eines wachsenden Systemhauses, in dem Strategie, Kundengespräch und Architekturentscheidung beim selben Menschen landen. Schwerpunkte: Modernisierung von Applikationslandschaften, KI und ML in bestehende Prozesse bringen, die Grenze zwischen klassischer IT und Operational Technology einreißen, wo sie nur noch aus Gewohnheit existiert.',
+    'career.2011.title': 'Dell Technologies',
+    'career.2011.role': 'Principal Solutions Architect',
     'career.2011.desc': 'Über ein Jahrzehnt Erfahrung als Solution Architect bei führenden IT-Herstellern. Konzeption und Umsetzung von Lösungsarchitekturen für Enterprise-Kunden — IT als strategischer Business Enabler statt reiner Kostenstelle.',
     'career.2000.title': 'Karrierebeginn',
     'career.2000.role': 'IT-Fachinformatiker (IHK)',
@@ -157,7 +157,7 @@ export const ui = {
     'contact.title': 'Kontakt',
     'contact.subtitle': 'Lassen Sie uns vernetzen',
     'contact.description':
-      'Sie möchten die Einführung innovativer Technologien beschleunigen, Ihre IT-Architektur zukunftssicher gestalten oder Ihre Teams für neue Technologien begeistern? Lassen Sie uns ins Gespräch kommen — ich freue mich auf Ihre Nachricht.',
+      'Ein Gespräch mit mir lohnt sich, wenn Sie an einer echten Wegmarke stehen: Infrastruktur, die ans Ende ihres Lebenszyklus kommt, ein Vendor, der nach Übernahme nicht mehr der ist, mit dem Sie den Vertrag geschlossen haben, ein KI-Vorhaben, das aus der Pilotphase raus soll, oder die unbequeme Frage, ob die nächste Hardware-Generation wirklich die Antwort ist. Nicht lohnenswert, wenn Sie eine Bestätigung für eine Entscheidung suchen, die schon gefallen ist — dafür gibt es günstigere Stimmen als meine. Alles andere: gerne.',
     'contact.linkedin.cta': 'Auf LinkedIn vernetzen',
     'contact.linkedin.desc': '3.000+ Follower — Insights zu Cloud, KI und digitaler Transformation',
     'contact.social.title': 'Weitere Kanäle',
@@ -261,9 +261,9 @@ export const ui = {
     'positioning.takeaway.cta.lead': "If one of these themes is on your mind —",
     'positioning.takeaway.cta.button': "Let's talk",
 
-    // Forge — From the Forge
+    // Forge — From the workshop
     'forge.eyebrow': 'Proof, not claims',
-    'forge.title': 'From the Forge',
+    'forge.title': 'From the workshop',
     'forge.lead': "Three projects that show how I work — not what I claim.",
     'forge.kitzcontrol.title': 'KitzControl',
     'forge.kitzcontrol.status': 'As of April 2026 — Handed over to CopterPro, built 2024–2026',
