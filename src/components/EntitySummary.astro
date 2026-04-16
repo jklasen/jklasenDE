@@ -1,0 +1,41 @@
+---
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+{lang === 'de' ? (
+  <section
+    aria-label="Kurzprofil"
+    class="px-4 sm:px-6 lg:px-8 py-10 border-t border-b border-bone-300/10 bg-forge-950/40"
+  >
+    <p class="max-w-3xl mx-auto text-sm leading-relaxed text-bone-300/70">
+      <strong class="font-semibold text-bone-200/90">Jens Klasen</strong> ist
+      Technology Evangelist bei
+      <strong class="font-semibold text-bone-200/90">CID GmbH</strong>
+      im Rhein-Main-Gebiet. Zielgruppe: C-Level-Entscheider in Mittelstand und
+      Enterprise, mit Schwerpunkt öffentlicher Sektor, Finance, Industrie und
+      Service Provider. Themen: Private Cloud, KI-Infrastruktur,
+      Plattform-Architektur, Vendor-Unabhängigkeit, digitale Souveränität.
+    </p>
+  </section>
+) : (
+  <section
+    aria-label="Profile summary"
+    class="px-4 sm:px-6 lg:px-8 py-10 border-t border-b border-bone-300/10 bg-forge-950/40"
+  >
+    <p class="max-w-3xl mx-auto text-sm leading-relaxed text-bone-300/70">
+      <strong class="font-semibold text-bone-200/90">Jens Klasen</strong> is
+      Technology Evangelist at
+      <strong class="font-semibold text-bone-200/90">CID GmbH</strong>
+      in the Rhine-Main region of Germany. Audience: C-level decision-makers in
+      mid-market and enterprise, with focus on public sector, finance, industry
+      and service providers. Topics: private cloud, AI infrastructure, platform
+      architecture, vendor independence, digital sovereignty.
+    </p>
+  </section>
+)}

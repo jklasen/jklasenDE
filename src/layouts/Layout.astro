@@ -8,9 +8,31 @@ interface Props {
   title: string;
   description?: string;
   lang?: Lang;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  noindex?: boolean;
+  publishedTime?: string;
+  articleSection?: string;
 }
 
-const { title, description = 'Jens Klasen — Technology Evangelist. Freidenker, Stratege, Architekt moderner IT-Landschaften.', lang = 'de' } = Astro.props;
+const {
+  title,
+  description = 'Technology Evangelist mit 25 Jahren Praxis in Private Cloud, KI-Infrastruktur und Plattform-Architektur. Sparringspartner für Entscheider im gehobenen Mittelstand und Enterprise-Umfeld.',
+  lang = 'de',
+  ogType = 'website',
+  // TODO: Kein dediziertes 1200×630 Share-Bild vorhanden. Fallback auf Sigil-Icon,
+  // damit Social-Previews nicht leer sind. Dedizierte OG-Grafik nachliefern.
+  ogImage = '/images/jens-klasen-icon-gradient.png',
+  noindex = false,
+  publishedTime,
+  articleSection,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://jklasen.de');
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+const absoluteOgImage = new URL(ogImage, siteUrl).href;
+const ogLocale = lang === 'en' ? 'en_US' : 'de_DE';
+const robotsContent = noindex ? 'noindex, follow' : 'index, follow';
 ---
 
 <!DOCTYPE html>
@@ -20,14 +42,40 @@ const { title, description = 'Jens Klasen — Technology Evangelist. Freidenker,
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Jens Klasen" />
+    <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#050504" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/jens-icon-dark.svg" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Jens Klasen" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:image" content={absoluteOgImage} />
+
+    {ogType === 'article' && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    {ogType === 'article' && (
+      <meta property="article:author" content="Jens Klasen" />
+    )}
+    {ogType === 'article' && articleSection && (
+      <meta property="article:section" content={articleSection} />
+    )}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+    <meta name="twitter:creator" content="@jensklasen" />
+
     <link rel="icon" type="image/svg+xml" href="/images/jens-icon-small.svg" />
     <link rel="apple-touch-icon" href="/images/jens-icon-dark.svg" />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body class="overflow-x-hidden">
     <Navigation lang={lang} />

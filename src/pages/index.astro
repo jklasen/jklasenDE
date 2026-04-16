@@ -11,12 +11,63 @@ import Career from '../components/Career.astro';
 import Certifications from '../components/Certifications.astro';
 import Hunting from '../components/Hunting.astro';
 import Contact from '../components/Contact.astro';
+import EntitySummary from '../components/EntitySummary.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 
 const lang = 'de';
+
+// TODO: `image` bewusst ausgelassen – kein echtes Porträt-Foto (1:1, Gesicht) im
+// Repo. Sigil-Icon eignet sich nicht als Person.image. Sobald Porträt verfügbar,
+// als absolute URL ergänzen.
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jens Klasen',
+  givenName: 'Jens',
+  familyName: 'Klasen',
+  jobTitle: 'Technology Evangelist',
+  description:
+    'Technology Evangelist mit 25 Jahren Praxis in Private Cloud, KI-Infrastruktur und Plattform-Architektur.',
+  url: 'https://jklasen.de',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'CID GmbH',
+    url: 'https://www.cid.de',
+  },
+  knowsAbout: [
+    'Private Cloud',
+    'KI-Infrastruktur',
+    'Software-Defined Datacenter',
+    'Virtualisierung',
+    'Plattform-Architektur',
+    'Digitale Souveränität',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/jensklasen/',
+    'https://x.com/jensklasen',
+    'https://www.credly.com/users/jens-klasen',
+    'https://www.youtube.com/@JensKlasen-z7x',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Jens Klasen',
+  url: 'https://jklasen.de',
+  inLanguage: ['de-DE', 'en-US'],
+};
 ---
 
-<Layout title="Jens Klasen | Technology Evangelist" lang={lang}>
+<Layout
+  title="Jens Klasen — Technology Evangelist bei CID GmbH"
+  description="Technology Evangelist mit 25 Jahren Praxis in Private Cloud, KI-Infrastruktur und Plattform-Architektur. Sparringspartner für Entscheider im gehobenen Mittelstand und Enterprise-Umfeld."
+  lang={lang}
+>
+  <JsonLd slot="head" data={personSchema} />
+  <JsonLd slot="head" data={websiteSchema} />
   <Hero lang={lang} />
+  <EntitySummary lang={lang} />
   <About lang={lang} />
   <Family lang={lang} />
   <Runes lang={lang} />

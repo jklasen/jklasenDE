@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
+import JsonLd from '../../components/seo/JsonLd.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('briefing');
@@ -22,9 +23,40 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
   month: 'long',
   day: 'numeric',
 });
+
+const slug = entry.id.replace(/\.md$/, '');
+const siteUrl = Astro.site ?? new URL('https://jklasen.de');
+const canonicalURL = new URL(`/briefing/${slug}/`, siteUrl).href;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: entry.data.title,
+  description: entry.data.teaser,
+  author: {
+    '@type': 'Person',
+    name: 'Jens Klasen',
+    url: 'https://jklasen.de',
+  },
+  datePublished: entry.data.date.toISOString(),
+  publisher: {
+    '@type': 'Person',
+    name: 'Jens Klasen',
+  },
+  mainEntityOfPage: canonicalURL,
+  inLanguage: 'de-DE',
+};
 ---
 
-<Layout title={`${entry.data.title} | Jens Klasen`} description={entry.data.teaser} lang={lang}>
+<Layout
+  title={`${entry.data.title} | Jens Klasen`}
+  description={entry.data.teaser}
+  lang={lang}
+  ogType="article"
+  publishedTime={entry.data.date.toISOString()}
+  articleSection="Technologie"
+>
+  <JsonLd slot="head" data={articleSchema} />
   <article class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
     <div class="max-w-2xl mx-auto">
       <!-- Header -->
