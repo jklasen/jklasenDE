@@ -15,7 +15,12 @@ import Contact from '../components/Contact.astro';
 const lang = 'de';
 ---
 
-<Layout title="Jens Klasen | Technology Evangelist" lang={lang}>
+<Layout
+  title="Jens Klasen | Technology Evangelist"
+  description="Jens Klasen — Technology Evangelist bei CID GmbH. 25 Jahre IT, Klartext zu Private Cloud, KI und Vendor-Strategie."
+  lang={lang}
+  alternateLangPath="/en/"
+>
   <Hero lang={lang} />
   <About lang={lang} />
   <Family lang={lang} />

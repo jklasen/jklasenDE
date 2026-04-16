@@ -2,15 +2,46 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import StructuredData from '../components/seo/StructuredData.astro';
 import type { Lang } from '../i18n/utils';
+
+interface ArticleMeta {
+  publishedTime: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
+}
 
 interface Props {
   title: string;
   description?: string;
   lang?: Lang;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  canonical?: string;
+  articleMeta?: ArticleMeta;
+  /** Absolute (site-relative) path of the current page's counterpart in the other language, e.g. "/en/" on the DE home. Omit if no alternate exists. */
+  alternateLangPath?: string;
 }
 
-const { title, description = 'Jens Klasen — Technology Evangelist. Freidenker, Stratege, Architekt moderner IT-Landschaften.', lang = 'de' } = Astro.props;
+const {
+  title,
+  description = 'Jens Klasen — Technology Evangelist bei CID GmbH. 25 Jahre IT, Klartext zu Private Cloud, KI und Vendor-Strategie.',
+  lang = 'de',
+  ogType = 'website',
+  ogImage = '/images/jens-icon-dark.svg',
+  canonical,
+  articleMeta,
+  alternateLangPath,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://jensklasen.de';
+const canonicalUrl = canonical ?? `${siteUrl}${Astro.url.pathname}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const otherLang: Lang = lang === 'de' ? 'en' : 'de';
+const ogLocale = lang === 'de' ? 'de_DE' : 'en_US';
+const ogLocaleAlternate = lang === 'de' ? 'en_US' : 'de_DE';
 ---
 
 <!DOCTYPE html>
@@ -21,13 +52,64 @@ const { title, description = 'Jens Klasen — Technology Evangelist. Freidenker,
     <meta name="description" content={description} />
     <meta name="author" content="Jens Klasen" />
     <meta name="theme-color" content="#050504" />
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={lang === 'de' ? 'de' : 'en'} href={canonicalUrl} />
+    {alternateLangPath && (
+      <>
+        <link
+          rel="alternate"
+          hreflang={otherLang === 'de' ? 'de' : 'en'}
+          href={`${siteUrl}${alternateLangPath}`}
+        />
+        <link rel="alternate" hreflang="x-default" href={`${siteUrl}${lang === 'de' ? Astro.url.pathname : alternateLangPath}`} />
+      </>
+    )}
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/jens-icon-dark.svg" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Jens Klasen" />
+    <meta property="og:locale" content={ogLocale} />
+    {alternateLangPath && <meta property="og:locale:alternate" content={ogLocaleAlternate} />}
+
+    {ogType === 'article' && articleMeta && (
+      <>
+        <meta property="article:published_time" content={articleMeta.publishedTime} />
+        {articleMeta.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
+        {articleMeta.author && <meta property="article:author" content={articleMeta.author} />}
+        {articleMeta.section && <meta property="article:section" content={articleMeta.section} />}
+      </>
+    )}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/images/jens-icon-small.svg" />
     <link rel="apple-touch-icon" href="/images/jens-icon-dark.svg" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    <StructuredData
+      lang={lang}
+      pageTitle={title}
+      pageDescription={description}
+      pageUrl={canonicalUrl}
+      siteUrl={siteUrl}
+      articleMeta={articleMeta}
+    />
   </head>
   <body class="overflow-x-hidden">
     <Navigation lang={lang} />

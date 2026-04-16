@@ -1,0 +1,102 @@
+---
+import type { Lang } from '../../i18n/utils';
+
+interface ArticleMeta {
+  publishedTime: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
+}
+
+interface Props {
+  lang: Lang;
+  pageTitle: string;
+  pageDescription: string;
+  pageUrl: string;
+  siteUrl: string;
+  articleMeta?: ArticleMeta;
+}
+
+const { lang, pageTitle, pageDescription, pageUrl, siteUrl, articleMeta } = Astro.props;
+
+const isHomepage =
+  pageUrl === `${siteUrl}/` || pageUrl === `${siteUrl}/en/`;
+const isArticle = Boolean(articleMeta);
+
+// Person schema — rendered on every page
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jens Klasen',
+  url: siteUrl,
+  image: `${siteUrl}/images/jens-icon-dark.svg`,
+  jobTitle: lang === 'de' ? 'Technology Evangelist' : 'Technology Evangelist',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'CID GmbH',
+    url: 'https://www.cid.de',
+  },
+  description:
+    lang === 'de'
+      ? 'Technology Evangelist bei CID GmbH. 25 Jahre IT, Klartext zu Private Cloud, KI und Vendor-Strategie.'
+      : 'Technology Evangelist at CID GmbH. 25 years in IT, straight talk on Private Cloud, AI and vendor strategy.',
+  sameAs: [
+    'https://www.linkedin.com/in/jensklasen/',
+  ],
+  knowsAbout: [
+    'Private Cloud',
+    'Artificial Intelligence',
+    'Vendor Strategy',
+    'IT Infrastructure',
+    'Enterprise Technology',
+  ],
+};
+
+// WebSite schema — rendered on homepages
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Jens Klasen',
+  url: siteUrl,
+  description: pageDescription,
+  inLanguage: lang === 'de' ? 'de-DE' : 'en-US',
+  author: {
+    '@type': 'Person',
+    name: 'Jens Klasen',
+    url: siteUrl,
+  },
+};
+
+// Article schema — rendered on briefing article pages
+const articleSchema = articleMeta
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: pageTitle.replace(/\s*\|\s*Jens Klasen\s*$/, ''),
+      description: pageDescription,
+      url: pageUrl,
+      datePublished: articleMeta.publishedTime,
+      dateModified: articleMeta.modifiedTime ?? articleMeta.publishedTime,
+      inLanguage: lang === 'de' ? 'de-DE' : 'en-US',
+      author: {
+        '@type': 'Person',
+        name: articleMeta.author ?? 'Jens Klasen',
+        url: siteUrl,
+      },
+      publisher: {
+        '@type': 'Person',
+        name: 'Jens Klasen',
+        url: siteUrl,
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': pageUrl,
+      },
+      ...(articleMeta.section ? { articleSection: articleMeta.section } : {}),
+    }
+  : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+{isHomepage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
+{isArticle && articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

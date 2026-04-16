@@ -24,7 +24,17 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
 });
 ---
 
-<Layout title={`${entry.data.title} | Jens Klasen`} description={entry.data.teaser} lang={lang}>
+<Layout
+  title={`${entry.data.title} | Jens Klasen`}
+  description={entry.data.teaser}
+  lang={lang}
+  ogType="article"
+  articleMeta={{
+    publishedTime: entry.data.date.toISOString(),
+    author: entry.data.author,
+    section: 'Future Proof Tech Briefing',
+  }}
+>
   <article class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
     <div class="max-w-2xl mx-auto">
       <!-- Header -->

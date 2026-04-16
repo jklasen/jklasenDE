@@ -1,0 +1,29 @@
+# Jens Klasen
+
+> Technology Evangelist bei CID GmbH. 25 Jahre IT-Erfahrung. Klartext zu Private Cloud, KI und Vendor-Strategie — ohne Buzzword-Kitsch.
+
+Ich bin der Jens — Jens Klasen. Technology Evangelist bei der CID GmbH, davor zehn Jahre evoila und Dell. Diese Seite ist mein persönliches Profil: kein Corporate-Blog, kein Newsletter-Funnel. Wer mich sucht, findet hier was ich mache, wie ich denke, und wie man mich erreicht.
+
+## Über mich
+
+- [Startseite (DE)](https://jensklasen.de/): Profil, Positionierung, Karriere, Zertifizierungen, Kontakt.
+- [Home (EN)](https://jensklasen.de/en/): English version of the full profile.
+- [Impressum](https://jensklasen.de/impressum/): rechtliche Angaben nach §5 TMG.
+
+## Future Proof Tech Briefing
+
+Unregelmäßige, kuratierte Notizen zu Technologie, Strategie und Umsetzung. Kein Content-Marketing, keine Top-10-Listen.
+
+- [Future Proof Tech Briefing — Übersicht](https://jensklasen.de/briefing/): alle Artikel.
+- [Ein KI-Prompt ist kein Text. Er ist Software.](https://jensklasen.de/briefing/ki-prompts-sind-software/): warum Prompts wie Code behandelt gehören — mit Versionierung, Tests und Ownership.
+
+## Schwerpunkte
+
+- **Private Cloud & Infrastruktur**: Architektur, Vendor-Landschaft, Betrieb.
+- **KI in der Praxis**: Prompt Engineering als Software-Disziplin, LLM-Einsatz jenseits des Hype-Zyklus.
+- **Vendor-Strategie**: was Hersteller versprechen, was Kunden bekommen, und wie man die Lücke schließt.
+
+## Kontakt
+
+- E-Mail: jens@jklasen.com
+- LinkedIn: https://www.linkedin.com/in/jensklasen/

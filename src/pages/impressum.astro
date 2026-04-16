@@ -6,7 +6,12 @@ const lang = 'de';
 const t = useTranslations(lang);
 ---
 
-<Layout title="Impressum | Jens Klasen" lang={lang}>
+<Layout
+  title="Impressum | Jens Klasen"
+  description="Impressum und Kontakt — Jens Klasen, Albig."
+  lang={lang}
+  alternateLangPath="/en/impressum/"
+>
   <section class="section-padding pt-32 bg-white dark:bg-gray-950">
     <div class="max-w-3xl mx-auto">
       <a href="/" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:underline mb-8">
