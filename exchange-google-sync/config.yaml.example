@@ -1,0 +1,25 @@
+exchange:
+  # Name des macOS-Kalender-Accounts (Systemeinstellungen → Internet-Accounts)
+  account_name: "CID"
+  # Optional: Liste konkreter Kalender innerhalb des Accounts. Leer = alle.
+  calendars: []
+
+google:
+  # Calendar-ID des Ziel-Kalenders (Google Calendar → Einstellungen → Kalender integrieren)
+  target_calendar_id: "xxxxxxxxxxxxxxxxxxxx@group.calendar.google.com"
+
+sync:
+  window_past_days: 30
+  window_future_days: 365
+  # Modus "full": Titel, Notizen, Ort, Teilnehmernamen werden übertragen.
+  # Modus "busy": nur Zeitblock mit Titel "CID-Termin"
+  mode: "full"
+  # Teilnehmer NIE als Google-Attendees setzen (Anti-Invite-Spam),
+  # sondern als Text im Description-Feld
+  attendees_as_description: true
+  # Titel für Busy-Mode
+  busy_title: "CID-Termin"
+
+logging:
+  path: "~/Library/Logs/exchange-google-sync.log"
+  level: "INFO"
