@@ -35,7 +35,7 @@ const {
   alternateLangPath,
 } = Astro.props;
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://jensklasen.de';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://klasen.ai';
 const canonicalUrl = canonical ?? `${siteUrl}${Astro.url.pathname}`;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 

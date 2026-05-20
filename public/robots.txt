@@ -50,4 +50,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://jensklasen.de/sitemap-index.xml
+Sitemap: https://klasen.ai/sitemap-index.xml

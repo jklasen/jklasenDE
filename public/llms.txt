@@ -6,16 +6,16 @@ Ich bin der Jens — Jens Klasen. Technology Evangelist bei der CID GmbH, davor 
 
 ## Über mich
 
-- [Startseite (DE)](https://jensklasen.de/): Profil, Positionierung, Karriere, Zertifizierungen, Kontakt.
-- [Home (EN)](https://jensklasen.de/en/): English version of the full profile.
-- [Impressum](https://jensklasen.de/impressum/): rechtliche Angaben nach §5 TMG.
+- [Startseite (DE)](https://klasen.ai/): Profil, Positionierung, Karriere, Zertifizierungen, Kontakt.
+- [Home (EN)](https://klasen.ai/en/): English version of the full profile.
+- [Impressum](https://klasen.ai/impressum/): rechtliche Angaben nach §5 TMG.
 
 ## Future Proof Tech Briefing
 
 Unregelmäßige, kuratierte Notizen zu Technologie, Strategie und Umsetzung. Kein Content-Marketing, keine Top-10-Listen.
 
-- [Future Proof Tech Briefing — Übersicht](https://jensklasen.de/briefing/): alle Artikel.
-- [Ein KI-Prompt ist kein Text. Er ist Software.](https://jensklasen.de/briefing/ki-prompts-sind-software/): warum Prompts wie Code behandelt gehören — mit Versionierung, Tests und Ownership.
+- [Future Proof Tech Briefing — Übersicht](https://klasen.ai/briefing/): alle Artikel.
+- [Ein KI-Prompt ist kein Text. Er ist Software.](https://klasen.ai/briefing/ki-prompts-sind-software/): warum Prompts wie Code behandelt gehören — mit Versionierung, Tests und Ownership.
 
 ## Schwerpunkte
 
