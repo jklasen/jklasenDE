@@ -29,7 +29,7 @@ const {
   description = 'Jens Klasen — Technology Evangelist bei CID GmbH. 25 Jahre IT, Klartext zu Private Cloud, KI und Vendor-Strategie.',
   lang = 'de',
   ogType = 'website',
-  ogImage = '/images/jens-icon-dark.svg',
+  ogImage = '/images/jens-klasen-icon-gradient.png',
   canonical,
   articleMeta,
   alternateLangPath,
@@ -93,8 +93,8 @@ const ogLocaleAlternate = lang === 'de' ? 'en_US' : 'de_DE';
     <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/images/jens-icon-small.svg" />
-    <link rel="apple-touch-icon" href="/images/jens-icon-dark.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/jens-klasen-icon-gradient.png" />
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -119,23 +119,48 @@ const ogLocaleAlternate = lang === 'de' ? 'en_US' : 'de_DE';
     <Footer lang={lang} />
 
     <script>
-      // Intersection Observer for animations
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in-up');
-              observer.unobserve(entry.target);
+      // Defensive scroll-triggered fade-in.
+      // Vorher hatte das Script `opacity:0` auf ALLE [data-animate]-Elemente
+      // gesetzt und sich darauf verlassen, dass IntersectionObserver sie
+      // wieder einblendet. Wenn der Observer aus irgendeinem Grund nicht
+      // gefeuert hat (alte Browser ohne IO, Race-Conditions, Privacy-
+      // Extensions, deaktiviertes JS), blieb der Content permanent
+      // unsichtbar — passierte u. a. auf der Briefing-Seite in einem
+      // externen Browser. Neue Strategie: nur Below-the-fold-Elemente
+      // werden überhaupt versteckt; Above-the-fold bleibt sichtbar.
+      // Zusätzlich ein 6 s-Failsafe, falls etwas hängenbleibt.
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+                (entry.target as HTMLElement).style.opacity = '';
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+
+        const elements = document.querySelectorAll('[data-animate]');
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top >= window.innerHeight) {
+            (el as HTMLElement).style.opacity = '0';
+            observer.observe(el);
+          }
+        });
+
+        // Safety net: nichts soll länger als 6 s unsichtbar bleiben.
+        window.setTimeout(() => {
+          elements.forEach((el) => {
+            if (window.getComputedStyle(el).opacity === '0') {
+              (el as HTMLElement).style.opacity = '1';
             }
           });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
-
-      document.querySelectorAll('[data-animate]').forEach((el) => {
-        (el as HTMLElement).style.opacity = '0';
-        observer.observe(el);
-      });
+        }, 6000);
+      }
     </script>
   </body>
 </html>
