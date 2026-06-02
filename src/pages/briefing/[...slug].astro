@@ -4,18 +4,31 @@ import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('briefing');
-  return entries.map((entry) => ({
-    params: { slug: entry.id.replace(/\.md$/, '') },
-    props: { entry },
-  }));
+  const all = await getCollection('briefing');
+  const deEntries = all.filter((e) => e.data.lang === 'de');
+  const enSlugs = new Set(
+    all
+      .filter((e) => e.data.lang === 'en')
+      .map((e) => e.id.replace(/^en\//, '').replace(/\.md$/, ''))
+  );
+  return deEntries.map((entry) => {
+    const slug = entry.id.replace(/\.md$/, '');
+    return {
+      params: { slug },
+      props: { entry, hasEnglishVersion: enSlugs.has(slug) },
+    };
+  });
 }
 
-const { entry } = Astro.props;
+const { entry, hasEnglishVersion } = Astro.props;
 const { Content } = await render(entry);
 
 const lang = 'de';
 const t = useTranslations(lang);
+
+const alternateLangPath = hasEnglishVersion
+  ? `/en/briefing/${entry.id.replace(/\.md$/, '')}/`
+  : undefined;
 
 const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
   year: 'numeric',
@@ -34,6 +47,7 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
     author: entry.data.author,
     section: 'Future Proof Tech Briefing',
   }}
+  alternateLangPath={alternateLangPath}
 >
   <article class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
     <div class="max-w-2xl mx-auto">

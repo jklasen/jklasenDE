@@ -1,0 +1,229 @@
+
+══════════════════════════════════════════════════════
+  Validierung
+══════════════════════════════════════════════════════
+  → Teste API-Token...
+  ✓ API-Token gültig
+
+══════════════════════════════════════════════════════
+  1/6 — jklasen.de (Google Workspace + Redirect)
+══════════════════════════════════════════════════════
+  → SSL-Modus setzen...
+  ✓ SSL-Modus → full
+  ✓ Always Use HTTPS → on
+  → DNS-Einträge anlegen...
+  ✓ A jklasen.de → 192.0.2.1
+  ✓ A www.jklasen.de → 192.0.2.1
+  ✗ MX jklasen.de — Fehler: An identical record already exists.
+  ✗ MX jklasen.de — Fehler: An identical record already exists.
+  ✗ MX jklasen.de — Fehler: An identical record already exists.
+  ✗ MX jklasen.de — Fehler: An identical record already exists.
+  ✓ TXT jklasen.de → v=spf1 include:_spf.google.com ~all
+  ✓ TXT _dmarc.jklasen.de → v=DMARC1; p=none; rua=mailto:dmarc-reports@jklasen.de
+  ✓ TXT google._domainkey.jklasen.de → v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl+Ou+N3zbGMyObPAUI5T8wx2i82XiQ4lOC6vTK0cYbSu5iWM+/iTJd2CVNho+/quWjH3/9XglN+U99+eduZ3LiMYi9nLdAUNia3eNn0okfyHd8f6zH5It/iLTdP1ErDReqTKlwKQRRV8/+yfQAUWCNz6u1k3KPwgtiHD307EektQ9JshekGgScfuAhACh6qGbGWAtpMXczrnRzYKsRzGmhclXR7FDv7nzDKvXVn3dTb2Rcm+xM1Xd3CLZ0bE5T6g3xKH9+rzvMhQy5mup5pEEhC01bm2J8yA2kMxMAULLf0UevmUWQmG56LpuJYjRfB/JOwAjBHemHhNr+tWncnVXwIDAQAB
+  → Redirect Rule anlegen...
+  ✓ Redirect Rule: jklasen.de → https://jensklasen.de
+
+══════════════════════════════════════════════════════
+  2/6 — jklasen.com (Google Workspace + Redirect)
+══════════════════════════════════════════════════════
+  → SSL-Modus setzen...
+  ✓ SSL-Modus → full
+  ✓ Always Use HTTPS → on
+  → DNS-Einträge anlegen...
+  ✓ A jklasen.com → 192.0.2.1
+  ✓ A www.jklasen.com → 192.0.2.1
+  ✗ MX jklasen.com — Fehler: An identical record already exists.
+  ✗ MX jklasen.com — Fehler: An identical record already exists.
+  ✗ MX jklasen.com — Fehler: An identical record already exists.
+  ✗ MX jklasen.com — Fehler: An identical record already exists.
+  ✓ TXT jklasen.com → v=spf1 include:_spf.google.com ~all
+  ✓ TXT _dmarc.jklasen.com → v=DMARC1; p=none; rua=mailto:dmarc-reports@jklasen.com
+  ✓ TXT google._domainkey.jklasen.com → v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp/bUyaAGpGvMNexidueYAECKwRFolCfqtEkrfJytJIqwgFl7ByUn6w7jVuyvC2SG+aU0YFdKzw1pdO1nvhpPnulg2xt2sCaLG4Q8q69Y6JnBGNB3CjKinJoF6daeTPPK3MbY2B7shz2YC4kQkEbOMsQguCR8A5TFNGhayPthlTi+H1TUfnVRk8KsqTRR/FY/VQ3OxTXZfP6z2HFIhhS3p46900a0/r27EcN9+eQ9qf5twJJwQfjKWjhBIg7lHSC+u0LrBFg9Iwlzmo3X4zK+4EifK+nMqjgSE377s02fxRxMEb6zi2C5DztK3gnZsg68dv2yQDtC17lsZWbvpf6g2QIDAQAB
+  → Redirect Rule anlegen...
+  ✓ Redirect Rule: jklasen.com → https://jensklasen.de
+
+══════════════════════════════════════════════════════
+  3/6 — klasen.rocks (nur Redirect)
+══════════════════════════════════════════════════════
+  → SSL-Modus setzen...
+  ✓ SSL-Modus → full
+  ✓ Always Use HTTPS → on
+  → DNS-Einträge anlegen...
+  ✓ A klasen.rocks → 192.0.2.1
+  ✓ A www.klasen.rocks → 192.0.2.1
+  → Redirect Rule anlegen...
+  ✓ Redirect Rule: klasen.rocks → https://jensklasen.de
+
+══════════════════════════════════════════════════════
+  4/6 — vbeard.de (nur Redirect)
+══════════════════════════════════════════════════════
+  → SSL-Modus setzen...
+  ✓ SSL-Modus → full
+  ✓ Always Use HTTPS → on
+  → DNS-Einträge anlegen...
+  ✓ A vbeard.de → 192.0.2.1
+  ✓ A www.vbeard.de → 192.0.2.1
+  → Redirect Rule anlegen...
+  ✓ Redirect Rule: vbeard.de → https://jensklasen.de
+
+══════════════════════════════════════════════════════
+  5/6 — ai-deer.de (nur Redirect)
+══════════════════════════════════════════════════════
+  → SSL-Modus setzen...
+  ✓ SSL-Modus → full
+  ✓ Always Use HTTPS → on
+  → DNS-Einträge anlegen...
+  ✓ A ai-deer.de → 192.0.2.1
+  ✓ A www.ai-deer.de → 192.0.2.1
+  → Redirect Rule anlegen...
+  ✓ Redirect Rule: ai-deer.de → https://jensklasen.de
+
+══════════════════════════════════════════════════════
+  6/6 — jensklasen.de (E-Mail-Authentifizierung prüfen)
+══════════════════════════════════════════════════════
+  → Bestehende TXT-Records abrufen...
+
+  Aktuelle TXT-Records für jensklasen.de:
+
+  → Prüfe SPF...
+  ⚠ SPF fehlt! Lege an...
+  ✓ TXT jensklasen.de → v=spf1 include:_spf.google.com ~all
+  → Prüfe DMARC...
+  ⚠ DMARC fehlt! Lege an...
+  ✓ TXT _dmarc.jensklasen.de → v=DMARC1; p=none; rua=mailto:dmarc-reports@jensklasen.de
+  → Prüfe DKIM...
+  ⚠ DKIM fehlt für jensklasen.de!
+  ⚠ Bitte DKIM-Key aus Google Workspace Admin holen und manuell anlegen:
+  ⚠   Typ: TXT
+  ⚠   Name: google._domainkey.jensklasen.de
+  ⚠   Wert: (aus Admin Console → Gmail → E-Mail authentifizieren)
+
+══════════════════════════════════════════════════════
+  Zusammenfassung
+══════════════════════════════════════════════════════
+
+  DNS-Einträge angelegt für:
+    • jklasen.de   (MX + SPF + DMARC + DKIM + Redirect)
+    • jklasen.com  (MX + SPF + DMARC + DKIM + Redirect)
+    • klasen.rocks (Redirect)
+    • vbeard.de    (Redirect)
+    • ai-deer.de   (Redirect)
+    • jensklasen.de (SPF/DMARC geprüft/ergänzt)
+
+  ┌─────────────────────────────────────────────────────┐
+  │  NÄCHSTE SCHRITTE (manuell):                        │
+  │                                                     │
+  │  1. Nameserver bei IONOS umstellen für:             │
+  │     - jklasen.de                                    │
+  │     - jklasen.com                                   │
+  │     - klasen.rocks                                  │
+  │     - vbeard.de                                     │
+  │     - ai-deer.de                                    │
+  │     → Auf die Cloudflare-Nameserver, die im         │
+  │       Dashboard pro Domain angezeigt werden.        │
+  │                                                     │
+  │  2. Warten: 1–24 Stunden DNS-Propagation            │
+  │                                                     │
+  │  3. Testen:                                         │
+  │     - E-Mail senden von jklasen.de + jklasen.com    │
+  │     - E-Mail empfangen auf beiden Domains           │
+  │     - https://jklasen.com im Browser → Redirect?    │
+  │     - https://klasen.rocks im Browser → Redirect?   │
+  │     - https://vbeard.de im Browser → Redirect?      │
+  │     - https://ai-deer.de im Browser → Redirect?     │
+  │                                                     │
+  │  4. IONOS SSL-Pakete kündigen (spart 48€/Jahr)      │
+  │                                                     │
+  │  5. Falls DKIM für jensklasen.de fehlt:             │
+  │     Google Workspace Admin → Gmail →                 │
+  │     E-Mail authentifizieren → DKIM generieren →      │
+  │     TXT-Record in Cloudflare anlegen                │
+  └─────────────────────────────────────────────────────┘
+
+
+══════════════════════════════════════════════════════
+  Verifizierung — Angelegte Records
+══════════════════════════════════════════════════════
+
+  ── jklasen.de ──
+    A      ftp.jklasen.de                           → 217.160.0.129 [PROXIED]
+    A      jklasen.de                               → 192.0.2.1 [PROXIED]
+    A      jklasen.de                               → 217.160.0.8 [PROXIED]
+    A      www.jklasen.de                           → 192.0.2.1 [PROXIED]
+    A      www.jklasen.de                           → 217.160.0.8 [PROXIED]
+    AAAA   ftp.jklasen.de                           → 2001:8d8:100f:f000::278 [PROXIED]
+    AAAA   jklasen.de                               → 2001:8d8:100f:f000::200 [PROXIED]
+    AAAA   www.jklasen.de                           → 2001:8d8:100f:f000::200 [PROXIED]
+    CNAME  _domainconnect.jklasen.de                → _domainconnect.1and1.com [PROXIED]
+    MX     jklasen.de                               → aspmx.l.google.com (Priority: 1)
+    MX     jklasen.de                               → alt1.aspmx.l.google.com (Priority: 5)
+    MX     jklasen.de                               → aspmx2.googlemail.com (Priority: 10)
+    MX     jklasen.de                               → alt2.aspmx.l.google.com (Priority: 5)
+    TXT    _dmarc.jklasen.de                        → v=DMARC1; p=none; rua=mailto:dmarc-reports@jklasen.de
+    TXT    google._domainkey.jklasen.de             → v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ
+    TXT    jklasen.de                               → v=spf1 include:_spf.google.com ~all
+
+  ── jklasen.com ──
+    A      ftp.jklasen.com                          → 217.160.0.129 [PROXIED]
+    A      jklasen.com                              → 192.0.2.1 [PROXIED]
+    A      jklasen.com                              → 217.160.0.124 [PROXIED]
+    A      www.jklasen.com                          → 192.0.2.1 [PROXIED]
+    A      www.jklasen.com                          → 217.160.0.124 [PROXIED]
+    AAAA   jklasen.com                              → 2001:8d8:100f:f000::200 [PROXIED]
+    AAAA   www.jklasen.com                          → 2001:8d8:100f:f000::200 [PROXIED]
+    CNAME  _domainconnect.jklasen.com               → _domainconnect.ionos.com [PROXIED]
+    MX     jklasen.com                              → aspmx2.googlemail.com (Priority: 10)
+    MX     jklasen.com                              → alt2.aspmx.l.google.com (Priority: 5)
+    MX     jklasen.com                              → aspmx.l.google.com (Priority: 1)
+    MX     jklasen.com                              → alt1.aspmx.l.google.com (Priority: 5)
+    TXT    _dmarc.jklasen.com                       → v=DMARC1; p=none; rua=mailto:dmarc-reports@jklasen.com
+    TXT    google._domainkey.jklasen.com            → v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ
+    TXT    jklasen.com                              → v=spf1 include:_spf.google.com ~all
+
+  ── klasen.rocks ──
+    A      klasen.rocks                             → 192.0.2.1 [PROXIED]
+    A      klasen.rocks                             → 217.160.0.17 [PROXIED]
+    A      www.klasen.rocks                         → 192.0.2.1 [PROXIED]
+    A      www.klasen.rocks                         → 217.160.0.17 [PROXIED]
+    AAAA   klasen.rocks                             → 2001:8d8:100f:f000::200 [PROXIED]
+    AAAA   www.klasen.rocks                         → 2001:8d8:100f:f000::200 [PROXIED]
+    CNAME  autodiscover.klasen.rocks                → adsredir.ionos.info [PROXIED]
+    CNAME  _dmarc.klasen.rocks                      → dmarc.ionos.de [PROXIED]
+    CNAME  _domainconnect.klasen.rocks              → _domainconnect.ionos.com [PROXIED]
+    MX     klasen.rocks                             → mx00.ionos.de (Priority: 10)
+    MX     klasen.rocks                             → mx01.ionos.de (Priority: 10)
+    TXT    klasen.rocks                             → "v=spf1 include:_spf-eu.ionos.com ~all"
+
+  ── vbeard.de ──
+    A      vbeard.de                                → 192.0.2.1 [PROXIED]
+    A      vbeard.de                                → 217.160.0.207 [PROXIED]
+    A      www.vbeard.de                            → 192.0.2.1 [PROXIED]
+    A      www.vbeard.de                            → 217.160.0.207 [PROXIED]
+    AAAA   vbeard.de                                → 2001:8d8:100f:f000::200 [PROXIED]
+    AAAA   www.vbeard.de                            → 2001:8d8:100f:f000::200 [PROXIED]
+    CNAME  autodiscover.vbeard.de                   → adsredir.ionos.info [PROXIED]
+    CNAME  _dmarc.vbeard.de                         → dmarc.ionos.de [PROXIED]
+    CNAME  _domainconnect.vbeard.de                 → _domainconnect.ionos.com [PROXIED]
+    MX     vbeard.de                                → mx01.ionos.de (Priority: 10)
+    MX     vbeard.de                                → mx00.ionos.de (Priority: 10)
+    TXT    vbeard.de                                → "v=spf1 include:_spf-eu.ionos.com ~all"
+
+  ── ai-deer.de ──
+    A      ai-deer.de                               → 192.0.2.1 [PROXIED]
+    A      ai-deer.de                               → 217.160.0.121 [PROXIED]
+    A      www.ai-deer.de                           → 192.0.2.1 [PROXIED]
+    A      www.ai-deer.de                           → 212.227.172.253 [PROXIED]
+    AAAA   ai-deer.de                               → 2001:8d8:100f:f000::200 [PROXIED]
+    AAAA   www.ai-deer.de                           → 2001:8d8:105:1:0:1:0:6 [PROXIED]
+    CNAME  autodiscover.ai-deer.de                  → adsredir.ionos.info [PROXIED]
+    CNAME  _dmarc.ai-deer.de                        → dmarc.ionos.de [PROXIED]
+    CNAME  _domainconnect.ai-deer.de                → _domainconnect.ionos.com [PROXIED]
+    MX     ai-deer.de                               → mx00.ionos.de (Priority: 10)
+    MX     ai-deer.de                               → mx01.ionos.de (Priority: 10)
+    TXT    ai-deer.de                               → "v=spf1 include:_spf-eu.ionos.com ~all"
+
+
+══════════════════════════════════════════════════════
+  Script abgeschlossen
+══════════════════════════════════════════════════════
