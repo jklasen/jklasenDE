@@ -12,13 +12,14 @@ const otherLang = lang === 'de' ? 'en' : 'de';
 const otherLangPath = lang === 'de' ? '/en/' : '/';
 
 const homeBase = getLocalizedPath(lang, '/');
+const briefingBase = lang === 'de' ? '/briefing/' : '/en/briefing/';
 
 const navItems = [
   { href: `${homeBase}#home`, label: t('nav.home') },
   { href: `${homeBase}#about`, label: t('nav.about') },
   { href: `${homeBase}#career`, label: t('nav.career') },
   { href: `${homeBase}#certifications`, label: t('nav.certifications') },
-  { href: '/briefing/', label: t('nav.briefing') },
+  { href: briefingBase, label: t('nav.briefing') },
   { href: `${homeBase}#contact`, label: t('nav.contact') },
 ];
 ---

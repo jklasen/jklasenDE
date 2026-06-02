@@ -3,3 +3,12 @@ dist/
 .astro/
 .DS_Store
 .claude/
+.wrangler/
+
+# Local-only scratch / source / migration leftovers (not part of the site)
+*.zip
+cloudflare-*.sh
+cloudflare-*.txt
+cloudflare-*.md
+rammageddon-*.md
+!src/content/**/rammageddon-*.md

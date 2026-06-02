@@ -1,36 +1,28 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import { useTranslations } from '../../i18n/utils';
+import Layout from '../../../layouts/Layout.astro';
+import TranslationNotice from '../../../components/briefing/TranslationNotice.astro';
+import { useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const all = await getCollection('briefing');
-  const deEntries = all.filter((e) => e.data.lang === 'de');
-  const enSlugs = new Set(
-    all
-      .filter((e) => e.data.lang === 'en')
-      .map((e) => e.id.replace(/^en\//, '').replace(/\.md$/, ''))
-  );
-  return deEntries.map((entry) => {
-    const slug = entry.id.replace(/\.md$/, '');
-    return {
-      params: { slug },
-      props: { entry, hasEnglishVersion: enSlugs.has(slug) },
-    };
-  });
+  const enEntries = all.filter((e) => e.data.lang === 'en');
+  return enEntries.map((entry) => ({
+    params: { slug: entry.id.replace(/^en\//, '').replace(/\.md$/, '') },
+    props: { entry },
+  }));
 }
 
-const { entry, hasEnglishVersion } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const lang = 'de';
+const lang = 'en';
 const t = useTranslations(lang);
 
-const alternateLangPath = hasEnglishVersion
-  ? `/en/briefing/${entry.id.replace(/\.md$/, '')}/`
-  : undefined;
+const slug = entry.id.replace(/^en\//, '').replace(/\.md$/, '');
+const canonicalDePath = `/briefing/${slug}/`;
 
-const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
+const formattedDate = entry.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -47,7 +39,7 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
     author: entry.data.author,
     section: 'Future Proof Tech Briefing',
   }}
-  alternateLangPath={alternateLangPath}
+  alternateLangPath={canonicalDePath}
 >
   <article class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
     <div class="max-w-2xl mx-auto">
@@ -69,6 +61,13 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
         </div>
       </header>
 
+      <!-- AI translation notice -->
+      {entry.data.aiTranslated && (
+        <div data-animate>
+          <TranslationNotice lang={lang} canonicalPath={canonicalDePath} />
+        </div>
+      )}
+
       <!-- Body -->
       <div class="briefing-prose" data-animate>
         <Content />
@@ -83,7 +82,7 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
           {t('briefing.article.author.body')}
         </p>
         <a
-          href="/briefing/"
+          href="/en/briefing/"
           class="inline-block text-xs uppercase tracking-[0.25em] font-display text-bone-300/70 hover:text-bone-50 transition-colors"
         >
           {t('briefing.article.back')}
@@ -174,5 +173,25 @@ const formattedDate = entry.data.date.toLocaleDateString('de-DE', {
     border: 0;
     border-top: 1px solid rgba(220, 209, 173, 0.15);
     margin: 3rem 0;
+  }
+
+  .briefing-prose table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+  }
+
+  .briefing-prose th,
+  .briefing-prose td {
+    border: 1px solid rgba(220, 209, 173, 0.15);
+    padding: 0.5em 0.75em;
+    text-align: left;
+  }
+
+  .briefing-prose th {
+    background: rgba(220, 209, 173, 0.05);
+    color: rgb(245, 240, 224);
+    font-weight: 600;
   }
 </style>

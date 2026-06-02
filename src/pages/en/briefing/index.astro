@@ -1,23 +1,25 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import { useTranslations } from '../../i18n/utils';
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations } from '../../../i18n/utils';
 
-const lang = 'de';
+const lang = 'en';
 const t = useTranslations(lang);
 
-const entries = await getCollection('briefing', ({ data }) => data.lang === 'de');
+const entries = await getCollection('briefing', ({ data }) => data.lang === 'en');
 const sorted = entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const stripEnPrefix = (id: string) => id.replace(/^en\//, '').replace(/\.md$/, '');
 ---
 
 <Layout
   title={`${t('briefing.overview.title')} | Jens Klasen`}
   description={t('briefing.overview.intro')}
   lang={lang}
-  alternateLangPath="/en/briefing/"
+  alternateLangPath="/briefing/"
 >
   <section class="px-4 sm:px-6 lg:px-8" style="padding-top: 12rem; padding-bottom: 8rem;">
     <div class="max-w-2xl mx-auto">
@@ -42,10 +44,10 @@ const formatDate = (date: Date) =>
       ) : (
         <ul class="space-y-0" data-animate>
           {sorted.map((entry, i) => {
-            const slug = entry.id.replace(/\.md$/, '');
+            const slug = stripEnPrefix(entry.id);
             return (
               <li class={i > 0 ? 'border-t border-bone-300/15' : ''}>
-                <a href={`/briefing/${slug}/`} class="block py-12 group">
+                <a href={`/en/briefing/${slug}/`} class="block py-12 group">
                   <div class="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-bone-300/60 font-display mb-4">
                     <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
                     <span class="w-1 h-1 bg-bone-300/40 rounded-full"></span>

@@ -1,0 +1,66 @@
+---
+import type { Lang } from '../../i18n/utils';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  /** Optional path to the canonical (German) original — renders as a link. */
+  canonicalPath?: string;
+}
+
+const { lang, canonicalPath } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<aside class="translation-notice" role="note" aria-label="AI translation notice">
+  <span class="translation-notice__icon" aria-hidden="true">⚙</span>
+  <p class="translation-notice__text">
+    {t('briefing.translationNotice')}
+    {canonicalPath && (
+      <>
+        {' '}
+        <a href={canonicalPath} class="translation-notice__link">Read the German original →</a>
+      </>
+    )}
+  </p>
+</aside>
+
+<style>
+  .translation-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    padding: 1rem 1.125rem;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid rgba(139, 0, 0, 0.6);
+    background: rgba(220, 209, 173, 0.04);
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: rgba(220, 209, 173, 0.7);
+  }
+
+  .translation-notice__icon {
+    flex-shrink: 0;
+    color: rgba(220, 38, 38, 0.7);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .translation-notice__text {
+    margin: 0;
+    font-style: italic;
+  }
+
+  .translation-notice__link {
+    color: rgb(245, 240, 224);
+    border-bottom: 1px solid rgba(139, 0, 0, 0.5);
+    font-style: normal;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .translation-notice__link:hover {
+    color: rgb(220, 38, 38);
+    border-color: rgb(220, 38, 38);
+  }
+</style>

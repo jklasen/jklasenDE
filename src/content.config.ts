@@ -10,6 +10,8 @@ const briefing = defineCollection({
     author: z.string(),
     readingTime: z.string(),
     teaser: z.string(),
+    lang: z.enum(['de', 'en']).default('de'),
+    aiTranslated: z.boolean().default(false),
   }),
 });
 
