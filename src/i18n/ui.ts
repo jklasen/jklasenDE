@@ -26,6 +26,12 @@ export const ui = {
     'hero.cta': 'Kontakt aufnehmen',
     'hero.cta2': 'Mehr erfahren',
 
+    // Leitsatz — Aristoteles
+    'leitsatz.eyebrow': 'Leitsatz',
+    'leitsatz.quote':
+      'Die Dinge, die wir lernen müssen, bevor wir sie tun können, lernen wir, indem wir sie tun.',
+    'leitsatz.attribution': 'Aristoteles · Nikomachische Ethik',
+
     // About
     'about.title': 'Über mich',
     'about.intro':
@@ -220,6 +226,12 @@ export const ui = {
       "25 years in IT, and I haven't given a single talk on something I didn't first test myself on real hardware or real code. I'm a sparring partner for decision-makers when infrastructure, sovereignty and AI all land on the table at the same time — and I'm the one who picks up the hammer while others are still talking. What I recommend, I also build myself. Sometimes on the side, sometimes full-time, always seriously.",
     'hero.cta': 'Get in Touch',
     'hero.cta2': 'Learn More',
+
+    // Leitsatz — Aristotle
+    'leitsatz.eyebrow': 'Guiding Principle',
+    'leitsatz.quote':
+      'For the things we have to learn before we can do them, we learn by doing them.',
+    'leitsatz.attribution': 'Aristotle · Nicomachean Ethics',
 
     // About
     'about.title': 'About Me',

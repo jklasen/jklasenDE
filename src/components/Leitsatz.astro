@@ -1,0 +1,52 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="leitsatz" class="relative overflow-hidden section-padding">
+  <!-- Background forge atmosphere -->
+  <div class="absolute inset-0 -z-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-forge-950 via-forge-900 to-forge-950"></div>
+    <!-- ember glow, centered behind the quote -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blood-700/12 rounded-full blur-[150px] ember-pulse"></div>
+    <!-- subtle vertical streaks, same as hero -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(90deg, transparent 0, transparent 80px, rgba(220,209,173,1) 80px, rgba(220,209,173,1) 81px);"></div>
+  </div>
+
+  <div class="relative container-narrow text-center">
+    <p class="eyebrow justify-center">
+      <span>{t('leitsatz.eyebrow')}</span>
+    </p>
+
+    <figure class="mt-10">
+      <!-- Oversized opening quotation mark, carved -->
+      <span
+        class="block heading-blood select-none leading-none mb-2 text-7xl sm:text-8xl"
+        style="font-family: 'Cinzel', Georgia, serif;"
+        aria-hidden="true"
+      >&ldquo;</span>
+
+      <blockquote
+        class="heading-blood mx-auto max-w-4xl text-balance hyphens-auto break-words uppercase tracking-tight leading-[1.1] sm:leading-[1.05] text-2xl sm:text-4xl lg:text-5xl"
+        style="font-family: 'Cinzel', Georgia, serif; font-weight: 800;"
+      >
+        {t('leitsatz.quote')}
+      </blockquote>
+
+      <div class="rune-divider mt-10">
+        <span class="font-rune text-lg">ᚨ</span>
+      </div>
+
+      <figcaption class="text-sm sm:text-base uppercase tracking-[0.3em] text-blood-400" style="font-family: 'MedievalSharp', 'Cinzel', Georgia, serif;">
+        {t('leitsatz.attribution')}
+      </figcaption>
+    </figure>
+  </div>
+</section>
