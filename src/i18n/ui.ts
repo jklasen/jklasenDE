@@ -29,8 +29,8 @@ export const ui = {
     // Leitsatz — Aristoteles
     'leitsatz.eyebrow': 'Leitsatz',
     'leitsatz.quote':
-      'Wir sind, was wir wiederholt tun. Vortrefflichkeit ist daher keine Handlung, sondern eine Gewohnheit.',
-    'leitsatz.attribution': 'Aristoteles',
+      'Die Dinge, die wir lernen müssen, bevor wir sie tun können, lernen wir, indem wir sie tun.',
+    'leitsatz.attribution': 'Aristoteles · Nikomachische Ethik',
 
     // About
     'about.title': 'Über mich',
@@ -230,8 +230,8 @@ export const ui = {
     // Leitsatz — Aristotle
     'leitsatz.eyebrow': 'Guiding Principle',
     'leitsatz.quote':
-      'We are what we repeatedly do. Excellence, then, is not an act, but a habit.',
-    'leitsatz.attribution': 'Aristotle',
+      'For the things we have to learn before we can do them, we learn by doing them.',
+    'leitsatz.attribution': 'Aristotle · Nicomachean Ethics',
 
     // About
     'about.title': 'About Me',
