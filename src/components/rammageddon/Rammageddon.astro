@@ -1,0 +1,598 @@
+---
+import type { Lang } from '../../i18n/utils';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Route in die bestehende Briefing-Liste (aus Schritt 0 verifiziert).
+const briefingBase = lang === 'de' ? '/briefing/' : '/en/briefing/';
+// Deutsche Fassung dieser Seite (für den EN-Hinweis).
+const germanPath = '/rammageddon/';
+
+// Inhalte sind bewusst Deutsch und werden auf beiden Sprachfassungen identisch
+// gezeigt — die Thesen werden nicht erfunden ins Englische übersetzt (wie bei
+// den Briefings). Englische Besucher bekommen oben einen Hinweis.
+const stats = [
+  { value: '+170 %', label: 'DRAM-Preis seit Q3/2025' },
+  { value: '15–20 %', label: 'Server teurer (Listenpreise Enterprise-RAM)' },
+  { value: '6 Monate', label: 'GPU-Wartezeit (Enterprise-Kontingente reserviert)' },
+  { value: '70 %', label: 'der Chips gehen an Hyperscaler (Rest teilt sich der Mittelstand)' },
+];
+
+const drivers = ['Section-232-Zölle', 'Iran-Konflikt', 'Exportkontrollen', 'kein Produktionsausbau'];
+
+const reactions = [
+  {
+    title: 'Panik-Bestellung',
+    body: 'Hardware zu Höchstpreisen. Budget verbrannt, Architektur unverändert.',
+    risk: 'Overpay',
+  },
+  {
+    title: 'Abwarten & hoffen',
+    body: 'Support verlängern, Problem verschieben. Keine strategische Antwort.',
+    risk: 'Stillstand',
+  },
+  {
+    title: 'Cloud-Flucht',
+    body: 'Unkontrollierter Lift-and-Shift. Ineffizienzen wandern 1:1 in die OpEx.',
+    risk: 'Lock-in',
+  },
+];
+---
+
+<div class="wasteland">
+  <!-- 1) HERO ------------------------------------------------------------- -->
+  <section class="wl-hero">
+    <picture class="wl-hero__media">
+      <source srcset="/rammageddon/hero-wasteland-frankfurt.webp" type="image/webp" />
+      <img
+        src="/rammageddon/hero-wasteland-frankfurt.jpg"
+        alt="Verfallene, postapokalyptische Skyline von Frankfurt unter rostrotem Himmel"
+        width="2816"
+        height="1536"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="wl-hero__scrim" aria-hidden="true"></div>
+
+    <div class="wl-hero__inner">
+      <picture class="wl-badge">
+        <source srcset="/rammageddon/rammageddon-badge.webp" type="image/webp" />
+        <img
+          src="/rammageddon/rammageddon-badge.png"
+          alt="RAMmageddon — Emblem"
+          width="1023"
+          height="1024"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
+
+      <p class="wl-kicker">Marktthese</p>
+      <h1 class="wl-hero__line">
+        Wer jetzt Hardware bestellt, zahlt den Preis von heute für die Architektur von gestern.
+      </h1>
+      <p class="wl-hero__sub">Architektur-Strategie statt Hardware-Reflex.</p>
+    </div>
+  </section>
+
+  <div class="wl-body">
+    {lang === 'en' && t('rammageddon.langNotice') && (
+      <aside class="wl-notice" role="note" aria-label="Language notice">
+        <span class="wl-notice__icon" aria-hidden="true">⚠</span>
+        <p class="wl-notice__text">
+          {t('rammageddon.langNotice')}
+          {' '}
+          <a href={germanPath} class="wl-notice__link">Open the German page →</a>
+        </p>
+      </aside>
+    )}
+
+    <!-- 2) MARKTLAGE ------------------------------------------------------ -->
+    <section class="wl-section" data-animate>
+      <header class="wl-section__head">
+        <p class="wl-eyebrow">Die Marktlage</p>
+        <h2 class="wl-h2">Was die Zahlen sagen</h2>
+      </header>
+
+      <div class="wl-stats">
+        {stats.map((s) => (
+          <div class="wl-stat">
+            <div class="wl-stat__value">{s.value}</div>
+            <div class="wl-stat__label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="wl-drivers" aria-label="Treiber der Krise">
+        <span class="wl-drivers__tag">Treiber</span>
+        <ul class="wl-drivers__list">
+          {drivers.map((d) => <li class="wl-driver">{d}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3) DREI REAKTIONEN ----------------------------------------------- -->
+    <section class="wl-section" data-animate>
+      <header class="wl-section__head">
+        <p class="wl-eyebrow">Drei Reaktionen</p>
+        <h2 class="wl-h2">Alle mit Risiko</h2>
+      </header>
+
+      <div class="wl-cards">
+        {reactions.map((r) => (
+          <article class="wl-card">
+            <h3 class="wl-card__title">{r.title}</h3>
+            <p class="wl-card__body">{r.body}</p>
+            <p class="wl-card__risk"><span class="wl-card__risk-label">Risiko</span>{r.risk}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4) KERNBOTSCHAFT -------------------------------------------------- -->
+    <section class="wl-section" data-animate>
+      <blockquote class="wl-quote">
+        <p class="wl-quote__text">
+          Die Zwangspause vom Hardware-Kauf ist keine verlorene Zeit — sie ist die seltene
+          Gelegenheit, die IT-Strategie ohne Zeitdruck auf Vordermann zu bringen.
+        </p>
+        <footer class="wl-quote__foot">Wartezeit <span aria-hidden="true">→</span> Planungszeit</footer>
+      </blockquote>
+    </section>
+
+    <!-- 5) STRATEGISCHE SCHLUSSFOLGERUNG --------------------------------- -->
+    <section class="wl-section" data-animate>
+      <header class="wl-section__head">
+        <p class="wl-eyebrow">Die strategische Schlussfolgerung</p>
+        <h2 class="wl-h2">Schlanker werden, bevor man kauft</h2>
+      </header>
+
+      <div class="wl-thesis">
+        <div class="wl-thesis__steps">
+          <div class="wl-step">
+            <p class="wl-step__kicker">Software modernisieren</p>
+            <p class="wl-step__body">Cloud-native, Kubernetes — Workloads, die nicht mehr jede Hardware-Generation mitwachsen müssen.</p>
+          </div>
+          <div class="wl-step">
+            <p class="wl-step__kicker">Datenmodell modernisieren</p>
+            <p class="wl-step__body">Ein offenes Lakehouse statt gewachsener Silos — entkoppelt von proprietärer Infrastruktur.</p>
+          </div>
+        </div>
+        <p class="wl-thesis__lead">
+          Die Zielarchitektur wird schlanker. Freigesetztes Hardware-Budget fließt in
+          Modernisierung statt in die Hardware-Inflation. KI-ready Daten entstehen dabei als
+          Beifang — nicht als eigenes Großprojekt, sondern als Nebeneffekt sauberer Architektur.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6) ÜBERGANG ZU DEN BRIEFINGS ------------------------------------- -->
+    <section class="wl-section wl-cta" data-animate>
+      <p class="wl-eyebrow">{t('rammageddon.cta.eyebrow')}</p>
+      <h2 class="wl-h2">{t('rammageddon.cta.title')}</h2>
+      <p class="wl-cta__body">{t('rammageddon.cta.body')}</p>
+      <a href={briefingBase} class="wl-btn">
+        {t('rammageddon.cta.button')}
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </div>
+</div>
+
+<style>
+  /* ===================================================================
+     Wasteland-Palette — strikt auf .wasteland gescopt.
+     Astro scopt diese Styles zusätzlich auf die Komponente; der Rest
+     der Seite (Navigation, Footer, ruhige Werkstatt-Tonalität) bleibt
+     unberührt.
+     =================================================================== */
+  .wasteland {
+    --wl-bg: #0a0907;
+    --wl-bg-2: #14110d;
+    --wl-panel: rgba(28, 22, 16, 0.72);
+    --wl-ink: #f1e7d2;
+    --wl-ink-dim: rgba(241, 231, 210, 0.72);
+    --wl-ink-faint: rgba(241, 231, 210, 0.5);
+    --wl-rust: #9a3a1e;
+    --wl-copper: #c4753a;
+    --wl-marigold: #e8a23d;
+    --wl-steel: #9a958a;
+    --wl-line: rgba(196, 117, 58, 0.28);
+
+    /* Dezente Grunge-/Used-Textur (fractalNoise), kupferfarben getönt. */
+    --wl-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.62 0 0 0 0 0.36 0 0 0 0 0.18 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+    position: relative;
+    background-color: var(--wl-bg);
+    background-image:
+      var(--wl-grain),
+      radial-gradient(ellipse 1100px 700px at 50% -5%, rgba(232, 162, 61, 0.14), transparent 70%),
+      radial-gradient(ellipse 900px 600px at 50% 105%, rgba(154, 58, 30, 0.14), transparent 72%);
+    color: var(--wl-ink);
+  }
+
+  /* Industrielle, kräftige Anmutung ohne zusätzliche Web-Fonts:
+     schwere, hochgestellte Sans aus dem vorhandenen Stack. */
+  .wasteland :global(h1),
+  .wasteland :global(h2),
+  .wasteland :global(h3) {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- HERO ---------- */
+  .wl-hero {
+    position: relative;
+    min-height: clamp(30rem, 82vh, 46rem);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .wl-hero__media,
+  .wl-hero__media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .wl-hero__media img {
+    object-fit: cover;
+    object-position: center 35%;
+    filter: saturate(0.92) contrast(1.05);
+  }
+  .wl-hero__scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10, 9, 7, 0.55) 0%, rgba(10, 9, 7, 0.2) 35%, rgba(10, 9, 7, 0.82) 88%, var(--wl-bg) 100%),
+      linear-gradient(90deg, rgba(10, 9, 7, 0.6) 0%, transparent 55%);
+  }
+  .wl-hero__inner {
+    position: relative;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 3.5rem;
+  }
+  .wl-badge {
+    display: block;
+    width: clamp(96px, 20vw, 168px);
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+  }
+  .wl-badge img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .wl-kicker {
+    font-family: 'Inter', system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.34em;
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: var(--wl-marigold);
+    margin-bottom: 1.1rem;
+  }
+  .wl-hero__line {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.02;
+    font-size: clamp(1.9rem, 6vw, 4.25rem);
+    max-width: 18ch;
+    color: var(--wl-ink);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.55), 0 0 26px rgba(0, 0, 0, 0.5);
+    text-wrap: balance;
+  }
+  .wl-hero__sub {
+    margin-top: 1.4rem;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight: 600;
+    color: var(--wl-copper);
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- BODY / SECTIONS ---------- */
+  .wl-body {
+    position: relative;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 6rem;
+  }
+  .wl-section {
+    padding: clamp(3rem, 7vw, 5.5rem) 0;
+    border-top: 1px solid var(--wl-line);
+  }
+  .wl-section:first-of-type {
+    border-top: 0;
+  }
+  .wl-section__head {
+    margin-bottom: 2.75rem;
+  }
+  .wl-eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: var(--wl-marigold);
+    margin-bottom: 0.9rem;
+  }
+  .wl-h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 4vw, 2.85rem);
+    line-height: 1.05;
+    color: var(--wl-ink);
+  }
+
+  /* ---------- STATS ---------- */
+  .wl-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--wl-line);
+    border: 1px solid var(--wl-line);
+  }
+  .wl-stat {
+    background: var(--wl-panel);
+    padding: 1.75rem 1.5rem;
+  }
+  .wl-stat__value {
+    font-weight: 900;
+    font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+    line-height: 1;
+    color: var(--wl-marigold);
+    letter-spacing: -0.02em;
+  }
+  .wl-stat__label {
+    margin-top: 0.7rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: var(--wl-ink-dim);
+  }
+  .wl-drivers {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 0.85rem;
+  }
+  .wl-drivers__tag {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.66rem;
+    font-weight: 700;
+    color: var(--wl-ink-faint);
+  }
+  .wl-drivers__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .wl-driver {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--wl-ink);
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--wl-line);
+    background: rgba(154, 58, 30, 0.12);
+  }
+
+  /* ---------- REACTION CARDS ---------- */
+  .wl-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .wl-card {
+    position: relative;
+    background: var(--wl-panel);
+    border: 1px solid var(--wl-line);
+    border-left: 3px solid var(--wl-rust);
+    padding: 1.75rem 1.6rem;
+  }
+  .wl-card__title {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 1.15rem;
+    color: var(--wl-ink);
+    margin-bottom: 0.7rem;
+  }
+  .wl-card__body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--wl-ink-dim);
+    margin-bottom: 1.4rem;
+  }
+  .wl-card__risk {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--wl-copper);
+  }
+  .wl-card__risk-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    color: var(--wl-ink-faint);
+    border: 1px solid var(--wl-line);
+    padding: 0.2rem 0.45rem;
+  }
+
+  /* ---------- KERNBOTSCHAFT ---------- */
+  .wl-quote {
+    margin: 0;
+    border-left: 4px solid var(--wl-marigold);
+    background: linear-gradient(90deg, rgba(232, 162, 61, 0.08), transparent 80%);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+  }
+  .wl-quote__text {
+    font-size: clamp(1.4rem, 3.6vw, 2.2rem);
+    line-height: 1.28;
+    font-weight: 800;
+    color: var(--wl-ink);
+    text-wrap: balance;
+  }
+  .wl-quote__foot {
+    margin-top: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--wl-marigold);
+  }
+  .wl-quote__foot span {
+    margin: 0 0.4rem;
+    color: var(--wl-copper);
+  }
+
+  /* ---------- THESIS ---------- */
+  .wl-thesis__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .wl-step {
+    background: var(--wl-panel);
+    border: 1px solid var(--wl-line);
+    padding: 1.5rem 1.5rem;
+  }
+  .wl-step__kicker {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 1rem;
+    color: var(--wl-marigold);
+    margin-bottom: 0.6rem;
+  }
+  .wl-step__body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--wl-ink-dim);
+  }
+  .wl-thesis__lead {
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--wl-ink);
+    max-width: 60ch;
+  }
+
+  /* ---------- CTA ---------- */
+  .wl-cta {
+    text-align: center;
+  }
+  .wl-cta .wl-eyebrow {
+    color: var(--wl-marigold);
+  }
+  .wl-cta__body {
+    max-width: 46ch;
+    margin: 1.1rem auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--wl-ink-dim);
+  }
+  .wl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.95rem 1.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.88rem;
+    color: var(--wl-bg);
+    background: var(--wl-marigold);
+    border: 1px solid var(--wl-marigold);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 14px 30px -12px rgba(232, 162, 61, 0.5);
+  }
+  .wl-btn:hover {
+    background: var(--wl-copper);
+    border-color: var(--wl-copper);
+    transform: translateY(-2px);
+  }
+  .wl-btn:focus-visible {
+    outline: 2px solid var(--wl-ink);
+    outline-offset: 3px;
+  }
+
+  /* ---------- EN LANG NOTICE ---------- */
+  .wl-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    margin: 2.5rem 0 0;
+    padding: 1rem 1.125rem;
+    border-left: 2px solid var(--wl-marigold);
+    background: rgba(232, 162, 61, 0.06);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--wl-ink-dim);
+  }
+  .wl-notice__icon {
+    flex-shrink: 0;
+    color: var(--wl-marigold);
+  }
+  .wl-notice__text {
+    margin: 0;
+  }
+  .wl-notice__link {
+    color: var(--wl-ink);
+    border-bottom: 1px solid var(--wl-line);
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .wl-notice__link:hover {
+    color: var(--wl-marigold);
+    border-color: var(--wl-marigold);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (min-width: 640px) {
+    .wl-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 900px) {
+    .wl-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .wl-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .wl-thesis__steps {
+      grid-template-columns: 1fr 1fr;
+    }
+    .wl-hero__inner {
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  /* Bewegung respektieren — eigene Übergänge abschalten. */
+  @media (prefers-reduced-motion: reduce) {
+    .wl-btn {
+      transition: none;
+    }
+    .wl-btn:hover {
+      transform: none;
+    }
+  }
+</style>

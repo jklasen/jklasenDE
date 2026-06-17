@@ -206,6 +206,17 @@ export const ui = {
     'briefing.teaser.cta.all': 'Alle Briefings',
     'briefing.translationNotice':
       'This is a machine translation of the German original. The German text is the canonical source — the AI may flatten the edges of how I\'d phrase it in English. I use AI where it earns its keep, and I say so. — Jens',
+
+    // RAMmageddon — Thought-Leadership-Hub
+    'rammageddon.meta.title': 'RAMmageddon — Architektur-Strategie statt Hardware-Reflex',
+    'rammageddon.meta.description':
+      'Die DRAM-Krise als Weckruf: Warum mehr Hardware die falsche Antwort ist — und wie die Zwangspause beim Hardware-Kauf zur Planungszeit für die IT-Strategie wird.',
+    'rammageddon.cta.eyebrow': 'Future Proof Tech Briefing',
+    'rammageddon.cta.title': 'Die These im Detail',
+    'rammageddon.cta.body':
+      'Die vollständige Analyse — Hardware-Renewal, geopolitische Eskalation, die Software-Antwort und die Landkarte — liegt als mehrteilige Serie im Briefing.',
+    'rammageddon.cta.button': 'Zu den Briefings',
+    'rammageddon.langNotice': '',
   },
   en: {
     // Navigation
@@ -407,5 +418,17 @@ export const ui = {
     'briefing.teaser.cta.all': 'All briefings',
     'briefing.translationNotice':
       'This is a machine translation of the German original. The German text is the canonical source — the AI may flatten the edges of how I\'d phrase it in English. I use AI where it earns its keep, and I say so. — Jens',
+
+    // RAMmageddon — Thought-Leadership-Hub
+    'rammageddon.meta.title': 'RAMmageddon — Architecture strategy over hardware reflex',
+    'rammageddon.meta.description':
+      'The DRAM crisis as a wake-up call: why more hardware is the wrong answer — and how the forced pause on hardware buying turns into planning time for IT strategy. (Analysis in German.)',
+    'rammageddon.cta.eyebrow': 'Future Proof Tech Briefing',
+    'rammageddon.cta.title': 'The thesis in detail',
+    'rammageddon.cta.body':
+      'The full analysis — hardware renewal, geopolitical escalation, the software answer and the map — is published as a multi-part series in the briefing.',
+    'rammageddon.cta.button': 'To the briefings',
+    'rammageddon.langNotice':
+      'RAMmageddon is a German-language analysis. The thesis below stays in the original German — I won\'t fake an English translation of it. — Jens',
   },
 } as const;
