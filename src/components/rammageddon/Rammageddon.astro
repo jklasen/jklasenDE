@@ -381,9 +381,12 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
   /* ---------- HERO ---------- */
   .wl-hero {
     position: relative;
-    min-height: clamp(30rem, 82vh, 46rem);
+    min-height: clamp(34rem, 88vh, 48rem);
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    /* Platz für die fixierte Navigation reservieren, damit der Inhalt
+       (Badge/Headline) nie unter die Navbar rutscht. */
+    padding-top: clamp(6.5rem, 13vh, 8.5rem);
     overflow: hidden;
   }
   .wl-hero__media,
@@ -409,13 +412,15 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
     position: relative;
     width: 100%;
     max-width: 72rem;
-    margin: 0 auto;
+    /* margin-top:auto -> bottom-aligned wenn Platz da ist, sonst sauber
+       am oberen (navbar-freien) Rand statt Overflow nach oben. */
+    margin: auto auto 0;
     padding: 0 1.25rem 3.5rem;
   }
   .wl-badge {
     display: block;
-    width: clamp(96px, 20vw, 168px);
-    margin-bottom: 1.5rem;
+    width: clamp(84px, 16vw, 140px);
+    margin-bottom: 1.4rem;
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
   }
   .wl-badge img {
