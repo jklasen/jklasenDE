@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Rammageddon from '../../components/rammageddon/Rammageddon.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={`${t('rammageddon.meta.title')} | Jens Klasen`}
+  description={t('rammageddon.meta.description')}
+  lang={lang}
+  ogImage="/rammageddon/rammageddon-badge.png"
+  alternateLangPath="/rammageddon/"
+>
+  <Rammageddon lang={lang} />
+</Layout>

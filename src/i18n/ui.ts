@@ -12,6 +12,7 @@ export const ui = {
     'nav.about': 'Über mich',
     'nav.career': 'Karriere',
     'nav.certifications': 'Zertifizierungen',
+    'nav.rammageddon': 'RAMmageddon',
     'nav.briefing': 'Briefing',
     'nav.contact': 'Kontakt',
     'nav.impressum': 'Impressum',
@@ -206,6 +207,28 @@ export const ui = {
     'briefing.teaser.cta.all': 'Alle Briefings',
     'briefing.translationNotice':
       'This is a machine translation of the German original. The German text is the canonical source — the AI may flatten the edges of how I\'d phrase it in English. I use AI where it earns its keep, and I say so. — Jens',
+
+    // RAMmageddon — Thought-Leadership-Hub
+    'rammageddon.meta.title': 'RAMmageddon — Architektur-Strategie statt Hardware-Reflex',
+    'rammageddon.meta.description':
+      'Die DRAM-Krise als Weckruf: Warum mehr Hardware die falsche Antwort ist — und wie die Zwangspause beim Hardware-Kauf zur Planungszeit für die IT-Strategie wird.',
+    'rammageddon.cta.eyebrow': 'Future Proof Tech Briefing',
+    'rammageddon.cta.title': 'Die These im Detail',
+    'rammageddon.cta.body':
+      'Die vollständige Analyse — Hardware-Renewal, geopolitische Eskalation, die Software-Antwort und die Landkarte — liegt als mehrteilige Serie im Briefing.',
+    'rammageddon.cta.button': 'Zu den Briefings',
+    'rammageddon.langNotice': '',
+    'rammageddon.downloads.eyebrow': 'Für die Crew',
+    'rammageddon.downloads.title': 'Beute aus dem Ödland',
+    'rammageddon.downloads.intro':
+      'Du willst RAMmageddon auf dem Desktop, im nächsten Video-Call oder als Sticker auf dem Laptop? Bedien dich — die Motive sind frei für den privaten Gebrauch.',
+    'rammageddon.downloads.wallpapers': 'Wallpaper — Desktop & Video-Call',
+    'rammageddon.downloads.stickers': 'Sticker',
+    'rammageddon.downloads.download': 'Herunterladen',
+    'rammageddon.downloads.sticker.note':
+      'Lad dir das Emblem als transparentes PNG und schick es an einen Druckdienst wie StickerMule — fertig ist der Laptop-Sticker.',
+    'rammageddon.downloads.sticker.badge': 'Logo als PNG',
+    'rammageddon.downloads.sticker.cta': 'Zu StickerMule',
   },
   en: {
     // Navigation
@@ -213,6 +236,7 @@ export const ui = {
     'nav.about': 'About',
     'nav.career': 'Career',
     'nav.certifications': 'Certifications',
+    'nav.rammageddon': 'RAMmageddon',
     'nav.briefing': 'Briefing',
     'nav.contact': 'Contact',
     'nav.impressum': 'Legal Notice',
@@ -407,5 +431,28 @@ export const ui = {
     'briefing.teaser.cta.all': 'All briefings',
     'briefing.translationNotice':
       'This is a machine translation of the German original. The German text is the canonical source — the AI may flatten the edges of how I\'d phrase it in English. I use AI where it earns its keep, and I say so. — Jens',
+
+    // RAMmageddon — Thought-Leadership-Hub
+    'rammageddon.meta.title': 'RAMmageddon — Architecture strategy over hardware reflex',
+    'rammageddon.meta.description':
+      'The DRAM crisis as a wake-up call: why more hardware is the wrong answer — and how the forced pause on hardware buying turns into planning time for IT strategy. (Analysis in German.)',
+    'rammageddon.cta.eyebrow': 'Future Proof Tech Briefing',
+    'rammageddon.cta.title': 'The thesis in detail',
+    'rammageddon.cta.body':
+      'The full analysis — hardware renewal, geopolitical escalation, the software answer and the map — is published as a multi-part series in the briefing.',
+    'rammageddon.cta.button': 'To the briefings',
+    'rammageddon.langNotice':
+      'RAMmageddon is a German-language analysis. The thesis below stays in the original German — I won\'t fake an English translation of it. — Jens',
+    'rammageddon.downloads.eyebrow': 'For the crew',
+    'rammageddon.downloads.title': 'Loot from the wasteland',
+    'rammageddon.downloads.intro':
+      'Want RAMmageddon on your desktop, in your next video call or as a sticker on your laptop? Help yourself — the artwork is free for personal use.',
+    'rammageddon.downloads.wallpapers': 'Wallpapers — desktop & video call',
+    'rammageddon.downloads.stickers': 'Stickers',
+    'rammageddon.downloads.download': 'Download',
+    'rammageddon.downloads.sticker.note':
+      'Grab the emblem as a transparent PNG and send it to a print service like StickerMule — there\'s your laptop sticker.',
+    'rammageddon.downloads.sticker.badge': 'Logo as PNG',
+    'rammageddon.downloads.sticker.cta': 'Go to StickerMule',
   },
 } as const;
