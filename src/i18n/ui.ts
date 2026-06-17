@@ -217,6 +217,17 @@ export const ui = {
       'Die vollständige Analyse — Hardware-Renewal, geopolitische Eskalation, die Software-Antwort und die Landkarte — liegt als mehrteilige Serie im Briefing.',
     'rammageddon.cta.button': 'Zu den Briefings',
     'rammageddon.langNotice': '',
+    'rammageddon.downloads.eyebrow': 'Für die Crew',
+    'rammageddon.downloads.title': 'Beute aus dem Ödland',
+    'rammageddon.downloads.intro':
+      'Du willst RAMmageddon auf dem Desktop, im nächsten Video-Call oder als Sticker auf dem Laptop? Bedien dich — die Motive sind frei für den privaten Gebrauch.',
+    'rammageddon.downloads.wallpapers': 'Wallpaper — Desktop & Video-Call',
+    'rammageddon.downloads.stickers': 'Sticker',
+    'rammageddon.downloads.download': 'Herunterladen',
+    'rammageddon.downloads.sticker.note':
+      'Lad dir das Emblem als transparentes PNG und schick es an einen Druckdienst wie StickerMule — fertig ist der Laptop-Sticker.',
+    'rammageddon.downloads.sticker.badge': 'Logo als PNG',
+    'rammageddon.downloads.sticker.cta': 'Zu StickerMule',
   },
   en: {
     // Navigation
@@ -430,5 +441,16 @@ export const ui = {
     'rammageddon.cta.button': 'To the briefings',
     'rammageddon.langNotice':
       'RAMmageddon is a German-language analysis. The thesis below stays in the original German — I won\'t fake an English translation of it. — Jens',
+    'rammageddon.downloads.eyebrow': 'For the crew',
+    'rammageddon.downloads.title': 'Loot from the wasteland',
+    'rammageddon.downloads.intro':
+      'Want RAMmageddon on your desktop, in your next video call or as a sticker on your laptop? Help yourself — the artwork is free for personal use.',
+    'rammageddon.downloads.wallpapers': 'Wallpapers — desktop & video call',
+    'rammageddon.downloads.stickers': 'Stickers',
+    'rammageddon.downloads.download': 'Download',
+    'rammageddon.downloads.sticker.note':
+      'Grab the emblem as a transparent PNG and send it to a print service like StickerMule — there\'s your laptop sticker.',
+    'rammageddon.downloads.sticker.badge': 'Logo as PNG',
+    'rammageddon.downloads.sticker.cta': 'Go to StickerMule',
   },
 } as const;

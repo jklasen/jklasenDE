@@ -43,6 +43,41 @@ const reactions = [
     risk: 'Lock-in',
   },
 ];
+
+// Frei verfügbare Motive für Fans — Wallpaper (Desktop & Video-Call).
+// preview: web-optimiertes WebP (klein); file: hochauflösender Download.
+const wallpapers = [
+  {
+    title: 'Key-Visual',
+    preview: '/rammageddon/band-keyvisual.webp',
+    file: '/rammageddon/downloads/rammageddon-wallpaper-keyvisual.jpg',
+    res: '2814 × 1536',
+    alt: 'RAMmageddon-Key-Visual: gekippte Server-Racks in der Wüste vor der Frankfurter Skyline',
+  },
+  {
+    title: 'Frankfurt',
+    preview: '/rammageddon/hero-wasteland-frankfurt.webp',
+    file: '/rammageddon/downloads/rammageddon-wallpaper-frankfurt.jpg',
+    res: '2816 × 1536',
+    alt: 'Postapokalyptische Frankfurter Skyline unter rostrotem Himmel',
+  },
+  {
+    title: 'Cockpit',
+    preview: '/rammageddon/band-cockpit.webp',
+    file: '/rammageddon/downloads/rammageddon-wallpaper-cockpit.jpg',
+    res: '2814 × 1536',
+    alt: 'Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks',
+  },
+  {
+    title: 'Interieur',
+    preview: '/rammageddon/band-interior.webp',
+    file: '/rammageddon/downloads/rammageddon-wallpaper-interieur.jpg',
+    res: '2752 × 1536',
+    alt: 'Innenraum eines ausgeschlachteten Fahrzeugs voller Hardware-Schrott',
+  },
+];
+
+const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
 ---
 
 <div class="wasteland">
@@ -231,6 +266,73 @@ const reactions = [
         {t('rammageddon.cta.button')}
         <span aria-hidden="true">→</span>
       </a>
+    </section>
+
+    <!-- 7) FÜR FANS — DOWNLOADS ------------------------------------------ -->
+    <section class="wl-section" data-animate>
+      <header class="wl-section__head">
+        <p class="wl-eyebrow">{t('rammageddon.downloads.eyebrow')}</p>
+        <h2 class="wl-h2">{t('rammageddon.downloads.title')}</h2>
+        <p class="wl-dl__intro">{t('rammageddon.downloads.intro')}</p>
+      </header>
+
+      <h3 class="wl-dl__subhead">{t('rammageddon.downloads.wallpapers')}</h3>
+      <div class="wl-dl__grid">
+        {wallpapers.map((w) => (
+          <figure class="wl-dl-card">
+            <span class="wl-dl-card__thumb">
+              <img src={w.preview} alt={w.alt} loading="lazy" decoding="async" />
+            </span>
+            <figcaption class="wl-dl-card__meta">
+              <span class="wl-dl-card__title">{w.title}</span>
+              <span class="wl-dl-card__res">{w.res}</span>
+            </figcaption>
+            <a
+              class="wl-dl-card__btn"
+              href={w.file}
+              download
+              aria-label={`${t('rammageddon.downloads.download')} — ${w.title} (${w.res})`}
+            >
+              <svg class="wl-dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              {t('rammageddon.downloads.download')}
+            </a>
+          </figure>
+        ))}
+      </div>
+
+      <h3 class="wl-dl__subhead wl-dl__subhead--sticker">{t('rammageddon.downloads.stickers')}</h3>
+      <div class="wl-sticker">
+        <span class="wl-sticker__art">
+          <picture>
+            <source srcset="/rammageddon/rammageddon-badge.webp" type="image/webp" />
+            <img
+              src="/rammageddon/rammageddon-badge.png"
+              alt="RAMmageddon — Emblem als Sticker-Vorlage"
+              width="1023"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </span>
+        <div class="wl-sticker__body">
+          <p class="wl-sticker__note">{t('rammageddon.downloads.sticker.note')}</p>
+          <div class="wl-sticker__actions">
+            <a class="wl-dl-card__btn" href="/rammageddon/downloads/rammageddon-logo-sticker.png" download>
+              <svg class="wl-dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              {t('rammageddon.downloads.sticker.badge')}
+            </a>
+            <a class="wl-btn wl-btn--sm" href={stickerMuleUrl} target="_blank" rel="noopener noreferrer">
+              {t('rammageddon.downloads.sticker.cta')}
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </div>
@@ -654,10 +756,157 @@ const reactions = [
     border-color: var(--wl-marigold);
   }
 
+  /* ---------- DOWNLOADS / FÜR FANS ---------- */
+  .wl-dl__intro {
+    margin-top: 1.1rem;
+    max-width: 56ch;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--wl-ink-dim);
+  }
+  .wl-dl__subhead {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--wl-copper);
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--wl-line);
+  }
+  .wl-dl__subhead--sticker {
+    margin-top: 3rem;
+  }
+  .wl-dl__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  .wl-dl-card {
+    margin: 0;
+    background: var(--wl-panel);
+    border: 1px solid var(--wl-line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .wl-dl-card__thumb {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--wl-bg-2);
+  }
+  .wl-dl-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .wl-dl-card__meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem 0.6rem;
+  }
+  .wl-dl-card__title {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+    color: var(--wl-ink);
+  }
+  .wl-dl-card__res {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--wl-ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .wl-dl-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 1rem 1rem;
+    padding: 0.6rem 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.76rem;
+    color: var(--wl-ink);
+    background: rgba(196, 117, 58, 0.14);
+    border: 1px solid var(--wl-line);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .wl-dl-card__btn:hover {
+    background: rgba(232, 162, 61, 0.22);
+    border-color: var(--wl-marigold);
+    color: var(--wl-ink);
+  }
+  .wl-dl-card__btn:focus-visible {
+    outline: 2px solid var(--wl-marigold);
+    outline-offset: 2px;
+  }
+  .wl-dl-ico {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* Sticker-Block */
+  .wl-sticker {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: var(--wl-panel);
+    border: 1px solid var(--wl-line);
+    border-left: 3px solid var(--wl-marigold);
+    padding: 1.75rem 1.6rem;
+  }
+  .wl-sticker__art {
+    width: clamp(120px, 32vw, 150px);
+    flex-shrink: 0;
+  }
+  .wl-sticker__art img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.5));
+  }
+  .wl-sticker__note {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--wl-ink-dim);
+    margin-bottom: 1.2rem;
+    max-width: 52ch;
+  }
+  .wl-sticker__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .wl-sticker__actions .wl-dl-card__btn {
+    margin: 0;
+  }
+  .wl-btn--sm {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.78rem;
+    box-shadow: none;
+  }
+
   /* ---------- RESPONSIVE ---------- */
   @media (min-width: 640px) {
     .wl-stats {
       grid-template-columns: 1fr 1fr;
+    }
+    .wl-dl__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .wl-sticker {
+      flex-direction: row;
+      align-items: center;
     }
   }
   @media (min-width: 900px) {
@@ -666,6 +915,9 @@ const reactions = [
     }
     .wl-cards {
       grid-template-columns: repeat(3, 1fr);
+    }
+    .wl-dl__grid {
+      grid-template-columns: repeat(4, 1fr);
     }
     .wl-thesis__steps {
       grid-template-columns: 1fr 1fr;
