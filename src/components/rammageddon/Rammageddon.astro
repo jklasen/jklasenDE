@@ -119,6 +119,22 @@ const reactions = [
       </div>
     </section>
 
+    <!-- Atmosphäre-Band: Cockpit-POV -->
+    <div class="wl-band" data-animate>
+      <picture>
+        <source srcset="/rammageddon/band-cockpit.webp" type="image/webp" />
+        <img
+          src="/rammageddon/band-cockpit.jpg"
+          alt="Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks in der Wüste vor der Frankfurter Skyline"
+          width="1600"
+          height="873"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <span class="wl-band__scrim" aria-hidden="true"></span>
+    </div>
+
     <!-- 3) DREI REAKTIONEN ----------------------------------------------- -->
     <section class="wl-section" data-animate>
       <header class="wl-section__head">
@@ -136,6 +152,22 @@ const reactions = [
         ))}
       </div>
     </section>
+
+    <!-- Atmosphäre-Band: Wrack-Innenraum -->
+    <div class="wl-band" data-animate>
+      <picture>
+        <source srcset="/rammageddon/band-interior.webp" type="image/webp" />
+        <img
+          src="/rammageddon/band-interior.jpg"
+          alt="Innenraum eines ausgeschlachteten Fahrzeugs voller alter Festplatten und Hardware-Schrott"
+          width="1600"
+          height="893"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <span class="wl-band__scrim" aria-hidden="true"></span>
+    </div>
 
     <!-- 4) KERNBOTSCHAFT -------------------------------------------------- -->
     <section class="wl-section" data-animate>
@@ -173,6 +205,22 @@ const reactions = [
         </p>
       </div>
     </section>
+
+    <!-- Atmosphäre-Band: panoramisches Key-Visual -->
+    <div class="wl-band wl-band--key" data-animate>
+      <picture>
+        <source srcset="/rammageddon/band-keyvisual.webp" type="image/webp" />
+        <img
+          src="/rammageddon/band-keyvisual.jpg"
+          alt="RAMmageddon — gekippte Server-Racks in einer Wüstenlandschaft vor der Frankfurter Skyline"
+          width="1600"
+          height="873"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <span class="wl-band__scrim" aria-hidden="true"></span>
+    </div>
 
     <!-- 6) ÜBERGANG ZU DEN BRIEFINGS ------------------------------------- -->
     <section class="wl-section wl-cta" data-animate>
@@ -332,6 +380,47 @@ const reactions = [
     font-size: clamp(1.6rem, 4vw, 2.85rem);
     line-height: 1.05;
     color: var(--wl-ink);
+  }
+
+  /* ---------- FULL-BLEED ATMOSPHÄRE-BÄNDER ---------- */
+  .wl-band {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-block: clamp(0.5rem, 3vw, 2rem);
+    height: clamp(14rem, 42vh, 23rem);
+    overflow: hidden;
+  }
+  .wl-band--key {
+    height: clamp(17rem, 54vh, 29rem);
+  }
+  .wl-band picture,
+  .wl-band img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .wl-band img {
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.04);
+  }
+  .wl-band--key img {
+    object-position: center 32%;
+  }
+  .wl-band__scrim {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      var(--wl-bg) 0%,
+      rgba(10, 9, 7, 0.12) 16%,
+      rgba(10, 9, 7, 0.12) 84%,
+      var(--wl-bg) 100%
+    );
   }
 
   /* ---------- STATS ---------- */
