@@ -9,21 +9,29 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
+const rammageddonPath = lang === 'de' ? '/rammageddon/' : '/en/rammageddon/';
+
 const projects = [
   {
     title: t('forge.kitzcontrol.title'),
     status: t('forge.kitzcontrol.status'),
     body: t('forge.kitzcontrol.body'),
+    href: null,
+    cta: null,
   },
   {
     title: t('forge.jkfitt.title'),
     status: t('forge.jkfitt.status'),
     body: t('forge.jkfitt.body'),
+    href: null,
+    cta: null,
   },
   {
     title: t('forge.rammageddon.title'),
     status: t('forge.rammageddon.status'),
     body: t('forge.rammageddon.body'),
+    href: rammageddonPath,
+    cta: t('forge.rammageddon.cta'),
   },
 ];
 ---
@@ -60,6 +68,17 @@ const projects = [
             {p.status}
           </p>
           <p class="text-base lg:text-lg text-bone-200/85 leading-relaxed" set:html={p.body}></p>
+          {p.href && (
+            <p class="mt-6">
+              <a
+                href={p.href}
+                class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] font-display font-bold text-bone-50 border-b border-blood-500/50 hover:text-blood-300 hover:border-blood-400 transition-colors pb-1"
+              >
+                {p.cta}
+                <span aria-hidden="true">→</span>
+              </a>
+            </p>
+          )}
         </article>
       ))}
     </div>
