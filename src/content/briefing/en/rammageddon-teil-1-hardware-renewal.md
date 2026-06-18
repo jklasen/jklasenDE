@@ -19,15 +19,15 @@ Samsung has raised its prices for server DRAM (DDR5) by up to 60 percent since S
 
 Dell COO Jeff Clarke puts it bluntly: "This is the worst shortage I have ever witnessed."
 
-The reason? AI infrastructure is eating everything. Up to 70 percent of the world's memory chip production in 2026 will flow into hyperscaler data centres. Manufacturers like Samsung, SK Hynix and Micron have massively reallocated production capacity towards high-margin HBM and AI chips — at the cost of "normal" DDR5 and DDR4 for enterprise servers. Micron even retired its 30-year-old consumer brand Crucial to focus entirely on the AI market. Silicon Motion CEO Wallace C. Kou sums it up: "We're facing what has never happened before: HDD, DRAM, HBM, NAND… all in severe shortage."
+The reason? AI infrastructure is eating everything. Up to 70 percent of the world's memory chip production in 2026 will flow into hyperscaler data centers. Manufacturers like Samsung, SK Hynix and Micron have massively reallocated production capacity towards high-margin HBM and AI chips — at the cost of "normal" DDR5 and DDR4 for enterprise servers. Micron even retired its 30-year-old consumer brand Crucial to focus entirely on the AI market. Silicon Motion CEO Wallace C. Kou sums it up: "We're facing what has never happened before: HDD, DRAM, HBM, NAND… all in severe shortage."
 
 This is not a temporary dip — it is a structural redistribution of global semiconductor capacity.
 
-## A Covid-effect on the data centre
+## A Covid-effect on the data center
 
 The parallels to the Covid-era chip crisis are not exaggerated — the Wall Street Journal is already drawing them itself. But this time the cause is not a pandemic, it is an AI-driven demand shock that hits all segments simultaneously: DRAM, NAND, HDDs, CPUs, even glass fabric for chip production.
 
-For IT organisations that planned hardware refreshes in 2026, that means concretely: longer lead times, shorter quote validities, ballooning budgets — and very difficult conversations with the CFO.
+For IT organizations that planned hardware refreshes in 2026, that means concretely: longer lead times, shorter quote validities, ballooning budgets — and very difficult conversations with the CFO.
 
 ## Support extensions: a sensible bridge, not a stopgap
 
@@ -43,7 +43,7 @@ That is exactly where the opportunity in the crisis lies.
 
 Proofs of concept and minimum viable products — now.
 
-Use the forced pause to work intensively on the future architecture. Test whether technologies like virtualisation, KubeVirt, modern SDN concepts or containerised platforms suit your workloads. Analyse where over-dimensioned infrastructures are generating cost — not only at VMware, but across the entire software landscape.
+Use the forced pause to work intensively on the future architecture. Test whether technologies like virtualization, KubeVirt, modern SDN concepts or containerized platforms suit your workloads. Analyse where over-dimensioned infrastructures are generating cost — not only at VMware, but across the entire software landscape.
 
 We at CID are doing exactly that: we're currently running POCs across several fire compartments, testing under real load, and gathering insights no datasheet can supply.
 

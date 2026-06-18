@@ -4,7 +4,7 @@ kicker: "Future Proof Tech Briefing · May 2026"
 date: 2026-05-22
 author: "Jens Klasen"
 readingTime: "10 minutes"
-teaser: "A synthetic but realistic reference model: how consolidation onto VVF/VKS pencils out against a like-for-like refresh — licence cores, RAM procurement, vSAN entitlement, and Pure as an S3 capacity tier. With assumptions disclosed for your own recalculation."
+teaser: "A synthetic but realistic reference model: how consolidation onto VVF/VKS pencils out against a like-for-like refresh — license cores, RAM procurement, vSAN entitlement, and Pure as an S3 capacity tier. With assumptions disclosed for your own recalculation."
 lang: "en"
 aiTranslated: true
 ---
@@ -15,7 +15,7 @@ So I'm working through one of the hotspots from the map (Part 5) concretely — 
 
 ## Up front: what this calculation is and what it isn't
 
-I'm using no customer data. What follows is a **synthetic reference model** with industry-standard assumptions for a mid-market data centre. Every assumption is disclosed so you can re-run it against your own environment. If your numbers diverge, that changes the amounts — not the logic.
+I'm using no customer data. What follows is a **synthetic reference model** with industry-standard assumptions for a mid-market data center. Every assumption is disclosed so you can re-run it against your own environment. If your numbers diverge, that changes the amounts — not the logic.
 
 I'm deliberately calculating **conservatively**: prices at the lower end, savings cautious, migration cost explicitly accounted for. A Field-CTO argument that conceals the counter-calculation is a sales brochure.
 
@@ -30,7 +30,7 @@ A typical mid-market estate, five years old, with the hardware refresh due.
 
 **Sizing assumptions (average across the 80 VMs):**
 
-| Metric | Assumption | Provisioned total | Real utilisation (typ.) |
+| Metric | Assumption | Provisioned total | Real utilization (typ.) |
 |---|---|---|---|
 | vCPU per VM | 4 | 320 vCPU | 15–25% |
 | RAM per VM | 12 GB | 960 GB | 30–45% working set |
@@ -72,13 +72,13 @@ The 16-core minimum rule per CPU is satisfied in both cases (24- and 32-core CPU
 
 ## The lever, position by position
 
-### 1. VVF licence cores: −192 cores (−50%)
+### 1. VVF license cores: −192 cores (−50%)
 
 VVF is licensed per physical core. Path A: 384 cores. Path B: 192 cores. Delta: **192 cores fewer, permanently, every year of the subscription.**
 
 I'm deliberately not naming an invented per-core price — plug in your real negotiated value:
 
-> Licence saving = 192 cores × (your VVF €/core/year) × subscription term
+> License saving = 192 cores × (your VVF €/core/year) × subscription term
 
 For illustration only, with a clearly flagged sample assumption of €250/core/year: 192 × 250 = **€48,000/year**, over a 3-year subscription **€144,000**. That is by far the largest single line item — and it is not one-off, it recurs.
 
@@ -99,13 +99,13 @@ VVF includes 0.25 TiB (256 GiB) of vSAN capacity per licensed core, aggregated a
 - Path B: 192 cores × 0.25 TiB = **48 TiB of vSAN entitlement included**
 - Hot-tier demand after consolidation: ~6 TB usable, with vSAN RAID-5 overhead ~8 TB raw
 
-8 TB sits well below 48 TiB. Result: **no vSAN add-on needed, €0 additional capacity licence.** If Path A had put the provisioned ~9.4 TB plus growth plus FTT all on vSAN, you would have run into the add-on TiB licensing depending on the protection level.
+8 TB sits well below 48 TiB. Result: **no vSAN add-on needed, €0 additional capacity license.** If Path A had put the provisioned ~9.4 TB plus growth plus FTT all on vSAN, you would have run into the add-on TiB licensing depending on the protection level.
 
-The double effect: consolidation halves the cores — and the reduced storage footprint still fits comfortably into the smaller entitlement. You pay half the cores and still don't give away any storage licence.
+The double effect: consolidation halves the cores — and the reduced storage footprint still fits comfortably into the smaller entitlement. You pay half the cores and still don't give away any storage license.
 
 ### 4. Flash / NAND procurement: −8 TB of expensive datacentre flash
 
-vSAN flash raw drops from ~16 TB to ~8 TB. The capacity-heavy, cold data no longer sits on expensive vSAN flash, but on the Pure capacity tier — cheaper €/TB, QLC/capacity-optimised, and above all **without ties to VMware licence cores**. NAND contract prices rise 70–75% QoQ in Q2/2026, faster than DRAM. The avoided flash purchase is the line item that gets more expensive the fastest.
+vSAN flash raw drops from ~16 TB to ~8 TB. The capacity-heavy, cold data no longer sits on expensive vSAN flash, but on the Pure capacity tier — cheaper €/TB, QLC/capacity-optimized, and above all **without ties to VMware license cores**. NAND contract prices rise 70–75% QoQ in Q2/2026, faster than DRAM. The avoided flash purchase is the line item that gets more expensive the fastest.
 
 ### 5. Operations: 6 → 4 hosts
 
@@ -115,21 +115,21 @@ A third fewer hosts: less power, rack U, maintenance contracts, patch surface. O
 
 Path B is no gift. It is a migration, and a migration costs before it saves. Anyone who hides that is selling — not calculating.
 
-The effort distributes across five phases. The person-days are sample assumptions for the synthetic 80-VM model at medium containerisation maturity — plug in your own maturity and team capacity:
+The effort distributes across five phases. The person-days are sample assumptions for the synthetic 80-VM model at medium containerization maturity — plug in your own maturity and team capacity:
 
 - **Assessment and workload profiling** (dependencies, data flows, containerisability per workload): ~10–20 PD
 - **Platform build** (VVF/VKS, storage tiering vSAN plus Pure S3, network/ingress, GitOps and observability base): ~20–35 PD
-- **Containerisation of the ~68 stateless / semi-stateless workloads** (bundled via templating, not 68 times from scratch): ~40–80 PD
+- **Containerization of the ~68 stateless / semi-stateless workloads** (bundled via templating, not 68 times from scratch): ~40–80 PD
 - **~12 stateful services** (DB migration, persistent volume and backup strategy, cutover, recovery tests — this is where the project risk sits): ~35–70 PD
 - **Cutover, hypercare, team enablement** (parallel operation, knowledge transfer, GitOps / Kubernetes operational enablement): ~15–35 PD
 
-In total roughly **130 to 240 person-days**. At a clearly flagged sample day-rate assumption of €1,100–€1,400 (specialist cloud-native / platform consulting, DACH) that gives a one-off migration investment in the range **~€145,000 to ~€335,000**. Plug in your real rate — and note: anyone with their own platform team shifts a substantial part from external invest to internal capacity, but the sum doesn't disappear, it just changes cost centre.
+In total roughly **130 to 240 person-days**. At a clearly flagged sample day-rate assumption of €1,100–€1,400 (specialist cloud-native / platform consulting, DACH) that gives a one-off migration investment in the range **~€145,000 to ~€335,000**. Plug in your real rate — and note: anyone with their own platform team shifts a substantial part from external invest to internal capacity, but the sum doesn't disappear, it just changes cost center.
 
-Honestly set against the saving: the recurring component (halved licence cores, avoided vSAN add-on, a third fewer hosts in operations, plus the avoided RAM and flash purchase growing with every refresh cycle) carries the invest — but not in 12 months. Realistically the break-even, depending on real licence price and containerisation maturity, sits at **roughly two to four years**. Whoever already has pipelines and a platform team is at the lower end; whoever starts at zero, at the upper.
+Honestly set against the saving: the recurring component (halved license cores, avoided vSAN add-on, a third fewer hosts in operations, plus the avoided RAM and flash purchase growing with every refresh cycle) carries the invest — but not in 12 months. Realistically the break-even, depending on real license price and containerization maturity, sits at **roughly two to four years**. Whoever already has pipelines and a platform team is at the lower end; whoever starts at zero, at the upper.
 
-That makes the break-even a planning parameter, not an obstacle. Whoever's next hardware refresh is three to five years away has exactly the window the amortisation needs — and invests today, at today's day-rates, in a platform that stands precisely when the procurement moment has become structurally and substantively more expensive. The time to refresh isn't a risk here, it is the reason to schedule the project now rather than later. That is the direct consequence of the structural reset in Part 6: modernisation is a scheduled preparation for a procurement moment that will with high certainty be more expensive — not an act of faith.
+That makes the break-even a planning parameter, not an obstacle. Whoever's next hardware refresh is three to five years away has exactly the window the amortization needs — and invests today, at today's day-rates, in a platform that stands precisely when the procurement moment has become structurally and substantively more expensive. The time to refresh isn't a risk here, it is the reason to schedule the project now rather than later. That is the direct consequence of the structural reset in Part 6: modernization is a scheduled preparation for a procurement moment that will with high certainty be more expensive — not an act of faith.
 
-And exactly here is the point a pure amortisation calculation doesn't capture.
+And exactly here is the point a pure amortization calculation doesn't capture.
 
 ## The strategic consequence: less lock-in
 
@@ -143,9 +143,9 @@ The value lies not in the switch, but in the optionality. When the workload laye
 
 ## What it comes down to
 
-80 VMs becoming 12 nodes is not a compaction trick. It is the concrete application of the doctrine from Part 6: software efficiency is the only capacity source that can't be allocated, can't be tariffed, and can't be bought up by hyperscalers. Every core you don't licence, every GB of RAM you don't procure, is defended against a market that is structurally getting more expensive — and the workload layer is no longer chained to the most expensive layer.
+80 VMs becoming 12 nodes is not a compaction trick. It is the concrete application of the doctrine from Part 6: software efficiency is the only capacity source that can't be allocated, can't be tariffed, and can't be bought up by hyperscalers. Every core you don't license, every GB of RAM you don't procure, is defended against a market that is structurally getting more expensive — and the workload layer is no longer chained to the most expensive layer.
 
-Exactly this migration path — assessment, platform build, containerisation, stateful cutover without operational outage — is not a slide business, it is project craft. It is the work the team I work with stands for; and the effort I costed openly above is openly costed precisely because hiding it would be the opposite of advice.
+Exactly this migration path — assessment, platform build, containerization, stateful cutover without operational outage — is not a slide business, it is project craft. It is the work the team I work with stands for; and the effort I costed openly above is openly costed precisely because hiding it would be the opposite of advice.
 
 Run it on your own numbers. If your core price, your day rate, your RAM offer or your workload structure tips the picture, write it in the comments — I take solid counter-calculations seriously and gladly into the next post.
 

@@ -19,7 +19,7 @@ Google Research introduced TurboQuant — a compression algorithm that reduces t
 
 Cloudflare's CEO called it "Google's DeepSeek moment". The internet called it "Pied Piper" — after the fictional compression revolution from the show *Silicon Valley*. And the markets? Shares of Micron, Samsung and Western Digital fell immediately.
 
-But here's where it gets interesting for us: TurboQuant only optimises inference — the operation of AI models. Not training. That means: demand for HBM memory for AI training remains unchanged. The short-term scarcity of conventional DRAM does not change. But it proves something fundamental.
+But here's where it gets interesting for us: TurboQuant only optimizes inference — the operation of AI models. Not training. That means: demand for HBM memory for AI training remains unchanged. The short-term scarcity of conventional DRAM does not change. But it proves something fundamental.
 
 Whoever handles software more intelligently needs less hardware.
 
@@ -49,7 +49,7 @@ The perfect storm I described in Part 2 has not calmed. It has grown.
 
 There is good news as well: Europe has understood that action is required. On 25 March 2026, EU Executive Vice-President Henna Virkkunen chaired an Implementation Dialogue on the Chips Act — a high-level meeting with industry leaders and stakeholders from across the semiconductor value chain. The EU is currently preparing the "Chips Act 2.0" — as part of a comprehensive "Technological Sovereignty" package.
 
-The balance sheet of the first Chips Act looks impressive at first glance: over 80 billion euros in investment mobilised — almost twice the originally targeted 43 billion. Seven state-approved semiconductor projects with over 31.5 billion euros in combined public and private capital are under way.
+The balance sheet of the first Chips Act looks impressive at first glance: over 80 billion euros in investment mobilized — almost twice the originally targeted 43 billion. Seven state-approved semiconductor projects with over 31.5 billion euros in combined public and private capital are under way.
 
 But the reality behind it is sobering: Europe's global share of chip production continues to stagnate at around 10 percent. While we invest, everyone else invests just as aggressively. New fabs take years before they are delivery-capable — Micron's Idaho facility and SK Hynix' Yongin cluster will reach volume production no earlier than 2027.
 
@@ -57,13 +57,13 @@ That means: we cannot "build" our way out of this crisis — at least not fast e
 
 ## The tools are here — but who wields them decides between success and damage
 
-And here it gets really interesting. Because in parallel to the hardware crisis, something has developed that fundamentally changes the timeline for software modernisation: AI-assisted coding.
+And here it gets really interesting. Because in parallel to the hardware crisis, something has developed that fundamentally changes the timeline for software modernization: AI-assisted coding.
 
-Tools like Claude Code (Anthropic) and Mistral Vibe (Mistral AI) make it possible to prototype in days what used to take months. Claude Code shook the IT world in February with its announcement on COBOL modernisation — IBM lost 13 percent of its market value in a single day. Not because the tool is perfect, but because the market understood: the era of million-dollar legacy migration projects is drawing to a close.
+Tools like Claude Code (Anthropic) and Mistral Vibe (Mistral AI) make it possible to prototype in days what used to take months. Claude Code shook the IT world in February with its announcement on COBOL modernization — IBM lost 13 percent of its market value in a single day. Not because the tool is perfect, but because the market understood: the era of million-dollar legacy migration projects is drawing to a close.
 
 Spotify reports a 90 percent reduction in engineering time on code migrations thanks to AI-assisted development. More than 650 AI-generated code changes are pushed to production there per month. These are not visions of the future — this is happening now.
 
-The term "Vibe Coding" describes working with AI agents that understand natural language and autonomously write, refactor, test and document code. Claude Code, Mistral Vibe, GitHub Copilot — these tools produce functional prototypes, MVPs and POCs in hours. For the RAMmageddon situation, that is gold: instead of theorising about modernisation, we can now prove it in weeks.
+The term "Vibe Coding" describes working with AI agents that understand natural language and autonomously write, refactor, test and document code. Claude Code, Mistral Vibe, GitHub Copilot — these tools produce functional prototypes, MVPs and POCs in hours. For the RAMmageddon situation, that is gold: instead of theorizing about modernization, we can now prove it in weeks.
 
 But — and this is the decisive point many are currently overlooking: a POC "vibe-coded" in an afternoon is not enterprise software.
 
@@ -71,15 +71,15 @@ The path from prototype to operations-ready system — with security, compliance
 
 A sentence I heard at a customer's site that sums it up perfectly: "Code has become cheap. Architecture has stayed expensive."
 
-That is exactly why these tools are most powerful in the hands of experienced developers and architects. A senior architect using Claude Code or Mistral Vibe understands the limits of the generated code, recognises missing edge cases, knows where security gaps lurk, and can steer the transformation from POC to production. They become a multiplier — their experience, amplified by AI, accelerates projects many times over without sacrificing quality.
+That is exactly why these tools are most powerful in the hands of experienced developers and architects. A senior architect using Claude Code or Mistral Vibe understands the limits of the generated code, recognizes missing edge cases, knows where security gaps lurk, and can steer the transformation from POC to production. They become a multiplier — their experience, amplified by AI, accelerates projects many times over without sacrificing quality.
 
-An inexperienced developer with the same tool produces impressive demos — but no operations-ready software. The risks and downsides of AI-generated code — missing tests, hidden security holes, technical debt, poor maintainability — are minimised when the tools are in the right hands.
+An inexperienced developer with the same tool produces impressive demos — but no operations-ready software. The risks and downsides of AI-generated code — missing tests, hidden security holes, technical debt, poor maintainability — are minimized when the tools are in the right hands.
 
 ## The Europe dimension: Mistral Vibe as a sovereign alternative
 
-Particularly relevant for us in Germany and Europe: Mistral Vibe is the European answer to Claude Code — open source, EU-based, fine-tunable on proprietary code, and with Devstral Small 2 even fully locally deployable, without cloud dependency. Anyone who cannot or does not want to use US cloud tools for their code modernisation for GDPR reasons or strategic considerations now has a peer-level option.
+Particularly relevant for us in Germany and Europe: Mistral Vibe is the European answer to Claude Code — open source, EU-based, fine-tunable on proprietary code, and with Devstral Small 2 even fully locally deployable, without cloud dependency. Anyone who cannot or does not want to use US cloud tools for their code modernization for GDPR reasons or strategic considerations now has a peer-level option.
 
-Data sovereignty applies not only to hardware and data centres — it applies just as much to the tools with which we modernise our software.
+Data sovereignty applies not only to hardware and data centers — it applies just as much to the tools with which we modernize our software.
 
 ## The formula stays — but it gets a turbo
 
@@ -87,29 +87,29 @@ My base formula from the first two parts still stands.
 
 Extend support → rethink architecture → run POCs → order with precision.
 
-But in 2026 a decisive accelerator joins it: AI-assisted modernisation makes the third step — running POCs — dramatically faster and cheaper.
+But in 2026 a decisive accelerator joins it: AI-assisted modernization makes the third step — running POCs — dramatically faster and cheaper.
 
-What used to be a six-month project to prove that a modernised application needs fewer resources is today a two-week sprint. A senior architect with the right AI tools can in that time analyse a legacy application, map the critical business logic, build a modernised prototype, and measure the resource delta.
+What used to be a six-month project to prove that a modernized application needs fewer resources is today a two-week sprint. A senior architect with the right AI tools can in that time analyse a legacy application, map the critical business logic, build a modernized prototype, and measure the resource delta.
 
 And that is the moment the circle closes.
 
-Google proves with TurboQuant that software efficiency tames hardware hunger. Claude Code and Mistral Vibe prove that software modernisation no longer has to take years. And the hardware crisis is finally forcing us to take both seriously.
+Google proves with TurboQuant that software efficiency tames hardware hunger. Claude Code and Mistral Vibe prove that software modernization no longer has to take years. And the hardware crisis is finally forcing us to take both seriously.
 
-Anyone who now proves with POCs that modernised software needs 40, 50 or even 70 percent fewer resources doesn't have to order yesterday's hardware at today's prices tomorrow — they can order the right hardware of tomorrow at the prices of tomorrow. And significantly less of it.
+Anyone who now proves with POCs that modernized software needs 40, 50 or even 70 percent fewer resources doesn't have to order yesterday's hardware at today's prices tomorrow — they can order the right hardware of tomorrow at the prices of tomorrow. And significantly less of it.
 
 ## What this means for you — concretely
 
 I know many of you are looking for concrete action items. Here are mine, based on what we at CID see in practice with our customers.
 
-**Start now, don't wait.** The tools for software modernisation are better today than they have ever been — and hardware will not get cheaper in the next 18 months. Every month you spend on modernisation now saves you hardware budget later.
+**Start now, don't wait.** The tools for software modernization are better today than they have ever been — and hardware will not get cheaper in the next 18 months. Every month you spend on modernization now saves you hardware budget later.
 
 **Deploy senior expertise.** Let your most experienced architects work with the new AI tools. Invest in their further training, not in the hope that a junior with Vibe Coding will somehow produce enterprise software.
 
 **Use POCs as proof.** Nothing convinces a management board more than a working prototype that demonstrably needs fewer resources. AI-assisted development makes exactly that possible — fast and cost-efficient.
 
-**Think data sovereignty through.** Examine European alternatives — both for your infrastructure and for your modernisation tools. Anyone who relies on sovereign tools today will be less dependent tomorrow on decisions made in Washington, Beijing or Mountain View.
+**Think data sovereignty through.** Examine European alternatives — both for your infrastructure and for your modernization tools. Anyone who relies on sovereign tools today will be less dependent tomorrow on decisions made in Washington, Beijing or Mountain View.
 
-Whoever plans today buys better tomorrow. Whoever modernises today needs less tomorrow. And whoever puts the right tools in the right hands today transforms faster than ever before.
+Whoever plans today buys better tomorrow. Whoever modernizes today needs less tomorrow. And whoever puts the right tools in the right hands today transforms faster than ever before.
 
 The hardware crisis is real. But so is the software answer. It is up to us to use it.
 
