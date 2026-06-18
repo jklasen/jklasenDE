@@ -448,7 +448,7 @@ export const ui = {
       'The full analysis — hardware renewal, geopolitical escalation, the software answer and the map — is published as a multi-part series in the briefing.',
     'rammageddon.cta.button': 'To the briefings',
     'rammageddon.langNotice':
-      'RAMmageddon is a German-language analysis. The thesis below stays in the original German — I won\'t fake an English translation of it. — Jens',
+      'This English version is a machine translation of the German original — the AI may flatten the edges of how I\'d phrase it. — Jens',
     'rammageddon.downloads.eyebrow': 'For the crew',
     'rammageddon.downloads.title': 'Loot from the wasteland',
     'rammageddon.downloads.intro':

@@ -13,71 +13,110 @@ const t = useTranslations(lang);
 const briefingBase = lang === 'de' ? '/briefing/' : '/en/briefing/';
 // Deutsche Fassung dieser Seite (für den EN-Hinweis).
 const germanPath = '/rammageddon/';
-
-// Inhalte sind bewusst Deutsch und werden auf beiden Sprachfassungen identisch
-// gezeigt — die Thesen werden nicht erfunden ins Englische übersetzt (wie bei
-// den Briefings). Englische Besucher bekommen oben einen Hinweis.
-const stats = [
-  { value: '+170 %', label: 'DRAM-Preis seit Q3/2025' },
-  { value: '15–20 %', label: 'Server teurer (Listenpreise Enterprise-RAM)' },
-  { value: '6 Monate', label: 'GPU-Wartezeit (Enterprise-Kontingente reserviert)' },
-  { value: '70 %', label: 'der Chips gehen an Hyperscaler (Rest teilt sich der Mittelstand)' },
-];
-
-const drivers = ['Section-232-Zölle', 'Iran-Konflikt', 'Exportkontrollen', 'kein Produktionsausbau'];
-
-const reactions = [
-  {
-    title: 'Panik-Bestellung',
-    body: 'Hardware zu Höchstpreisen. Budget verbrannt, Architektur unverändert.',
-    risk: 'Overpay',
-  },
-  {
-    title: 'Abwarten & hoffen',
-    body: 'Support verlängern, Problem verschieben. Keine strategische Antwort.',
-    risk: 'Stillstand',
-  },
-  {
-    title: 'Cloud-Flucht',
-    body: 'Unkontrollierter Lift-and-Shift. Ineffizienzen wandern 1:1 in die OpEx.',
-    risk: 'Lock-in',
-  },
-];
-
-// Frei verfügbare Motive für Fans — Wallpaper (Desktop & Video-Call).
-// preview: web-optimiertes WebP (klein); file: hochauflösender Download.
-const wallpapers = [
-  {
-    title: 'Key-Visual',
-    preview: '/rammageddon/band-keyvisual.webp',
-    file: '/rammageddon/downloads/rammageddon-wallpaper-keyvisual.jpg',
-    res: '2814 × 1536',
-    alt: 'RAMmageddon-Key-Visual: gekippte Server-Racks in der Wüste vor der Frankfurter Skyline',
-  },
-  {
-    title: 'Frankfurt',
-    preview: '/rammageddon/hero-wasteland-frankfurt.webp',
-    file: '/rammageddon/downloads/rammageddon-wallpaper-frankfurt.jpg',
-    res: '2816 × 1536',
-    alt: 'Postapokalyptische Frankfurter Skyline unter rostrotem Himmel',
-  },
-  {
-    title: 'Cockpit',
-    preview: '/rammageddon/band-cockpit.webp',
-    file: '/rammageddon/downloads/rammageddon-wallpaper-cockpit.jpg',
-    res: '2814 × 1536',
-    alt: 'Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks',
-  },
-  {
-    title: 'Interieur',
-    preview: '/rammageddon/band-interior.webp',
-    file: '/rammageddon/downloads/rammageddon-wallpaper-interieur.jpg',
-    res: '2752 × 1536',
-    alt: 'Innenraum eines ausgeschlachteten Fahrzeugs voller Hardware-Schrott',
-  },
-];
-
 const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
+
+// Thesen-/Sektionsinhalte zweisprachig. Die EN-Fassung ist eine
+// Übersetzung des deutschen Originals (Hinweis via rammageddon.langNotice).
+const content = {
+  de: {
+    heroAlt: 'Verfallene, postapokalyptische Skyline von Frankfurt unter rostrotem Himmel',
+    badgeAlt: 'RAMmageddon — Emblem',
+    heroKicker: 'Marktthese',
+    heroLine: 'Wer jetzt Hardware bestellt, zahlt den Preis von heute für die Architektur von gestern.',
+    heroSub: 'Architektur-Strategie statt Hardware-Reflex.',
+    marktEyebrow: 'Die Marktlage',
+    marktTitle: 'Was die Zahlen sagen',
+    stats: [
+      { value: '+170 %', label: 'DRAM-Preis seit Q3/2025' },
+      { value: '15–20 %', label: 'Server teurer (Listenpreise Enterprise-RAM)' },
+      { value: '6 Monate', label: 'GPU-Wartezeit (Enterprise-Kontingente reserviert)' },
+      { value: '70 %', label: 'der Chips gehen an Hyperscaler (Rest teilt sich der Mittelstand)' },
+    ],
+    driversLabel: 'Treiber',
+    driversAria: 'Treiber der Krise',
+    drivers: ['Section-232-Zölle', 'Iran-Konflikt', 'Exportkontrollen', 'kein Produktionsausbau'],
+    reactEyebrow: 'Drei Reaktionen',
+    reactTitle: 'Alle mit Risiko',
+    riskLabel: 'Risiko',
+    reactions: [
+      { title: 'Panik-Bestellung', body: 'Hardware zu Höchstpreisen. Budget verbrannt, Architektur unverändert.', risk: 'Overpay' },
+      { title: 'Abwarten & hoffen', body: 'Support verlängern, Problem verschieben. Keine strategische Antwort.', risk: 'Stillstand' },
+      { title: 'Cloud-Flucht', body: 'Unkontrollierter Lift-and-Shift. Ineffizienzen wandern 1:1 in die OpEx.', risk: 'Lock-in' },
+    ],
+    quoteText: 'Die Zwangspause vom Hardware-Kauf ist keine verlorene Zeit — sie ist die seltene Gelegenheit, die IT-Strategie ohne Zeitdruck auf Vordermann zu bringen.',
+    quoteFootPre: 'Wartezeit',
+    quoteFootPost: 'Planungszeit',
+    schlussEyebrow: 'Die strategische Schlussfolgerung',
+    schlussTitle: 'Schlanker werden, bevor man kauft',
+    steps: [
+      { kicker: 'Software modernisieren', body: 'Cloud-native, Kubernetes — Workloads, die nicht mehr jede Hardware-Generation mitwachsen müssen.' },
+      { kicker: 'Datenmodell modernisieren', body: 'Ein offenes Lakehouse statt gewachsener Silos — entkoppelt von proprietärer Infrastruktur.' },
+    ],
+    thesisLead: 'Die Zielarchitektur wird schlanker. Freigesetztes Hardware-Budget fließt in Modernisierung statt in die Hardware-Inflation. KI-ready Daten entstehen dabei als Beifang — nicht als eigenes Großprojekt, sondern als Nebeneffekt sauberer Architektur.',
+    bandCockpitAlt: 'Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks in der Wüste vor der Frankfurter Skyline',
+    bandInteriorAlt: 'Innenraum eines ausgeschlachteten Fahrzeugs voller alter Festplatten und Hardware-Schrott',
+    bandKeyAlt: 'RAMmageddon — gekippte Server-Racks in einer Wüstenlandschaft vor der Frankfurter Skyline',
+    stickerAlt: 'RAMmageddon — Emblem als Sticker-Vorlage',
+    wallpapers: [
+      { title: 'Key-Visual', preview: '/rammageddon/band-keyvisual.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-keyvisual.jpg', res: '2814 × 1536', alt: 'RAMmageddon-Key-Visual: gekippte Server-Racks in der Wüste vor der Frankfurter Skyline' },
+      { title: 'Frankfurt', preview: '/rammageddon/hero-wasteland-frankfurt.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-frankfurt.jpg', res: '2816 × 1536', alt: 'Postapokalyptische Frankfurter Skyline unter rostrotem Himmel' },
+      { title: 'Cockpit', preview: '/rammageddon/band-cockpit.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-cockpit.jpg', res: '2814 × 1536', alt: 'Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks' },
+      { title: 'Interieur', preview: '/rammageddon/band-interior.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-interieur.jpg', res: '2752 × 1536', alt: 'Innenraum eines ausgeschlachteten Fahrzeugs voller Hardware-Schrott' },
+    ],
+  },
+  en: {
+    heroAlt: 'Derelict, post-apocalyptic Frankfurt skyline under a rust-red sky',
+    badgeAlt: 'RAMmageddon — emblem',
+    heroKicker: 'Market thesis',
+    heroLine: "Order hardware now and you pay today's price for yesterday's architecture.",
+    heroSub: 'Architecture strategy instead of hardware reflex.',
+    marktEyebrow: 'The market situation',
+    marktTitle: 'What the numbers say',
+    stats: [
+      { value: '+170 %', label: 'DRAM price since Q3/2025' },
+      { value: '15–20 %', label: 'Servers more expensive (enterprise-RAM list prices)' },
+      { value: '6 months', label: 'GPU lead time (enterprise allocations reserved)' },
+      { value: '70 %', label: 'of chips go to hyperscalers (the mid-market shares the rest)' },
+    ],
+    driversLabel: 'Drivers',
+    driversAria: 'Drivers of the crisis',
+    drivers: ['Section 232 tariffs', 'Iran conflict', 'Export controls', 'no capacity expansion'],
+    reactEyebrow: 'Three reactions',
+    reactTitle: 'All carry risk',
+    riskLabel: 'Risk',
+    reactions: [
+      { title: 'Panic order', body: 'Hardware at peak prices. Budget burned, architecture unchanged.', risk: 'Overpay' },
+      { title: 'Wait & hope', body: 'Extend support, defer the problem. No strategic answer.', risk: 'Standstill' },
+      { title: 'Cloud flight', body: 'Uncontrolled lift-and-shift. Inefficiencies move 1:1 into OpEx.', risk: 'Lock-in' },
+    ],
+    quoteText: 'The forced pause on hardware spending is not lost time — it is the rare chance to get your IT strategy in shape without time pressure.',
+    quoteFootPre: 'Waiting time',
+    quoteFootPost: 'Planning time',
+    schlussEyebrow: 'The strategic conclusion',
+    schlussTitle: 'Get leaner before you buy',
+    steps: [
+      { kicker: 'Modernise the software', body: 'Cloud-native, Kubernetes — workloads that no longer have to grow with every hardware generation.' },
+      { kicker: 'Modernise the data model', body: 'An open lakehouse instead of grown silos — decoupled from proprietary infrastructure.' },
+    ],
+    thesisLead: 'The target architecture gets leaner. Freed-up hardware budget flows into modernisation instead of hardware inflation. AI-ready data emerges as a by-product — not a project of its own, but a side effect of clean architecture.',
+    bandCockpitAlt: 'View from a derelict vehicle onto toppled server racks in the desert before the Frankfurt skyline',
+    bandInteriorAlt: 'Interior of a gutted vehicle full of old hard drives and hardware scrap',
+    bandKeyAlt: 'RAMmageddon — toppled server racks in a desert landscape before the Frankfurt skyline',
+    stickerAlt: 'RAMmageddon — emblem as a sticker template',
+    wallpapers: [
+      { title: 'Key visual', preview: '/rammageddon/band-keyvisual.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-keyvisual.jpg', res: '2814 × 1536', alt: 'RAMmageddon key visual: toppled server racks in the desert before the Frankfurt skyline' },
+      { title: 'Frankfurt', preview: '/rammageddon/hero-wasteland-frankfurt.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-frankfurt.jpg', res: '2816 × 1536', alt: 'Post-apocalyptic Frankfurt skyline under a rust-red sky' },
+      { title: 'Cockpit', preview: '/rammageddon/band-cockpit.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-cockpit.jpg', res: '2814 × 1536', alt: 'View from a derelict vehicle onto toppled server racks' },
+      { title: 'Interior', preview: '/rammageddon/band-interior.webp', file: '/rammageddon/downloads/rammageddon-wallpaper-interieur.jpg', res: '2752 × 1536', alt: 'Interior of a gutted vehicle full of hardware scrap' },
+    ],
+  },
+};
+
+const c = content[lang];
+const stats = c.stats;
+const drivers = c.drivers;
+const reactions = c.reactions;
+const wallpapers = c.wallpapers;
 ---
 
 <div class="wasteland">
@@ -87,7 +126,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
       <source srcset="/rammageddon/hero-wasteland-frankfurt.webp" type="image/webp" />
       <img
         src="/rammageddon/hero-wasteland-frankfurt.jpg"
-        alt="Verfallene, postapokalyptische Skyline von Frankfurt unter rostrotem Himmel"
+        alt={c.heroAlt}
         width="2816"
         height="1536"
         loading="eager"
@@ -102,7 +141,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         <source srcset="/rammageddon/rammageddon-badge.webp" type="image/webp" />
         <img
           src="/rammageddon/rammageddon-badge.png"
-          alt="RAMmageddon — Emblem"
+          alt={c.badgeAlt}
           width="1023"
           height="1024"
           loading="eager"
@@ -110,11 +149,9 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         />
       </picture>
 
-      <p class="wl-kicker">Marktthese</p>
-      <h1 class="wl-hero__line">
-        Wer jetzt Hardware bestellt, zahlt den Preis von heute für die Architektur von gestern.
-      </h1>
-      <p class="wl-hero__sub">Architektur-Strategie statt Hardware-Reflex.</p>
+      <p class="wl-kicker">{c.heroKicker}</p>
+      <h1 class="wl-hero__line">{c.heroLine}</h1>
+      <p class="wl-hero__sub">{c.heroSub}</p>
     </div>
   </section>
 
@@ -133,8 +170,8 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
     <!-- 2) MARKTLAGE ------------------------------------------------------ -->
     <section class="wl-section" data-animate>
       <header class="wl-section__head">
-        <p class="wl-eyebrow">Die Marktlage</p>
-        <h2 class="wl-h2">Was die Zahlen sagen</h2>
+        <p class="wl-eyebrow">{c.marktEyebrow}</p>
+        <h2 class="wl-h2">{c.marktTitle}</h2>
       </header>
 
       <div class="wl-stats">
@@ -146,8 +183,8 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         ))}
       </div>
 
-      <div class="wl-drivers" aria-label="Treiber der Krise">
-        <span class="wl-drivers__tag">Treiber</span>
+      <div class="wl-drivers" aria-label={c.driversAria}>
+        <span class="wl-drivers__tag">{c.driversLabel}</span>
         <ul class="wl-drivers__list">
           {drivers.map((d) => <li class="wl-driver">{d}</li>)}
         </ul>
@@ -160,7 +197,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         <source srcset="/rammageddon/band-cockpit.webp" type="image/webp" />
         <img
           src="/rammageddon/band-cockpit.jpg"
-          alt="Blick aus einem verfallenen Fahrzeug auf gekippte Server-Racks in der Wüste vor der Frankfurter Skyline"
+          alt={c.bandCockpitAlt}
           width="1600"
           height="873"
           loading="lazy"
@@ -173,8 +210,8 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
     <!-- 3) DREI REAKTIONEN ----------------------------------------------- -->
     <section class="wl-section" data-animate>
       <header class="wl-section__head">
-        <p class="wl-eyebrow">Drei Reaktionen</p>
-        <h2 class="wl-h2">Alle mit Risiko</h2>
+        <p class="wl-eyebrow">{c.reactEyebrow}</p>
+        <h2 class="wl-h2">{c.reactTitle}</h2>
       </header>
 
       <div class="wl-cards">
@@ -182,7 +219,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
           <article class="wl-card">
             <h3 class="wl-card__title">{r.title}</h3>
             <p class="wl-card__body">{r.body}</p>
-            <p class="wl-card__risk"><span class="wl-card__risk-label">Risiko</span>{r.risk}</p>
+            <p class="wl-card__risk"><span class="wl-card__risk-label">{c.riskLabel}</span>{r.risk}</p>
           </article>
         ))}
       </div>
@@ -194,7 +231,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         <source srcset="/rammageddon/band-interior.webp" type="image/webp" />
         <img
           src="/rammageddon/band-interior.jpg"
-          alt="Innenraum eines ausgeschlachteten Fahrzeugs voller alter Festplatten und Hardware-Schrott"
+          alt={c.bandInteriorAlt}
           width="1600"
           height="893"
           loading="lazy"
@@ -207,37 +244,28 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
     <!-- 4) KERNBOTSCHAFT -------------------------------------------------- -->
     <section class="wl-section" data-animate>
       <blockquote class="wl-quote">
-        <p class="wl-quote__text">
-          Die Zwangspause vom Hardware-Kauf ist keine verlorene Zeit — sie ist die seltene
-          Gelegenheit, die IT-Strategie ohne Zeitdruck auf Vordermann zu bringen.
-        </p>
-        <footer class="wl-quote__foot">Wartezeit <span aria-hidden="true">→</span> Planungszeit</footer>
+        <p class="wl-quote__text">{c.quoteText}</p>
+        <footer class="wl-quote__foot">{c.quoteFootPre} <span aria-hidden="true">→</span> {c.quoteFootPost}</footer>
       </blockquote>
     </section>
 
     <!-- 5) STRATEGISCHE SCHLUSSFOLGERUNG --------------------------------- -->
     <section class="wl-section" data-animate>
       <header class="wl-section__head">
-        <p class="wl-eyebrow">Die strategische Schlussfolgerung</p>
-        <h2 class="wl-h2">Schlanker werden, bevor man kauft</h2>
+        <p class="wl-eyebrow">{c.schlussEyebrow}</p>
+        <h2 class="wl-h2">{c.schlussTitle}</h2>
       </header>
 
       <div class="wl-thesis">
         <div class="wl-thesis__steps">
-          <div class="wl-step">
-            <p class="wl-step__kicker">Software modernisieren</p>
-            <p class="wl-step__body">Cloud-native, Kubernetes — Workloads, die nicht mehr jede Hardware-Generation mitwachsen müssen.</p>
-          </div>
-          <div class="wl-step">
-            <p class="wl-step__kicker">Datenmodell modernisieren</p>
-            <p class="wl-step__body">Ein offenes Lakehouse statt gewachsener Silos — entkoppelt von proprietärer Infrastruktur.</p>
-          </div>
+          {c.steps.map((step) => (
+            <div class="wl-step">
+              <p class="wl-step__kicker">{step.kicker}</p>
+              <p class="wl-step__body">{step.body}</p>
+            </div>
+          ))}
         </div>
-        <p class="wl-thesis__lead">
-          Die Zielarchitektur wird schlanker. Freigesetztes Hardware-Budget fließt in
-          Modernisierung statt in die Hardware-Inflation. KI-ready Daten entstehen dabei als
-          Beifang — nicht als eigenes Großprojekt, sondern als Nebeneffekt sauberer Architektur.
-        </p>
+        <p class="wl-thesis__lead">{c.thesisLead}</p>
       </div>
     </section>
 
@@ -247,7 +275,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
         <source srcset="/rammageddon/band-keyvisual.webp" type="image/webp" />
         <img
           src="/rammageddon/band-keyvisual.jpg"
-          alt="RAMmageddon — gekippte Server-Racks in einer Wüstenlandschaft vor der Frankfurter Skyline"
+          alt={c.bandKeyAlt}
           width="1600"
           height="873"
           loading="lazy"
@@ -309,7 +337,7 @@ const stickerMuleUrl = 'https://www.stickermule.com/products/custom-stickers';
             <source srcset="/rammageddon/rammageddon-badge.webp" type="image/webp" />
             <img
               src="/rammageddon/rammageddon-badge.png"
-              alt="RAMmageddon — Emblem als Sticker-Vorlage"
+              alt={c.stickerAlt}
               width="1023"
               height="1024"
               loading="lazy"
