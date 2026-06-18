@@ -41,9 +41,9 @@ The moment that became clear to me was the real turning point. My system prompt 
 
 When I talk with C-level decision-makers today about AI tools — and that happens more often, because the question "how much developer productivity do we get out of this" dominates the IT department's agenda — I say one sentence that reliably produces a short silence:
 
-*"AI tools accelerate building. They don't accelerate knowing what to build. If your organisation's bottleneck is the second one — and in most it is — these tools won't help you. They'll just make your fuzziness visible faster."*
+*"AI tools accelerate building. They don't accelerate knowing what to build. If your organization's bottleneck is the second one — and in most it is — these tools won't help you. They'll just make your fuzziness visible faster."*
 
-That isn't a critique of the technology. It's an organisational diagnosis. AI tools behave like a microscope: they magnify what's there. If the requirements analysis in a company is clean, they accelerate delivery considerably. If the requirements analysis is unclean — which is the reality in most organisations between the business side and IT — then they build the wrong code faster, and you only notice in the third sprint.
+That isn't a critique of the technology. It's an organizational diagnosis. AI tools behave like a microscope: they magnify what's there. If the requirements analysis in a company is clean, they accelerate delivery considerably. If the requirements analysis is unclean — which is the reality in most organizations between the business side and IT — then they build the wrong code faster, and you only notice in the third sprint.
 
 And with system prompts, it's the same pattern, just one level up. If you treat a prompt as text, you get a text-generator result. If you treat it as software — with layers, rules, interfaces and error cases — you get a system that actually prepares decisions.
 
@@ -51,11 +51,11 @@ And with system prompts, it's the same pattern, just one level up. If you treat 
 
 Three consequences I give customers today, when they're thinking about an AI-tool rollout:
 
-**First:** don't start with the tool, start with the product owner. If your user stories are already precisely worded, you have an organisation that will benefit strongly from AI tools. If they aren't, invest the first three months in the stories, not in the tools.
+**First:** don't start with the tool, start with the product owner. If your user stories are already precisely worded, you have an organization that will benefit strongly from AI tools. If they aren't, invest the first three months in the stories, not in the tools.
 
 **Second:** don't measure speed, measure rework. The metric that counts isn't *"how many lines of code per day"*, it's *"how often does a feature have to be pulled back in the second or third sprint because the original requirement wasn't what was actually needed"*. AI tools that work well lower that number. AI tools deployed badly raise it.
 
-**Third:** treat system prompts like source code. They belong in version control, they need reviews, they need tests, and they need a responsible owner who maintains them. A system prompt written by an intern in an hour and then forgotten is a production risk. I version my own prompt today like any other production code, because every change has a consequence for the coach's behaviour that I need to be able to trace.
+**Third:** treat system prompts like source code. They belong in version control, they need reviews, they need tests, and they need a responsible owner who maintains them. A system prompt written by an intern in an hour and then forgotten is a production risk. I version my own prompt today like any other production code, because every change has a consequence for the coach's behavior that I need to be able to trace.
 
 ## The uncomfortable summary
 

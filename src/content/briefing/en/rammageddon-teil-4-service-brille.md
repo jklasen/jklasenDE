@@ -9,9 +9,9 @@ lang: "en"
 aiTranslated: true
 ---
 
-Six weeks after Part 3, much has been confirmed — and one question has crystallised out of the responses. It came from CTOs, IT leaders, one CFO, and even from two architects who deal with refresh tickets in their day jobs. It is phrased differently each time, but at its core always the same:
+Six weeks after Part 3, much has been confirmed — and one question has crystallized out of the responses. It came from CTOs, IT leaders, one CFO, and even from two architects who deal with refresh tickets in their day jobs. It is phrased differently each time, but at its core always the same:
 
-*"We've understood that we should modernise. But where do we start?"*
+*"We've understood that we should modernize. But where do we start?"*
 
 That is exactly what today is about.
 
@@ -27,9 +27,9 @@ Over the past weeks I've spoken with a number of IT leaders. One pattern runs th
 
 **The diagnosis is there. What's missing is the lens through which to read your own environment.**
 
-The standard tools in most data centres are sizing tools from hardware vendors. They answer exactly one question: *which box fits 1:1 for the refresh?* They collect CPU, RAM, IOPS, latency — and map it onto the next-generation device in the vendor's portfolio.
+The standard tools in most data centers are sizing tools from hardware vendors. They answer exactly one question: *which box fits 1:1 for the refresh?* They collect CPU, RAM, IOPS, latency — and map it onto the next-generation device in the vendor's portfolio.
 
-What they don't answer: which software is driving the load? Where are the hotspots that could be modernised instead of replaced? In the workload that's maxing out a server right now, what has grown over the years, what is necessary, what is junk?
+What they don't answer: which software is driving the load? Where are the hotspots that could be modernized instead of replaced? In the workload that's maxing out a server right now, what has grown over the years, what is necessary, what is junk?
 
 For that there is no standard tool. There is only a different reading of the same dataset.
 
@@ -51,7 +51,7 @@ Imagine a discovery tool collects seven days of telemetry from your vCenter, you
 - Three VMs generate 65 percent of the storage load
 - 22 percent of the VMs run on end-of-life operating systems
 - Several dozen VMs are similar apps with identical OS stacks — container candidates with no further debate
-- Recommendation: modernise first, dimension leaner second, then procure
+- Recommendation: modernize first, dimension leaner second, then procure
 
 It is the same dataset. It is a different question. And it is the only lens with which you can still defend a refresh budget in 2026 that isn't spent on yesterday's architecture at today's prices.
 
@@ -59,15 +59,15 @@ It is the same dataset. It is a different question. And it is the only lens with
 
 What the service lens does concretely can be distilled into six reading lenses. Each shows something a classic sizing report systematically ignores.
 
-**1. Naming conventions.** VM names reveal business context. *SAP-PROD-01, ERP-DB-04, TEST-OLDPROJ-2020, MIGRATION-TMP-18.* In every data centre, the name list is a map of the past — and of the spots where cleanup pays off.
+**1. Naming conventions.** VM names reveal business context. *SAP-PROD-01, ERP-DB-04, TEST-OLDPROJ-2020, MIGRATION-TMP-18.* In every data center, the name list is a map of the past — and of the spots where cleanup pays off.
 
-**2. Provisioned vs. active memory.** The single most common lever. A typical picture: hosts with 768 GB RAM, of which 700 are allocated, of which only 200 are actively used. The customer has been paying licences, power and hardware for 500 GB of air for years.
+**2. Provisioned vs. active memory.** The single most common lever. A typical picture: hosts with 768 GB RAM, of which 700 are allocated, of which only 200 are actively used. The customer has been paying licenses, power and hardware for 500 GB of air for years.
 
 **3. Boot time and date provisioned.** VMs that haven't been restarted in 18 months. VMs provisioned in 2019 for a project that ended in 2020. Zombie workloads that survive every refresh, because nobody knows who the owner is anymore.
 
-**4. Applications and OS distribution.** What percentage of VMs run on Windows Server 2012 R2? How many databases are still SQL Server 2014? Which Linux distributions are end-of-life? Audit risk, licence inefficiency, and modernisation leverage live in the same table.
+**4. Applications and OS distribution.** What percentage of VMs run on Windows Server 2012 R2? How many databases are still SQL Server 2014? Which Linux distributions are end-of-life? Audit risk, license inefficiency, and modernization leverage live in the same table.
 
-**5. Workload concentration.** Pareto strikes everywhere: in almost every data centre fewer than ten percent of VMs generate the bulk of IOPS load. Buying an all-flash array for the whole environment is the most expensive answer to a three-VM problem.
+**5. Workload concentration.** Pareto strikes everywhere: in almost every data center fewer than ten percent of VMs generate the bulk of IOPS load. Buying an all-flash array for the whole environment is the most expensive answer to a three-VM problem.
 
 **6. Datastore mapping.** Which VMs share which storage pools? Where are the consolidation opportunities a sizing tool never sees, because it only asks "how much storage do we need next year"?
 
@@ -75,7 +75,7 @@ Six lenses, one dataset, an entirely different conversation with the CFO.
 
 ## A case from the field
 
-This sounds theoretical. It isn't. An anonymised Hyper-V environment a vendor documented in its own discovery reference — nine hosts, five days of data collection:
+This sounds theoretical. It isn't. An anonymized Hyper-V environment a vendor documented in its own discovery reference — nine hosts, five days of data collection:
 
 - 9 two-socket hosts, each 36 cores and 768 GB RAM
 - 284 cores total, 6.9 TB RAM
@@ -84,10 +84,10 @@ This sounds theoretical. It isn't. An anonymised Hyper-V environment a vendor do
 
 That is the hardware view. Now the service view from the same five days:
 
-- **27 percent RAM utilisation.** 1.56 TiB actually active out of 5.62 TiB installed.
-- **23 percent CPU utilisation.** 195 GHz at peak out of 844 GHz available.
+- **27 percent RAM utilization.** 1.56 TiB actually active out of 5.62 TiB installed.
+- **23 percent CPU utilization.** 195 GHz at peak out of 844 GHz available.
 - **3,329 IOPS** in the 95th percentile — on a hybrid storage setup that had long become the brake.
-- **100 percent Windows Server 2019** — modernisation stagnation for years.
+- **100 percent Windows Server 2019** — modernization stagnation for years.
 
 The vendor architect's diagnosis, verbatim: *"Old environment was over-dimensioned. VMs were under-provisioned. Storage was the bottleneck."*
 
@@ -103,19 +103,19 @@ Three concrete consequences I now give every customer:
 
 **Second:** Let the analysis be done by someone who brings the service lens. Hardware partners deliver discovery tools — they do not deliver architecture readings. You need both. The separation isn't accidental.
 
-**Third:** Accept that the result will be uncomfortable. Anyone who reads five days of telemetry honestly will find zombies, over-provisioning, legacy hotspots, licence waste. The bad news: that's a lot of cleanup work. The good news: every one of those points is a lever that frees hardware budget.
+**Third:** Accept that the result will be uncomfortable. Anyone who reads five days of telemetry honestly will find zombies, over-provisioning, legacy hotspots, license waste. The bad news: that's a lot of cleanup work. The good news: every one of those points is a lever that frees hardware budget.
 
 Anyone who triggers a refresh in 2026 without first reading their architecture isn't financing their own IT — they are financing the hyperscalers' AI margin through the component supply chain. That's tough, but after three newsletter parts it shouldn't surprise anyone anymore.
 
 ## What's coming next
 
-In Part 5 we go deeper into the use cases. Seven concrete patterns we find in almost every environment — from zombie VMs through database hotspots to the lakehouse as an answer to the legacy data warehouse. With numbers, with examples, with clear modernisation levers.
+In Part 5 we go deeper into the use cases. Seven concrete patterns we find in almost every environment — from zombie VMs through database hotspots to the lakehouse as an answer to the legacy data warehouse. With numbers, with examples, with clear modernization levers.
 
 Until then, two questions for you:
 
 Who among you has already run a discovery in Q2 — and what was the biggest aha moment in the report?
 
-And: which hotspot category hurts most in your environment — licences, legacy OS, storage heat, zombies, over-provisioning?
+And: which hotspot category hurts most in your environment — licenses, legacy OS, storage heat, zombies, over-provisioning?
 
 Write to me. The next posts grow out of answers like that.
 

@@ -11,11 +11,11 @@ aiTranslated: true
 
 Modern software protects itself. Older software relies on the infrastructure to protect it.
 
-This one difference decides what your hardware has to look like — and it gets skipped in almost every modernisation discussion. People talk about the software stack, about Kubernetes, about the VMware question. But rarely about the layer where modernisation is actually decided: the metal underneath.
+This one difference decides what your hardware has to look like — and it gets skipped in almost every modernization discussion. People talk about the software stack, about Kubernetes, about the VMware question. But rarely about the layer where modernization is actually decided: the metal underneath.
 
 ## Two kinds of software, opposing demands
 
-Look closely and you have two worlds side by side in the data centre.
+Look closely and you have two worlds side by side in the data center.
 
 Cloud-native applications run distributed across multiple instances. They absorb the failure of a node themselves and expect little more from the infrastructure than fast, local resources. Protection is part of the application, not the platform.
 
@@ -23,7 +23,7 @@ Classic, organically grown software runs as a single instance, doesn't keep its 
 
 One paradigm wants ephemeral, cheap, local speed. The other wants rock-solid enterprise resilience. And both sit in the same rack.
 
-## Where modernisation is really decided
+## Where modernization is really decided
 
 Right here — not in the software stack, but in the question of whether your hardware can serve both worlds at once. In a node design I helped shape substantially, that was the guiding idea: NVMe-dense worker nodes, sized for the more demanding profile, so the same hardware is at home in both worlds:
 
@@ -46,7 +46,7 @@ Outwards, you respond to storage supply shortages without rethinking the stack. 
 
 ## You don't have to choose between old and new
 
-That's the good news for everyone who has to keep running their VMware infrastructure for a while — some by choice, some under duress. As your software modernises, from infrastructure-dependent to self-protecting, you shift the resources along on the same foundation, step by step: a workload moves, a node is repurposed, existing storage stays in use. No forklift, no second procurement.
+That's the good news for everyone who has to keep running their VMware infrastructure for a while — some by choice, some under duress. As your software modernizes, from infrastructure-dependent to self-protecting, you shift the resources along on the same foundation, step by step: a workload moves, a node is repurposed, existing storage stays in use. No forklift, no second procurement.
 
 In a year where every server, every GB of NVMe and the lead time for the next array turn into a budget fight, infrastructure that serves both worlds and isn't chained to a single delivery date is the most efficient capital there is.
 
