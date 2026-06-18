@@ -441,12 +441,12 @@ export const ui = {
     // RAMmageddon — Thought-Leadership-Hub
     'rammageddon.meta.title': 'RAMmageddon — Architecture strategy over hardware reflex',
     'rammageddon.meta.description':
-      'The DRAM crisis as a wake-up call: why more hardware is the wrong answer — and how the forced pause on hardware buying turns into planning time for IT strategy. (Analysis in German.)',
+      'The DRAM crunch as a wake-up call: why more hardware is the wrong answer — and how the forced pause turns into planning time for your IT strategy.',
     'rammageddon.cta.eyebrow': 'Future Proof Tech Briefing',
-    'rammageddon.cta.title': 'The thesis in detail',
+    'rammageddon.cta.title': 'The full breakdown',
     'rammageddon.cta.body':
-      'The full analysis — hardware renewal, geopolitical escalation, the software answer and the map — is published as a multi-part series in the briefing.',
-    'rammageddon.cta.button': 'To the briefings',
+      'The full analysis — hardware renewal, geopolitical escalation, the software answer, and the map — runs as a multi-part series in the briefing.',
+    'rammageddon.cta.button': 'Read the briefings',
     'rammageddon.langNotice':
       'This English version is a machine translation of the German original — the AI may flatten the edges of how I\'d phrase it. — Jens',
     'rammageddon.downloads.eyebrow': 'For the crew',
